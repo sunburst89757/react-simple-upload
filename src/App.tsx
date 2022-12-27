@@ -1,8 +1,8 @@
 import A from './lib';
-
+import style from './App.module.scss';
 function App() {
   return (
-    <div>
+    <div className={style.container}>
       <A></A>
     </div>
   );

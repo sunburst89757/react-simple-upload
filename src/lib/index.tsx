@@ -1,3 +1,4 @@
+import './index.scss';
 export default function A() {
-  return <div>hhhhkkkkkhhhh</div>;
+  return <div className="uploader-example">hhhhkkkkkhhhh</div>;
 }
