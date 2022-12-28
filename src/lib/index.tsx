@@ -37,7 +37,6 @@ export default function Upload(props: IProps) {
     onFileAdded = () => {},
     onFilesAdded = () => {}
   } = props;
-  const [files, setFiles] = useState();
   const uploader = useRef<Uploader | null>(null);
   const allEvent = (...args: any[]) => {
     const eventName = args[0];
@@ -72,10 +71,15 @@ export default function Upload(props: IProps) {
     options.initialPaused = !autoStart;
     const uploaderInstance = new Uploader(options);
     uploader.current = uploaderInstance;
+    uploader.current.fileStatusText = fileStatusText;
     //  事件监听  监听常见的事件
     uploader.current.on('catchAll', allEvent);
 
-    return () => {};
+    return () => {
+      // 关闭监听 并将未返回的回调 进行回调
+      uploader.current?.off('catchAll', allEvent);
+      uploader.current = null;
+    };
   });
   return (
     <div className="uploader-example uploader">

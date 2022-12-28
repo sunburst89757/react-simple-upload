@@ -5,7 +5,7 @@ declare module 'simple-uploader.js' {
     allError: boolean;
     completed: boolean;
     error: boolean;
-    fileStatusText: Record<string, any>;
+    fileStatusText: Record<string, string>;
     paused: boolean;
     file: UploaderFile;
     fileList: UploaderFile[];
