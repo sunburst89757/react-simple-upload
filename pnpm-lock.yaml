@@ -14,6 +14,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   sass: ^1.57.1
+  simple-uploader.js: ^0.6.0
   tailwindcss: ^3.2.4
   typescript: ^4.9.3
   vite: ^4.0.0
@@ -21,6 +22,7 @@ specifiers:
 dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  simple-uploader.js: 0.6.0
 
 devDependencies:
   '@types/node': 18.11.17
@@ -1451,6 +1453,10 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
     dev: true
+
+  /simple-uploader.js/0.6.0:
+    resolution: {integrity: sha512-EXN+o+LD6PVnfzTq/usP8k8yYrI6wKrAx8e+fPcPLVzzttonkyn1KT+Ycx5JnPBSnp6lpiVhNG4JhDJucdPnhA==}
+    dev: false
 
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}

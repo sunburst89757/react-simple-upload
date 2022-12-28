@@ -1,17 +1,23 @@
+import { useEffect, useRef, useState } from 'react';
+import Uploader, { UploaderAllEvents } from 'simple-uploader.js';
 import { UploaderBtn } from './Btn';
 import { UploaderDrop } from './Drop';
 import { UploaderList } from './List';
 import { UnSupport } from './UnSupport';
 import './index.scss';
-interface IProps {
+
+interface IProps extends UploaderAllEvents {
   options: UploaderOptions;
   fileStatusText?: Record<string, string>;
+  autoStart?: Boolean;
 }
 interface UploaderOptions {
   target: string;
   testChunks: Boolean;
+  [objkey: string]: any;
 }
-export default function Uploader(props: IProps) {
+
+export default function Upload(props: IProps) {
   const {
     options,
     fileStatusText = {
@@ -20,8 +26,57 @@ export default function Uploader(props: IProps) {
       uploading: '上传中',
       paused: '暂停中',
       waiting: '等待中'
-    }
+    },
+    autoStart = true,
+    onFileComplete,
+    onComplete,
+    onChange = () => {},
+    onFilesSubmitted = () => {},
+    onFileProgress = () => {},
+    onFileSuccess = () => {},
+    onFileAdded = () => {},
+    onFilesAdded = () => {}
   } = props;
+  const [files, setFiles] = useState();
+  const uploader = useRef<Uploader | null>(null);
+  const allEvent = (...args: any[]) => {
+    const eventName = args[0];
+    switch (eventName) {
+      case 'change':
+        onChange(args[1]!);
+        break;
+      case 'filesSubmitted':
+        onFilesSubmitted(args[1], args[2], args[3]);
+        break;
+      case 'fileProgress':
+        onFileProgress(args[1], args[2], args[3]);
+        break;
+      case 'fileSuccess':
+        onFileSuccess(args[1], args[2], args[3], args[4]);
+        break;
+      case 'fileComplete':
+        onFileComplete(args[1], args[2]);
+        break;
+      case 'complete':
+        onComplete();
+        break;
+      case 'fileAdded':
+        onFileAdded(args[1]);
+        break;
+      case 'filesAdded':
+        onFilesAdded(args[1], args[2]);
+        break;
+    }
+  };
+  useEffect(() => {
+    options.initialPaused = !autoStart;
+    const uploaderInstance = new Uploader(options);
+    uploader.current = uploaderInstance;
+    //  事件监听  监听常见的事件
+    uploader.current.on('catchAll', allEvent);
+
+    return () => {};
+  });
   return (
     <div className="uploader-example uploader">
       <UnSupport></UnSupport>
