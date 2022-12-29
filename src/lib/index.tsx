@@ -4,6 +4,7 @@ import { UploaderBtn } from './Btn';
 import { UploaderDrop } from './Drop';
 import { UploaderList } from './List';
 import { UnSupport } from './UnSupport';
+import { UploaderContext } from './utils/UploaderContext';
 import './index.scss';
 
 interface IProps extends UploaderAllEvents {
@@ -37,8 +38,10 @@ export default function Upload(props: IProps) {
     onFileAdded = () => {},
     onFilesAdded = () => {}
   } = props;
-  const uploader = useRef<Uploader | null>(null);
+  const [uploader, setUploader] = useState<Uploader | null>(null);
   const allEvent = (...args: any[]) => {
+    console.log(args, '事件监听');
+
     const eventName = args[0];
     switch (eventName) {
       case 'change':
@@ -70,30 +73,32 @@ export default function Upload(props: IProps) {
   useEffect(() => {
     options.initialPaused = !autoStart;
     const uploaderInstance = new Uploader(options);
-    uploader.current = uploaderInstance;
-    uploader.current.fileStatusText = fileStatusText;
+    uploaderInstance.fileStatusText = fileStatusText;
+    uploaderInstance.on('catchAll', allEvent);
+    setUploader(uploaderInstance);
     //  事件监听  监听常见的事件
-    uploader.current.on('catchAll', allEvent);
 
     return () => {
       // 关闭监听 并将未返回的回调 进行回调
-      uploader.current?.off('catchAll', allEvent);
-      uploader.current = null;
+      uploader?.off('catchAll', allEvent);
+      setUploader(null);
     };
-  });
+  }, []);
   return (
     <div className="uploader-example uploader">
-      <UnSupport></UnSupport>
-      <UploaderDrop>
-        <>
-          <p className="m-3">把文件拖拽到此处进行上传</p>
-          <div className="flex">
-            <UploaderBtn>选择文件</UploaderBtn>
-            <UploaderBtn>选择文件夹</UploaderBtn>
-          </div>
-        </>
-      </UploaderDrop>
-      <UploaderList></UploaderList>
+      <UploaderContext.Provider value={uploader}>
+        <UnSupport></UnSupport>
+        <UploaderDrop>
+          <>
+            <p className="m-3">把文件拖拽到此处进行上传</p>
+            <div className="flex">
+              <UploaderBtn>选择文件</UploaderBtn>
+              <UploaderBtn directory={true}>选择文件夹</UploaderBtn>
+            </div>
+          </>
+        </UploaderDrop>
+        <UploaderList></UploaderList>
+      </UploaderContext.Provider>
     </div>
   );
 }

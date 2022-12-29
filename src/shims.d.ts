@@ -11,7 +11,12 @@ declare module 'simple-uploader.js' {
     fileList: UploaderFile[];
     files: UploaderFile[];
     uploader: Uploader;
-    assignBrowse: (node: HTMLElement) => void;
+    assignBrowse: (
+      node: HTMLElement,
+      isDirectory?: boolean,
+      singleFile?: boolean,
+      attributes?: string
+    ) => void;
     assignDrop: (node: HTMLElement) => void;
     on: (watchEvent: string, cb: Function) => void;
     off: (watchEvent: string, cb: Function) => void;
