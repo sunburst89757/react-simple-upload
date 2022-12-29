@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import Uploader, { UploaderAllEvents } from 'simple-uploader.js';
+import Uploader, { UploaderAllEvents, UploaderFile } from 'simple-uploader.js';
 import { UploaderBtn } from './Btn';
 import { UploaderDrop } from './Drop';
 import { UploaderList } from './List';
@@ -38,7 +38,8 @@ export default function Upload(props: IProps) {
     onFileAdded = () => {},
     onFilesAdded = () => {}
   } = props;
-  const [uploader, setUploader] = useState<Uploader | null>(null);
+  const uploader = useRef<Uploader | null>(new Uploader(options));
+  const [fileList, setFileList] = useState<UploaderFile[]>([]);
   const allEvent = (...args: any[]) => {
     console.log(args, '事件监听');
 
@@ -63,6 +64,7 @@ export default function Upload(props: IProps) {
         onComplete();
         break;
       case 'fileAdded':
+        setFileList((fileList) => [...fileList, args[1]]);
         onFileAdded(args[1]);
         break;
       case 'filesAdded':
@@ -71,22 +73,24 @@ export default function Upload(props: IProps) {
     }
   };
   useEffect(() => {
-    options.initialPaused = !autoStart;
-    const uploaderInstance = new Uploader(options);
-    uploaderInstance.fileStatusText = fileStatusText;
-    uploaderInstance.on('catchAll', allEvent);
-    setUploader(uploaderInstance);
+    uploader.current!.fileStatusText = fileStatusText;
     //  事件监听  监听常见的事件
-
+    uploader.current!.on('catchAll', allEvent);
+    // @ts-ignore 便于调试
+    window.uploader = uploader.current;
     return () => {
       // 关闭监听 并将未返回的回调 进行回调
-      uploader?.off('catchAll', allEvent);
-      setUploader(null);
+      uploader.current?.off('catchAll', allEvent);
+      uploader.current = null;
     };
   }, []);
   return (
     <div className="uploader-example uploader">
-      <UploaderContext.Provider value={uploader}>
+      <UploaderContext.Provider
+        value={{
+          uploader: uploader.current
+        }}
+      >
         <UnSupport></UnSupport>
         <UploaderDrop>
           <>
@@ -97,7 +101,7 @@ export default function Upload(props: IProps) {
             </div>
           </>
         </UploaderDrop>
-        <UploaderList></UploaderList>
+        <UploaderList fileList={fileList}></UploaderList>
       </UploaderContext.Provider>
     </div>
   );

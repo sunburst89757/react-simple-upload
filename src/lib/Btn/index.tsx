@@ -14,18 +14,13 @@ export const UploaderBtn = ({
   attributes = ''
 }: BtnProps) => {
   const btnRef = useRef<HTMLLabelElement>(null);
-  const uploaderInstance = useContext(UploaderContext);
+  const { uploader } = useContext(UploaderContext);
   useEffect(() => {
     // 指定的按钮实现上传
-    if (uploaderInstance) {
-      uploaderInstance.assignBrowse(
-        btnRef.current!,
-        directory,
-        single,
-        attributes
-      );
+    if (uploader) {
+      uploader.assignBrowse(btnRef.current!, directory, single, attributes);
     }
-  }, [uploaderInstance]);
+  }, [uploader]);
   return (
     <div>
       <label className="uploader-btn" ref={btnRef}>
