@@ -33,8 +33,24 @@ declare module 'simple-uploader.js' {
     isFolder: boolean;
     name: string;
     paused: boolean;
+    averageSpeed: number;
+    currentSpeed: number;
     size: number;
     chunks: UploaderChunk[];
+    isComplete: () => boolean;
+    isUploading: () => boolean;
+    formatedSize: string;
+    sizeUploaded: () => number;
+    progress: () => number;
+    timeRemaining: () => number;
+    pause: () => void;
+    resume: () => void;
+    cancel: () => void;
+    retry: () => void;
+    getType: () => string;
+    getExtension: () => string;
+    uploader: Uploader;
+    file: File;
     [propKey: string]: any;
   }
   export interface UploaderChunk {
