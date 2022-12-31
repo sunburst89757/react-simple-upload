@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { UploaderFile as File } from 'simple-uploader.js';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import Uploader, { UploaderFile as File } from 'simple-uploader.js';
+import { defaultCategoryMap } from '../config';
+import { secondsToStr } from '../utils/time';
 import './index.scss';
 interface IProps {
   file: File;
@@ -24,25 +26,92 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
   });
   const [response, setResponse] = useState<string | null>(null);
   const [progressingClass, setProgressingClass] = useState('');
+  //  处理定时器
+  const tid = useRef<any>(null);
   const handlers = useRef<Record<string, any> | null>({});
-
-  // const [paused, setPaused] = useState(false);
-  // const [error, setError] = useState(false);
-  // const [averageSpeed, setAverageSpeed] = useState(0);
-  // const [currentSpeed, setCurrentSpeed] = useState(0);
-  // const [isComplete, setIsComplete] = useState(false);
-  // const [isUploading, setIsUploading] = useState(false);
-  // const [size, setSize] = useState(0);
-  // const [formatedSize, setFormatedSize] = useState('');
-  // const [uploadedSize, setUploadedSize] = useState(0);
-  // const [progress, setProgress] = useState(0);
-  // const [timeRemaining, setTimeRemaining] = useState(0);
-  // const [type, setType] = useState('');
-  // const [extension, setExtension] = useState('');
-  const pause = () => {};
-  const retry = () => {};
-  const resume = () => {};
-  const remove = () => {};
+  const status = useMemo(() => {
+    const { isUploading, isComplete, error, paused } = fileInfo;
+    if (isComplete) {
+      return 'success';
+    } else if (error) {
+      return 'error';
+    } else if (isUploading) {
+      return 'uploading';
+    } else if (paused) {
+      return 'paused';
+    } else {
+      return 'waiting';
+    }
+  }, [
+    fileInfo.isUploading,
+    fileInfo.isComplete,
+    fileInfo.error,
+    fileInfo.paused
+  ]);
+  const fileCategory = useMemo(() => {
+    const isFolder = file.isFolder;
+    let type = isFolder ? 'folder' : 'unknown';
+    const categoryMap = file.uploader.opts.categoryMap;
+    const typeMap = categoryMap || defaultCategoryMap;
+    Object.keys(typeMap).forEach((_type) => {
+      const extensions = typeMap[_type];
+      if (extensions.indexOf(fileInfo.extension) > -1) {
+        type = _type;
+      }
+    });
+    return type;
+  }, [fileInfo.extension]);
+  const progressStyle = useMemo(() => {
+    const progress = Math.floor(fileInfo.progress * 100);
+    const style = `translateX(${Math.floor(progress - 100)}%)`;
+    return {
+      progress: `${progress}%`,
+      WebkitTransform: style,
+      MozTransform: style,
+      msTransform: style,
+      transform: style
+    };
+  }, [fileInfo.progress]);
+  const formatedAverageSpeed = useMemo(
+    () => `${Uploader.utils.formatSize(fileInfo.averageSpeed)} / s`,
+    [fileInfo.averageSpeed]
+  );
+  const statusText = useMemo(
+    () => file.uploader.fileStatusText[status],
+    [status]
+  );
+  const formatedTimeRemaining = useMemo(() => {
+    const { timeRemaining } = fileInfo;
+    if (timeRemaining === Number.POSITIVE_INFINITY || timeRemaining === 0) {
+      return '';
+    }
+    let parsedTimeRemaining = secondsToStr(timeRemaining);
+    // 按照配置进行剩余时间转换
+    const parseTimeRemaining = file.uploader.opts.parseTimeRemaining;
+    if (parseTimeRemaining) {
+      parsedTimeRemaining = parseTimeRemaining(
+        timeRemaining,
+        parsedTimeRemaining
+      );
+    }
+    return parsedTimeRemaining;
+  }, [fileInfo.timeRemaining]);
+  const pause = () => {
+    file.pause();
+    _actionCheck();
+    _fileProgress();
+  };
+  const retry = () => {
+    file.retry();
+    _actionCheck();
+  };
+  const resume = () => {
+    file.resume();
+    _actionCheck();
+  };
+  const remove = () => {
+    file.cancel();
+  };
   const _fileProgress = () => {
     const { averageSpeed, currentSpeed } = file;
     setFileInfo({
@@ -124,7 +193,16 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
       isUploading: file.isUploading()
     });
   };
-
+  useEffect(() => {
+    if (status === 'uploading') {
+      tid.current = setTimeout(() => {
+        setProgressingClass('uploader-file-progressing');
+      }, 200);
+    } else {
+      clearTimeout(tid.current);
+      setProgressingClass('');
+    }
+  }, [status]);
   useEffect(() => {
     // 初始化fileInfo
     const staticProps = ['paused', 'error', 'averageSpeed', 'currentSpeed'];
@@ -173,7 +251,6 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
       });
     fileEvents.forEach((event) => {
       console.log('event', event);
-
       file.uploader.on(event, eventHandler(event));
     });
     return () => {
@@ -182,31 +259,40 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
         file.uploader.off(event, handlers.current![event]);
       });
       // GC
-      handlers.current = null;
+      // handlers.current = null;
     };
   }, []);
   return (
     <>
-      <div className="uploader-file-info">
-        <div className="uploader-file-name">
-          <i className="uploader-file-icon"></i>
-          {file.name}
-        </div>
-        <div className="uploader-file-size">大小</div>
-        <div className="uploader-file-meta"></div>
-        <div className="uploader-file-status">
-          <span>状态</span>
-          <span>
-            <span>进度</span>
-            <em>速度</em>
-            <i>剩余时间</i>
-          </span>
-        </div>
-        <div className="uploader-file-actions">
-          <span className="uploader-file-pause" onClick={pause}></span>
-          <span className="uploader-file-resume" onClick={resume}></span>
-          <span className="uploader-file-retry" onClick={retry}></span>
-          <span className="uploader-file-remove" onClick={remove}></span>
+      <div className="uploader-file" status={status}>
+        <div
+          className={`uploader-file-progress ${progressingClass}`}
+          style={progressStyle}
+        >
+          <div className="uploader-file-info">
+            <div className="uploader-file-name">
+              <i className="uploader-file-icon" icon={fileCategory}></i>
+              {file.name}
+            </div>
+            <div className="uploader-file-size">{fileInfo.formatedSize}</div>
+            <div className="uploader-file-meta"></div>
+            <div className="uploader-file-status">
+              {status !== 'uploading' && <span>{statusText}</span>}
+              {status === 'uploading' && (
+                <span>
+                  <span>{progressStyle.progress}</span>
+                  <em>{formatedAverageSpeed}</em>
+                  <i>{formatedTimeRemaining}</i>
+                </span>
+              )}
+            </div>
+            <div className="uploader-file-actions">
+              <span className="uploader-file-pause" onClick={pause}></span>
+              <span className="uploader-file-resume" onClick={resume}></span>
+              <span className="uploader-file-retry" onClick={retry}></span>
+              <span className="uploader-file-remove" onClick={remove}></span>
+            </div>
+          </div>
         </div>
       </div>
     </>
