@@ -44,6 +44,7 @@ declare module 'simple-uploader.js' {
     assignDrop: (node: HTMLElement) => void;
     on: (watchEvent: string, cb: Function) => void;
     off: (watchEvent: string, cb: Function) => void;
+    upload: () => void;
     constructor(options: Record<string, any>) {}
     static utils: {
       formatSize: (number) => number;

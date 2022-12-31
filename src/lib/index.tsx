@@ -49,6 +49,7 @@ export default function Upload(props: IProps) {
         onChange(args[1]!);
         break;
       case 'filesSubmitted':
+        uploader.current!.upload();
         onFilesSubmitted(args[1], args[2], args[3]);
         break;
       case 'fileProgress':
