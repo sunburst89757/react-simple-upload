@@ -71,6 +71,8 @@ export default function Upload(props: IProps) {
       case 'filesAdded':
         onFilesAdded(args[1], args[2]);
         break;
+      case 'fileRemoved':
+        setFileList(uploader.current?.fileList!);
     }
   };
   useEffect(() => {
