@@ -61,6 +61,7 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
     });
     return type;
   }, [fileInfo.extension]);
+  // 计算逻辑有问题
   const progressStyle = useMemo(() => {
     const progress = Math.floor(fileInfo.progress * 100);
     const style = `translateX(${Math.floor(progress - 100)}%)`;
@@ -172,7 +173,7 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
 
     const rootFile = args[0];
     console.log(event, args, '文件事件处理');
-    debugger;
+    // debugger;
     const file = args[1];
     const target = list ? rootFile : file;
     if (file === target) {
@@ -268,30 +269,29 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
         <div
           className={`uploader-file-progress ${progressingClass}`}
           style={progressStyle}
-        >
-          <div className="uploader-file-info">
-            <div className="uploader-file-name">
-              <i className="uploader-file-icon" icon={fileCategory}></i>
-              {file.name}
-            </div>
-            <div className="uploader-file-size">{fileInfo.formatedSize}</div>
-            <div className="uploader-file-meta"></div>
-            <div className="uploader-file-status">
-              {status !== 'uploading' && <span>{statusText}</span>}
-              {status === 'uploading' && (
-                <span>
-                  <span>{progressStyle.progress}</span>
-                  <em>{formatedAverageSpeed}</em>
-                  <i>{formatedTimeRemaining}</i>
-                </span>
-              )}
-            </div>
-            <div className="uploader-file-actions">
-              <span className="uploader-file-pause" onClick={pause}></span>
-              <span className="uploader-file-resume" onClick={resume}></span>
-              <span className="uploader-file-retry" onClick={retry}></span>
-              <span className="uploader-file-remove" onClick={remove}></span>
-            </div>
+        ></div>
+        <div className="uploader-file-info">
+          <div className="uploader-file-name">
+            <i className="uploader-file-icon" icon={fileCategory}></i>
+            {file.name}
+          </div>
+          <div className="uploader-file-size">{fileInfo.formatedSize}</div>
+          <div className="uploader-file-meta"></div>
+          <div className="uploader-file-status">
+            {status !== 'uploading' && <span>{statusText}</span>}
+            {status === 'uploading' && (
+              <span>
+                <span>{progressStyle.progress}</span>
+                <em>{formatedAverageSpeed}</em>
+                <i>{formatedTimeRemaining}</i>
+              </span>
+            )}
+          </div>
+          <div className="uploader-file-actions">
+            <span className="uploader-file-pause" onClick={pause}></span>
+            <span className="uploader-file-resume" onClick={resume}></span>
+            <span className="uploader-file-retry" onClick={retry}></span>
+            <span className="uploader-file-remove" onClick={remove}></span>
           </div>
         </div>
       </div>
