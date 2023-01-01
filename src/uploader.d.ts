@@ -67,7 +67,6 @@ declare module 'simple-uploader.js' {
     chunks: UploaderChunk[];
     isComplete: () => boolean;
     isUploading: () => boolean;
-    formatedSize: string;
     sizeUploaded: () => number;
     progress: () => number;
     timeRemaining: () => number;
@@ -77,9 +76,9 @@ declare module 'simple-uploader.js' {
     retry: () => void;
     getType: () => string;
     getExtension: () => string;
+    getFormatSize: () => string;
     uploader: Uploader;
     file: File;
-    [propKey: string]: any;
   }
   export interface UploaderChunk {
     chunkSize: number;
@@ -87,7 +86,6 @@ declare module 'simple-uploader.js' {
     retries: number;
     processedState: { err: any; res: string };
     processingResponse: boolean;
-    [propKey: string]: any;
   }
   export type UploaderAllEvents = {
     onChange?: (e: Event) => void;

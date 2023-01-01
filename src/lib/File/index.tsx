@@ -9,28 +9,18 @@ interface IProps {
 }
 const fileEvents = ['fileProgress', 'fileSuccess', 'fileComplete', 'fileError'];
 export const UploaderFile = ({ file, list = false }: IProps) => {
-  const [fileInfo, setFileInfo] = useState({
-    paused: false,
-    error: false,
-    averageSpeed: 0,
-    currentSpeed: 0,
-    isComplete: false,
-    isUploading: false,
-    size: 0,
-    formatedSize: '',
-    uploadedSize: 0,
-    progress: 0,
-    timeRemaining: 0,
-    type: '',
-    extension: ''
-  });
+  const [error, setError] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [isComplete, setIsComplete] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [timeRemaining, setTimeRemaining] = useState(0);
   const [response, setResponse] = useState<string | null>(null);
   const [progressingClass, setProgressingClass] = useState('');
   //  处理定时器
   const tid = useRef<any>(null);
   const handlers = useRef<Record<string, any> | null>({});
   const status = useMemo(() => {
-    const { isUploading, isComplete, error, paused } = fileInfo;
     if (isComplete) {
       return 'success';
     } else if (error) {
@@ -42,47 +32,42 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
     } else {
       return 'waiting';
     }
-  }, [
-    fileInfo.isUploading,
-    fileInfo.isComplete,
-    fileInfo.error,
-    fileInfo.paused
-  ]);
+  }, [isUploading, isComplete, error, paused]);
   const fileCategory = useMemo(() => {
     const isFolder = file.isFolder;
+    const extension = file.getExtension();
     let type = isFolder ? 'folder' : 'unknown';
     const categoryMap = file.uploader.opts.categoryMap;
     const typeMap = categoryMap || defaultCategoryMap;
     Object.keys(typeMap).forEach((_type) => {
       const extensions = typeMap[_type];
-      if (extensions.indexOf(fileInfo.extension) > -1) {
+      if (extensions.indexOf(extension) > -1) {
         type = _type;
       }
     });
     return type;
-  }, [fileInfo.extension]);
+  }, [file.getExtension()]);
   // 计算逻辑有问题
   const progressStyle = useMemo(() => {
-    const progress = Math.floor(fileInfo.progress * 100);
-    const style = `translateX(${Math.floor(progress - 100)}%)`;
+    const Progress = Math.floor(progress * 100);
+    const style = `translateX(${Math.floor(Progress - 100)}%)`;
     return {
-      progress: `${progress}%`,
+      progress: `${Progress}%`,
       WebkitTransform: style,
       MozTransform: style,
       msTransform: style,
       transform: style
     };
-  }, [fileInfo.progress]);
+  }, [progress]);
   const formatedAverageSpeed = useMemo(
-    () => `${Uploader.utils.formatSize(fileInfo.averageSpeed)} / s`,
-    [fileInfo.averageSpeed]
+    () => `${Uploader.utils.formatSize(file.averageSpeed)} / s`,
+    [file.averageSpeed]
   );
   const statusText = useMemo(
     () => file.uploader.fileStatusText[status],
     [status]
   );
   const formatedTimeRemaining = useMemo(() => {
-    const { timeRemaining } = fileInfo;
     if (timeRemaining === Number.POSITIVE_INFINITY || timeRemaining === 0) {
       return '';
     }
@@ -96,7 +81,7 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
       );
     }
     return parsedTimeRemaining;
-  }, [fileInfo.timeRemaining]);
+  }, [timeRemaining]);
   const pause = () => {
     file.pause();
     _actionCheck();
@@ -114,15 +99,8 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
     file.cancel();
   };
   const _fileProgress = () => {
-    const { averageSpeed, currentSpeed } = file;
-    setFileInfo({
-      ...fileInfo,
-      averageSpeed,
-      currentSpeed,
-      progress: file.progress(),
-      timeRemaining: file.timeRemaining(),
-      uploadedSize: file.sizeUploaded()
-    });
+    setTimeRemaining(file.timeRemaining());
+    setProgress(file.progress());
     _actionCheck();
   };
   const _fileSuccess = (
@@ -134,12 +112,9 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
       processResponse(message!);
     }
     _fileProgress();
-    setFileInfo({
-      ...fileInfo,
-      error: false,
-      isComplete: true,
-      isUploading: false
-    });
+    setError(false);
+    setIsComplete(true);
+    setIsUploading(false);
   };
   const _fileComplete = () => {
     _fileSuccess();
@@ -147,12 +122,9 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
   const _fileError = (rootFile: File, file: File, message: string) => {
     _fileProgress();
     processResponse(message);
-    setFileInfo({
-      ...fileInfo,
-      error: true,
-      isComplete: false,
-      isUploading: false
-    });
+    setError(true);
+    setIsComplete(false);
+    setIsUploading(false);
   };
   const eventObj = useRef<Record<string, Function>>({
     _fileProgress,
@@ -186,13 +158,9 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
     }
   };
   const _actionCheck = () => {
-    const { paused, error } = file;
-    setFileInfo({
-      ...fileInfo,
-      paused,
-      error,
-      isUploading: file.isUploading()
-    });
+    setError(file.error);
+    setPaused(file.paused);
+    setIsUploading(file.isUploading());
   };
   useEffect(() => {
     if (status === 'uploading') {
@@ -205,47 +173,14 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
     }
   }, [status]);
   useEffect(() => {
-    // 初始化fileInfo
-    const staticProps = ['paused', 'error', 'averageSpeed', 'currentSpeed'];
-    const fnProps = [
-      'isComplete',
-      'isUploading',
-      {
-        key: 'size',
-        fn: 'getSize'
-      },
-      {
-        key: 'formatedSize',
-        fn: 'getFormatSize'
-      },
-      {
-        key: 'uploadedSize',
-        fn: 'sizeUploaded'
-      },
-      'progress',
-      'timeRemaining',
-      {
-        key: 'type',
-        fn: 'getType'
-      },
-      {
-        key: 'extension',
-        fn: 'getExtension'
-      }
-    ];
-    const initialFileInfo: Record<string, any> = {};
-    staticProps.forEach((prop) => {
-      initialFileInfo[prop] = file[prop];
-    });
-    fnProps.forEach((fnProp) => {
-      if (typeof fnProp === 'string') {
-        initialFileInfo[fnProp] = file[fnProp]();
-      } else {
-        initialFileInfo[fnProp.key] = file[fnProp.fn]();
-      }
-    });
-    setFileInfo(initialFileInfo as typeof fileInfo);
+    setError(file.error);
+    setPaused(file.paused);
+    setIsComplete(file.isComplete());
+    setIsUploading(file.isUploading());
+    setProgress(file.progress());
+    setTimeRemaining(file.timeRemaining());
     // 是不是返回值无所谓 解决的是ts的报错
+    //  文件进行四个事件的监听
     const eventHandler = (event: string) =>
       (handlers.current![event] = (...args: any[]) => {
         fileEventsHandler(event, args);
@@ -275,15 +210,15 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
             <i className="uploader-file-icon" icon={fileCategory}></i>
             {file.name}
           </div>
-          <div className="uploader-file-size">{fileInfo.formatedSize}</div>
+          <div className="uploader-file-size">{file.getFormatSize()}</div>
           <div className="uploader-file-meta"></div>
           <div className="uploader-file-status">
             {status !== 'uploading' && <span>{statusText}</span>}
             {status === 'uploading' && (
               <span>
-                <span>{progressStyle.progress}</span>
-                <em>{formatedAverageSpeed}</em>
-                <i>{formatedTimeRemaining}</i>
+                <span>{progressStyle.progress} </span>
+                <em>{formatedAverageSpeed} </em>
+                <i>{formatedTimeRemaining} </i>
               </span>
             )}
           </div>
