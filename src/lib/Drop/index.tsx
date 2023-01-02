@@ -1,12 +1,37 @@
-import { useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { UploaderContext } from '../utils/UploaderContext';
 import './index.scss';
 interface DropProps {
   children?: JSX.Element;
 }
 export const UploaderDrop = ({ children }: DropProps) => {
   const DropEle = useRef<HTMLDivElement>(null);
+  const { uploader } = useContext(UploaderContext);
+  const [dropClass, setDropClass] = useState('');
+  const onDragEnter = () => {
+    setDropClass('uploader-dragover');
+  };
+  const onDragLeave = () => {
+    setDropClass('');
+  };
+  const onDrop = () => {
+    setDropClass('uploader-droped');
+  };
+  useEffect(() => {
+    uploader?.assignDrop(DropEle.current!);
+    uploader?.on('dragenter', onDragEnter);
+    uploader?.on('dragleave', onDragLeave);
+    uploader?.on('drop', onDrop);
+
+    return () => {
+      uploader?.off('dragenter', onDragEnter);
+      uploader?.off('dragleave', onDragLeave);
+      uploader?.off('drop', onDrop);
+      uploader?.unAssignDrop(DropEle.current!);
+    };
+  }, [uploader]);
   return (
-    <div className="uploader-drop" ref={DropEle}>
+    <div className={`uploader-drop ${dropClass}`} ref={DropEle}>
       {children}
     </div>
   );

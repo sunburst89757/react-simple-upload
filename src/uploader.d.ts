@@ -42,6 +42,7 @@ declare module 'simple-uploader.js' {
       attributes?: string
     ) => void;
     assignDrop: (node: HTMLElement) => void;
+    unAssignDrop: (node: HTMLElement) => void;
     on: (watchEvent: string, cb: Function) => void;
     off: (watchEvent: string, cb: Function) => void;
     upload: () => void;

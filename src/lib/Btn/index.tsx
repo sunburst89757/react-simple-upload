@@ -17,9 +17,7 @@ export const UploaderBtn = ({
   const { uploader } = useContext(UploaderContext);
   useEffect(() => {
     // 指定的按钮实现上传
-    if (uploader) {
-      uploader.assignBrowse(btnRef.current!, directory, single, attributes);
-    }
+    uploader?.assignBrowse(btnRef.current!, directory, single, attributes);
   }, [uploader]);
   return (
     <div>
