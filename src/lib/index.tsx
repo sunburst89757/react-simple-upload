@@ -49,6 +49,7 @@ export default function Upload(props: IProps) {
         onChange(args[1]!);
         break;
       case 'filesSubmitted':
+        setFileList([...uploader.current?.fileList!]);
         uploader.current!.upload();
         onFilesSubmitted(args[1], args[2], args[3]);
         break;
@@ -65,14 +66,14 @@ export default function Upload(props: IProps) {
         onComplete();
         break;
       case 'fileAdded':
-        setFileList((fileList) => [...fileList, args[1]]);
+        // setFileList((fileList) => [...fileList, args[1]]);
         onFileAdded(args[1]);
         break;
       case 'filesAdded':
         onFilesAdded(args[1], args[2]);
         break;
       case 'fileRemoved':
-        setFileList(uploader.current?.fileList!);
+        setFileList([...uploader.current?.fileList!]);
     }
   };
   useEffect(() => {

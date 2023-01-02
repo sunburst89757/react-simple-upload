@@ -89,7 +89,11 @@ declare module 'simple-uploader.js' {
   }
   export type UploaderAllEvents = {
     onChange?: (e: Event) => void;
-    onFilesSubmitted?: (arr1: any[], arr2: any[], e: Event) => void;
+    onFilesSubmitted?: (
+      files: UploaderFile[],
+      fileList: UploaderFile[],
+      e: Event
+    ) => void;
     onFileProgress?: (
       file1: UploaderFile,
       file2: UploaderFile,

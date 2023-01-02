@@ -99,6 +99,7 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
     file.cancel();
   };
   const _fileProgress = () => {
+    // debugger;
     setTimeRemaining(file.timeRemaining());
     setProgress(file.progress());
     _actionCheck();
@@ -141,13 +142,14 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
     }
   };
   const fileEventsHandler = (event: string, args: any[]) => {
+    // debugger;
     console.log(event, '事件');
 
     const rootFile = args[0];
     console.log(event, args, '文件事件处理');
     // debugger;
-    const file = args[1];
-    const target = list ? rootFile : file;
+    const fileList = args[1];
+    const target = list ? rootFile : fileList;
     if (file === target) {
       if (list && event === 'fileSuccess') {
         processResponse(args[2]);
