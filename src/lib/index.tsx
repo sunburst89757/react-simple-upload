@@ -95,17 +95,23 @@ export default function Upload(props: IProps) {
           uploader: uploader.current
         }}
       >
-        <UnSupport></UnSupport>
-        <UploaderDrop>
-          <>
-            <p className="m-3">把文件拖拽到此处进行上传</p>
-            <div className="flex">
-              <UploaderBtn>选择文件</UploaderBtn>
-              <UploaderBtn directory={true}>选择文件夹</UploaderBtn>
-            </div>
-          </>
-        </UploaderDrop>
-        <UploaderList fileList={fileList}></UploaderList>
+        {!uploader.current?.support! ? (
+          <UnSupport></UnSupport>
+        ) : (
+          <UploaderDrop>
+            <>
+              <p className="m-3">把文件拖拽到此处进行上传</p>
+              <div className="flex">
+                <UploaderBtn>选择文件</UploaderBtn>
+                <UploaderBtn directory={true}>选择文件夹</UploaderBtn>
+              </div>
+            </>
+          </UploaderDrop>
+        )}
+
+        {uploader.current?.support! && (
+          <UploaderList fileList={fileList}></UploaderList>
+        )}
       </UploaderContext.Provider>
     </div>
   );
