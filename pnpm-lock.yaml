@@ -14,12 +14,14 @@ specifiers:
   prettier: ^2.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  rollup-plugin-scss: ^4.0.0
   sass: ^1.57.1
   simple-uploader.js: ^0.6.0
   tailwindcss: ^3.2.4
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
+  vite-plugin-libcss: ^1.0.5
 
 dependencies:
   react: 18.2.0
@@ -38,11 +40,13 @@ devDependencies:
   eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
   postcss: 8.4.20
   prettier: 2.8.1
+  rollup-plugin-scss: 4.0.0
   sass: 1.57.1
   tailwindcss: 3.2.4_postcss@8.4.20
   tslib: 2.4.1
   typescript: 4.9.4
   vite: 4.0.3_gneikmxcpj2uc2xuqjosnroj4e
+  vite-plugin-libcss: 1.0.5_vite@4.0.3
 
 packages:
 
@@ -896,6 +900,10 @@ packages:
     engines: {node: '>=4.0'}
     dev: true
 
+  /estree-walker/0.6.1:
+    resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
+    dev: true
+
   /estree-walker/2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
@@ -1457,6 +1465,18 @@ packages:
       glob: 7.2.3
     dev: true
 
+  /rollup-plugin-scss/4.0.0:
+    resolution: {integrity: sha512-wxasNXDYC2m+fDxCMgK00WebVWYmeFvShyNABmjvSJZ6D1/SepwqFeaMFMQromveI79gfvb64yJjiZZxSZxEIA==}
+    dependencies:
+      rollup-pluginutils: 2.8.2
+    dev: true
+
+  /rollup-pluginutils/2.8.2:
+    resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
+    dependencies:
+      estree-walker: 0.6.1
+    dev: true
+
   /rollup/3.8.1:
     resolution: {integrity: sha512-4yh9eMW7byOroYcN8DlF9P/2jCpu6txVIHjEqquQVSx7DI0RgyCCN3tjrcy4ra6yVtV336aLBB3v2AarYAxePQ==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
@@ -1618,6 +1638,14 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: true
+
+  /vite-plugin-libcss/1.0.5_vite@4.0.3:
+    resolution: {integrity: sha512-NUQwWhn9j8fpRBwHeDr35a3TuRP0xvdIHtJni+3DcnPcq4Vrg+G5A3ZtCJ8y2EC83G97tBJ36svPdiIVuBEfsQ==}
+    peerDependencies:
+      vite: ^2
+    dependencies:
+      vite: 4.0.3_gneikmxcpj2uc2xuqjosnroj4e
     dev: true
 
   /vite/4.0.3_gneikmxcpj2uc2xuqjosnroj4e:
