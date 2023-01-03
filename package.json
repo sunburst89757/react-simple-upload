@@ -1,12 +1,28 @@
 {
   "name": "react-simple-upload",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "module": "./dist/react-simple-upload.js",
   "types": "./dist/index.d.ts",
+  "description": "a react Uploader library implements html5 file upload and provides multiple simultaneous, stable, fault tolerant and resumable uploads",
+  "keywords": [
+    "simple-uploader.js",
+    "react upload",
+    "uploader",
+    "uploader.js",
+    "file upload",
+    "resumable upload",
+    "chunk upload",
+    "html5 upload",
+    "javascript upload",
+    "upload"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunburst89757/react-simple-upload.git"
+  },
+  "bugs": "https://github.com/sunburst89757/react-simple-upload/issues",
+  "homepage": "https://github.com/sunburst89757/react-simple-upload",
   "exports": {
     ".": {
       "import": "./dist/react-simple-upload.js"

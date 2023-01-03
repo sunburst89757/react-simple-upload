@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import Uploader, { UploaderAllEvents, UploaderFile } from 'simple-uploader.js';
+import Uploader, { UploaderFile } from 'simple-uploader.js';
 import { UploaderBtn } from './Btn';
 import { UploaderDrop } from './Drop';
 import { UploaderList } from './List';
 import { UnSupport } from './UnSupport';
 import { UploaderContext } from './utils/UploaderContext';
 import './index.css';
+import { UploaderAllEvents } from './types';
 
 interface IProps extends UploaderAllEvents {
   options: UploaderOptions;
@@ -60,7 +61,7 @@ export default function Upload(props: IProps) {
         onFileSuccess(args[1], args[2], args[3], args[4]);
         break;
       case 'fileComplete':
-        onFileComplete(args[1], args[2]);
+        onFileComplete(args[1]);
         break;
       case 'complete':
         onComplete();

@@ -1,17 +1,18 @@
 import { useState } from 'react';
-import { UploaderFile } from 'simple-uploader.js';
+
 //  @ts-ignore
 import Uploader from '../../dist/react-simple-upload.js';
+import { UploaderFile } from '../lib/types.js';
 export const Example = () => {
   const [options, setoptions] = useState({
     target: '//localhost:3000/upload', // '//jsonplaceholder.typicode.com/posts/',
     testChunks: false
   });
-  const fileComplete = (file1: UploaderFile, file2: UploaderFile) => {
-    console.log(file1, file2, '111');
+  const fileComplete = (rootFile: UploaderFile) => {
+    console.log(rootFile, 'fileComplete');
   };
   const complete = () => {
-    console.log('complete', '1111');
+    console.log('complete');
   };
   return (
     <div>

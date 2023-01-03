@@ -1626,7 +1626,7 @@ function wt(v) {
         t(u[1], u[2], u[3], u[4]);
         break;
       case "fileComplete":
-        w(u[1], u[2]);
+        w(u[1]);
         break;
       case "complete":
         a();
