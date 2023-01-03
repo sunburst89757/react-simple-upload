@@ -1,9 +1,12 @@
 {
   "name": "react-simple-upload",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "module": "./dist/react-simple-upload.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "description": "a react Uploader library implements html5 file upload and provides multiple simultaneous, stable, fault tolerant and resumable uploads",
   "keywords": [
     "simple-uploader.js",
@@ -50,7 +53,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
-    "rollup-plugin-scss": "^4.0.0",
     "sass": "^1.57.1",
     "tailwindcss": "^3.2.4",
     "tslib": "^2.4.1",
