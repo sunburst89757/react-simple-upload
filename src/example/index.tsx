@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { UploaderFile } from 'simple-uploader.js';
 //  @ts-ignore
-import Uploader from '../../dist/react-upload.js';
+import Uploader from '../../dist/react-simple-upload.js';
 export const Example = () => {
   const [options, setoptions] = useState({
     target: '//localhost:3000/upload', // '//jsonplaceholder.typicode.com/posts/',

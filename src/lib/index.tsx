@@ -5,7 +5,7 @@ import { UploaderDrop } from './Drop';
 import { UploaderList } from './List';
 import { UnSupport } from './UnSupport';
 import { UploaderContext } from './utils/UploaderContext';
-import './index.scss';
+import './index.css';
 
 interface IProps extends UploaderAllEvents {
   options: UploaderOptions;

@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { UploaderAllEvents } from 'simple-uploader.js';
-import './index.scss';
+import './index.css';
 interface IProps extends UploaderAllEvents {
     options: UploaderOptions;
     fileStatusText?: Record<string, string>;
