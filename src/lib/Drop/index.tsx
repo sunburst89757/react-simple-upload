@@ -5,8 +5,9 @@ interface DropProps {
   children?: JSX.Element;
 }
 export const UploaderDrop = ({ children }: DropProps) => {
+  const { uploader, isSupport } = useContext(UploaderContext);
+  if (!isSupport) return null;
   const DropEle = useRef<HTMLDivElement>(null);
-  const { uploader } = useContext(UploaderContext);
   const [dropClass, setDropClass] = useState('');
   const onDragEnter = () => {
     setDropClass('uploader-dragover');

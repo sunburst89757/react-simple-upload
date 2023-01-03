@@ -40,6 +40,7 @@ export default function Upload(props: IProps) {
     onFilesAdded = () => {}
   } = props;
   const uploader = useRef<Uploader | null>(new Uploader(options));
+  const isSupport = useRef(uploader.current?.support);
   const [fileList, setFileList] = useState<UploaderFile[]>([]);
   const allEvent = (...args: any[]) => {
     console.log(args, '事件监听');
@@ -86,33 +87,28 @@ export default function Upload(props: IProps) {
     return () => {
       // 关闭监听 并将未返回的回调 进行回调
       uploader.current?.off('catchAll', allEvent);
-      // uploader.current = null;
+      uploader.current = null;
     };
   }, []);
   return (
     <div className="uploader-example uploader">
       <UploaderContext.Provider
         value={{
-          uploader: uploader.current
+          uploader: uploader.current,
+          isSupport: isSupport.current
         }}
       >
-        {!uploader.current?.support! ? (
-          <UnSupport></UnSupport>
-        ) : (
-          <UploaderDrop>
-            <>
-              <p className="m-3">把文件拖拽到此处进行上传</p>
-              <div className="flex">
-                <UploaderBtn>选择文件</UploaderBtn>
-                <UploaderBtn directory={true}>选择文件夹</UploaderBtn>
-              </div>
-            </>
-          </UploaderDrop>
-        )}
-
-        {uploader.current?.support! && (
-          <UploaderList fileList={fileList}></UploaderList>
-        )}
+        <UnSupport></UnSupport>
+        <UploaderDrop>
+          <>
+            <p className="m-3">把文件拖拽到此处进行上传</p>
+            <div className="flex">
+              <UploaderBtn>选择文件</UploaderBtn>
+              <UploaderBtn directory={true}>选择文件夹</UploaderBtn>
+            </div>
+          </>
+        </UploaderDrop>
+        <UploaderList fileList={fileList}></UploaderList>
       </UploaderContext.Provider>
     </div>
   );

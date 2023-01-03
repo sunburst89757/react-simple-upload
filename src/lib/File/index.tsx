@@ -197,7 +197,7 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
         file.uploader.off(event, handlers.current![event]);
       });
       // GC
-      // handlers.current = null;
+      handlers.current = null;
     };
   }, []);
   return (
