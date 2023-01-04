@@ -1,6 +1,6 @@
 {
   "name": "react-simple-upload",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "module": "./dist/react-simple-upload.js",
   "types": "./dist/index.d.ts",
@@ -37,6 +37,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.8.0",
+    "antd": "^5.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "simple-uploader.js": "^0.6.0"

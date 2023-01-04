@@ -20,6 +20,7 @@ interface IProps {
     progress: number;
     formatedTimeRemaining: string;
     status: 'success' | 'error' | 'uploading' | 'paused' | 'waiting';
+    statusText: string;
     fileCategory: string;
     pause: () => void;
     retry: () => void;
@@ -234,6 +235,7 @@ export const UploaderFile = ({ file, list = false, children }: IProps) => {
           progress,
           formatedTimeRemaining,
           status,
+          statusText,
           fileCategory,
           pause,
           remove,

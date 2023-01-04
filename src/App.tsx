@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Example } from './example';
+import { A } from './example1';
 import Uploader from './lib';
 import { UploaderFile } from './lib/types';
 function App() {
@@ -16,11 +17,12 @@ function App() {
   return (
     <>
       {/* <Example></Example> */}
-      <Uploader
+      {/* <Uploader
         options={options}
         onFileComplete={fileComplete}
         onComplete={complete}
-      ></Uploader>
+      ></Uploader> */}
+      <A></A>
     </>
   );
 }
