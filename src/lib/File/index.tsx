@@ -6,9 +6,29 @@ import './index.scss';
 interface IProps {
   file: File;
   list?: boolean;
+  children?: ({
+    error,
+    paused
+  }: {
+    name: string;
+    size: string;
+    averageSpeed: string;
+    error: boolean;
+    paused: boolean;
+    isComplete: boolean;
+    isUploading: boolean;
+    progress: number;
+    formatedTimeRemaining: string;
+    status: 'success' | 'error' | 'uploading' | 'paused' | 'waiting';
+    fileCategory: string;
+    pause: () => void;
+    retry: () => void;
+    resume: () => void;
+    remove: () => void;
+  }) => JSX.Element;
 }
 const fileEvents = ['fileProgress', 'fileSuccess', 'fileComplete', 'fileError'];
-export const UploaderFile = ({ file, list = false }: IProps) => {
+export const UploaderFile = ({ file, list = false, children }: IProps) => {
   const [error, setError] = useState(false);
   const [paused, setPaused] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
@@ -202,36 +222,56 @@ export const UploaderFile = ({ file, list = false }: IProps) => {
   }, []);
   return (
     <>
-      <div className="uploader-file" status={status}>
-        <div
-          className={`uploader-file-progress ${progressingClass}`}
-          style={progressStyle}
-        ></div>
-        <div className="uploader-file-info">
-          <div className="uploader-file-name">
-            <i className="uploader-file-icon" icon={fileCategory}></i>
-            {file.name}
-          </div>
-          <div className="uploader-file-size">{file.getFormatSize()}</div>
-          <div className="uploader-file-meta"></div>
-          <div className="uploader-file-status">
-            {status !== 'uploading' && <span>{statusText}</span>}
-            {status === 'uploading' && (
-              <span>
-                <span>{progressStyle.progress} </span>
-                <em>{formatedAverageSpeed} </em>
-                <i>{formatedTimeRemaining} </i>
-              </span>
-            )}
-          </div>
-          <div className="uploader-file-actions">
-            <span className="uploader-file-pause" onClick={pause}></span>
-            <span className="uploader-file-resume" onClick={resume}></span>
-            <span className="uploader-file-retry" onClick={retry}></span>
-            <span className="uploader-file-remove" onClick={remove}></span>
+      {children ? (
+        children({
+          name: file.name,
+          size: file.getFormatSize(),
+          averageSpeed: formatedAverageSpeed,
+          error,
+          paused,
+          isComplete,
+          isUploading,
+          progress,
+          formatedTimeRemaining,
+          status,
+          fileCategory,
+          pause,
+          remove,
+          resume,
+          retry
+        })
+      ) : (
+        <div className="uploader-file" status={status}>
+          <div
+            className={`uploader-file-progress ${progressingClass}`}
+            style={progressStyle}
+          ></div>
+          <div className="uploader-file-info">
+            <div className="uploader-file-name">
+              <i className="uploader-file-icon" icon={fileCategory}></i>
+              {file.name}
+            </div>
+            <div className="uploader-file-size">{file.getFormatSize()}</div>
+            <div className="uploader-file-meta"></div>
+            <div className="uploader-file-status">
+              {status !== 'uploading' && <span>{statusText}</span>}
+              {status === 'uploading' && (
+                <span>
+                  <span>{progressStyle.progress} </span>
+                  <em>{formatedAverageSpeed} </em>
+                  <i>{formatedTimeRemaining} </i>
+                </span>
+              )}
+            </div>
+            <div className="uploader-file-actions">
+              <span className="uploader-file-pause" onClick={pause}></span>
+              <span className="uploader-file-resume" onClick={resume}></span>
+              <span className="uploader-file-retry" onClick={retry}></span>
+              <span className="uploader-file-remove" onClick={remove}></span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

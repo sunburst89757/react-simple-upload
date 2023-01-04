@@ -12,6 +12,7 @@ interface IProps extends UploaderAllEvents {
   options: UploaderOptions;
   fileStatusText?: Record<string, string>;
   autoStart?: Boolean;
+  children?: ({ fileList }: { fileList: UploaderFile[] }) => JSX.Element;
 }
 interface UploaderOptions {
   target: string;
@@ -30,14 +31,15 @@ export default function Upload(props: IProps) {
       waiting: '等待中'
     },
     autoStart = true,
-    onFileComplete,
-    onComplete,
+    onFileComplete = () => {},
+    onComplete = () => {},
     onChange = () => {},
     onFilesSubmitted = () => {},
     onFileProgress = () => {},
     onFileSuccess = () => {},
     onFileAdded = () => {},
-    onFilesAdded = () => {}
+    onFilesAdded = () => {},
+    children
   } = props;
   const uploader = useRef<Uploader | null>(new Uploader(options));
   const isSupport = useRef(uploader.current?.support);
@@ -98,17 +100,23 @@ export default function Upload(props: IProps) {
           isSupport: isSupport.current
         }}
       >
-        <UnSupport></UnSupport>
-        <UploaderDrop>
+        {children ? (
+          children({ fileList })
+        ) : (
           <>
-            <p className="m-3">把文件拖拽到此处进行上传</p>
-            <div className="flex">
-              <UploaderBtn>选择文件</UploaderBtn>
-              <UploaderBtn directory={true}>选择文件夹</UploaderBtn>
-            </div>
+            <UnSupport></UnSupport>
+            <UploaderDrop>
+              <>
+                <p className="m-3">把文件拖拽到此处进行上传</p>
+                <div className="flex">
+                  <UploaderBtn>选择文件</UploaderBtn>
+                  <UploaderBtn directory={true}>选择文件夹</UploaderBtn>
+                </div>
+              </>
+            </UploaderDrop>
+            <UploaderList fileList={fileList}></UploaderList>
           </>
-        </UploaderDrop>
-        <UploaderList fileList={fileList}></UploaderList>
+        )}
       </UploaderContext.Provider>
     </div>
   );

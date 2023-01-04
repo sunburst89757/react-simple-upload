@@ -30,8 +30,8 @@ export type UploaderAllEvents = {
     status: string,
     chunk: UploaderChunk
   ) => void;
-  onFileComplete: (rootFile: UploaderFile) => void;
-  onComplete: () => void;
+  onFileComplete?: (rootFile: UploaderFile) => void;
+  onComplete?: () => void;
   onFileAdded?: (file: UploaderFile) => void;
   onFilesAdded?: (files: UploaderFile[], fileList: UploaderFile[]) => {};
 };
