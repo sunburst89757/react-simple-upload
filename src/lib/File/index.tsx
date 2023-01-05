@@ -222,7 +222,7 @@ export const UploaderFile = ({ file, list = false, children }: IProps) => {
         file.uploader.off(event, handlers.current![event]);
       });
       // GC
-      handlers.current = null;
+      // handlers.current = null;
     };
   }, []);
   return (

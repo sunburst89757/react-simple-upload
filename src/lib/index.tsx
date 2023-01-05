@@ -90,7 +90,7 @@ export default function Upload(props: IProps) {
     return () => {
       // 关闭监听 并将未返回的回调 进行回调
       uploader.current?.off('catchAll', allEvent);
-      uploader.current = null;
+      // uploader.current = null;
     };
   }, []);
   return (

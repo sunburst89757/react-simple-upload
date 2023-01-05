@@ -1,6 +1,6 @@
 {
   "name": "react-simple-upload",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "type": "module",
   "module": "./dist/react-simple-upload.js",
   "types": "./dist/index.d.ts",

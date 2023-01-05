@@ -22,16 +22,16 @@ function bt() {
   if (Be)
     return oe;
   Be = 1;
-  var m = We, y = Symbol.for("react.element"), C = Symbol.for("react.fragment"), x = Object.prototype.hasOwnProperty, w = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, n = { key: !0, ref: !0, __self: !0, __source: !0 };
+  var m = We, y = Symbol.for("react.element"), C = Symbol.for("react.fragment"), S = Object.prototype.hasOwnProperty, w = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, n = { key: !0, ref: !0, __self: !0, __source: !0 };
   function E(p, u, t) {
-    var i, l = {}, a = null, r = null;
-    t !== void 0 && (a = "" + t), u.key !== void 0 && (a = "" + u.key), u.ref !== void 0 && (r = u.ref);
-    for (i in u)
-      x.call(u, i) && !n.hasOwnProperty(i) && (l[i] = u[i]);
+    var r, l = {}, a = null, i = null;
+    t !== void 0 && (a = "" + t), u.key !== void 0 && (a = "" + u.key), u.ref !== void 0 && (i = u.ref);
+    for (r in u)
+      S.call(u, r) && !n.hasOwnProperty(r) && (l[r] = u[r]);
     if (p && p.defaultProps)
-      for (i in u = p.defaultProps, u)
-        l[i] === void 0 && (l[i] = u[i]);
-    return { $$typeof: y, type: p, key: a, ref: r, props: l, _owner: w.current };
+      for (r in u = p.defaultProps, u)
+        l[r] === void 0 && (l[r] = u[r]);
+    return { $$typeof: y, type: p, key: a, ref: i, props: l, _owner: w.current };
   }
   return oe.Fragment = C, oe.jsx = E, oe.jsxs = E, oe;
 }
@@ -48,7 +48,7 @@ var ue = {};
 var Ge;
 function _t() {
   return Ge || (Ge = 1, process.env.NODE_ENV !== "production" && function() {
-    var m = We, y = Symbol.for("react.element"), C = Symbol.for("react.portal"), x = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), n = Symbol.for("react.profiler"), E = Symbol.for("react.provider"), p = Symbol.for("react.context"), u = Symbol.for("react.forward_ref"), t = Symbol.for("react.suspense"), i = Symbol.for("react.suspense_list"), l = Symbol.for("react.memo"), a = Symbol.for("react.lazy"), r = Symbol.for("react.offscreen"), f = Symbol.iterator, R = "@@iterator";
+    var m = We, y = Symbol.for("react.element"), C = Symbol.for("react.portal"), S = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), n = Symbol.for("react.profiler"), E = Symbol.for("react.provider"), p = Symbol.for("react.context"), u = Symbol.for("react.forward_ref"), t = Symbol.for("react.suspense"), r = Symbol.for("react.suspense_list"), l = Symbol.for("react.memo"), a = Symbol.for("react.lazy"), i = Symbol.for("react.offscreen"), f = Symbol.iterator, R = "@@iterator";
     function s(e) {
       if (e === null || typeof e != "object")
         return null;
@@ -73,10 +73,10 @@ function _t() {
         D.unshift("Warning: " + o), Function.prototype.apply.call(console[e], console, D);
       }
     }
-    var S = !1, g = !1, O = !1, j = !1, G = !1, I;
+    var x = !1, g = !1, O = !1, j = !1, G = !1, I;
     I = Symbol.for("react.module.reference");
     function L(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === x || e === n || G || e === w || e === t || e === i || j || e === r || S || g || O || typeof e == "object" && e !== null && (e.$$typeof === a || e.$$typeof === l || e.$$typeof === E || e.$$typeof === p || e.$$typeof === u || e.$$typeof === I || e.getModuleId !== void 0));
+      return !!(typeof e == "string" || typeof e == "function" || e === S || e === n || G || e === w || e === t || e === r || j || e === i || x || g || O || typeof e == "object" && e !== null && (e.$$typeof === a || e.$$typeof === l || e.$$typeof === E || e.$$typeof === p || e.$$typeof === u || e.$$typeof === I || e.getModuleId !== void 0));
     }
     function q(e, o, h) {
       var b = e.displayName;
@@ -96,7 +96,7 @@ function _t() {
       if (typeof e == "string")
         return e;
       switch (e) {
-        case x:
+        case S:
           return "Fragment";
         case C:
           return "Portal";
@@ -106,7 +106,7 @@ function _t() {
           return "StrictMode";
         case t:
           return "Suspense";
-        case i:
+        case r:
           return "SuspenseList";
       }
       if (typeof e == "object")
@@ -302,7 +302,7 @@ function _t() {
       switch (e) {
         case t:
           return Z("Suspense");
-        case i:
+        case r:
           return Z("SuspenseList");
       }
       if (typeof e == "object")
@@ -610,7 +610,7 @@ Check the top-level render call using <` + h + ">.");
             else
               ze(B, e);
         }
-        return e === x ? ht(U) : ft(U), U;
+        return e === S ? ht(U) : ft(U), U;
       }
     }
     function pt(e, o, h) {
@@ -620,7 +620,7 @@ Check the top-level render call using <` + h + ">.");
       return Me(e, o, h, !1);
     }
     var vt = dt, gt = pt;
-    ue.Fragment = x, ue.jsx = vt, ue.jsxs = gt;
+    ue.Fragment = S, ue.jsx = vt, ue.jsxs = gt;
   }()), ue;
 }
 (function(m) {
@@ -648,32 +648,32 @@ var Pe = {}, Et = {
   (function(C) {
     m.exports = C();
   })(function() {
-    return function C(x, w, n) {
-      function E(t, i) {
+    return function C(S, w, n) {
+      function E(t, r) {
         if (!w[t]) {
-          if (!x[t]) {
+          if (!S[t]) {
             var l = typeof ye == "function" && ye;
-            if (!i && l)
+            if (!r && l)
               return l(t, !0);
             if (p)
               return p(t, !0);
             throw new Error("Cannot find module '" + t + "'");
           }
           var a = w[t] = { exports: {} };
-          x[t][0].call(a.exports, function(r) {
-            var f = x[t][1][r];
-            return E(f || r);
-          }, a, a.exports, C, x, w, n);
+          S[t][0].call(a.exports, function(i) {
+            var f = S[t][1][i];
+            return E(f || i);
+          }, a, a.exports, C, S, w, n);
         }
         return w[t].exports;
       }
       for (var p = typeof ye == "function" && ye, u = 0; u < n.length; u++)
         E(n[u]);
       return E;
-    }({ 1: [function(C, x, w) {
+    }({ 1: [function(C, S, w) {
       var n = C("./utils");
-      function E(u, t, i) {
-        n.defineNonEnumerable(this, "uploader", u), n.defineNonEnumerable(this, "file", t), n.defineNonEnumerable(this, "bytes", null), this.offset = i, this.tested = !1, this.retries = 0, this.pendingRetry = !1, this.preprocessState = 0, this.readState = 0, this.loaded = 0, this.total = 0, this.chunkSize = n.evalOpts(u.opts.chunkSize, t, this), this.startByte = this.offset * this.chunkSize, this.endByte = this.computeEndByte(), this.xhr = null;
+      function E(u, t, r) {
+        n.defineNonEnumerable(this, "uploader", u), n.defineNonEnumerable(this, "file", t), n.defineNonEnumerable(this, "bytes", null), this.offset = r, this.tested = !1, this.retries = 0, this.pendingRetry = !1, this.preprocessState = 0, this.readState = 0, this.loaded = 0, this.total = 0, this.chunkSize = n.evalOpts(u.opts.chunkSize, t, this), this.startByte = this.offset * this.chunkSize, this.endByte = this.computeEndByte(), this.xhr = null;
       }
       var p = E.STATUS = {
         PENDING: "pending",
@@ -712,10 +712,10 @@ var Pe = {}, Et = {
           this.xhr = new XMLHttpRequest(), this.xhr.addEventListener("load", l, !1), this.xhr.addEventListener("error", l, !1);
           var u = n.evalOpts(this.uploader.opts.testMethod, this.file, this), t = this.prepareXhrRequest(u, !0);
           this.xhr.send(t);
-          var i = this;
+          var r = this;
           function l(a) {
-            var r = i.status(!0);
-            r === p.ERROR ? (i._event(r, i.message()), i.uploader.uploadNextChunk()) : r === p.SUCCESS ? (i._event(r, i.message()), i.tested = !0) : i.file.paused || (i.tested = !0, i.send());
+            var i = r.status(!0);
+            i === p.ERROR ? (r._event(i, r.message()), r.uploader.uploadNextChunk()) : i === p.SUCCESS ? (r._event(i, r.message()), r.tested = !0) : r.file.paused || (r.tested = !0, r.send());
           }
         },
         preprocessFinished: function() {
@@ -745,11 +745,11 @@ var Pe = {}, Et = {
             this.test();
             return;
           }
-          this.loaded = 0, this.total = 0, this.pendingRetry = !1, this.xhr = new XMLHttpRequest(), this.xhr.upload.addEventListener("progress", r, !1), this.xhr.addEventListener("load", f, !1), this.xhr.addEventListener("error", f, !1);
-          var i = n.evalOpts(this.uploader.opts.uploadMethod, this.file, this), l = this.prepareXhrRequest(i, !1, this.uploader.opts.method, this.bytes);
+          this.loaded = 0, this.total = 0, this.pendingRetry = !1, this.xhr = new XMLHttpRequest(), this.xhr.upload.addEventListener("progress", i, !1), this.xhr.addEventListener("load", f, !1), this.xhr.addEventListener("error", f, !1);
+          var r = n.evalOpts(this.uploader.opts.uploadMethod, this.file, this), l = this.prepareXhrRequest(r, !1, this.uploader.opts.method, this.bytes);
           this.xhr.send(l);
           var a = this;
-          function r(R) {
+          function i(R) {
             R.lengthComputable && (a.loaded = R.loaded, a.total = R.total), a._event(p.PROGRESS, R);
           }
           function f(R) {
@@ -765,10 +765,10 @@ var Pe = {}, Et = {
                   a._event(v, d), v === p.ERROR && a.uploader.uploadNextChunk();
                 else {
                   a._event(p.RETRY, d), a.pendingRetry = !0, a.abort(), a.retries++;
-                  var S = a.uploader.opts.chunkRetryInterval;
-                  S !== null ? setTimeout(function() {
+                  var x = a.uploader.opts.chunkRetryInterval;
+                  x !== null ? setTimeout(function() {
                     a.send();
-                  }, S) : a.send();
+                  }, x) : a.send();
                 }
               }
             }, a.file, a);
@@ -788,8 +788,8 @@ var Pe = {}, Et = {
               return p.UPLOADING;
             var t;
             this.uploader.opts.successStatuses.indexOf(this.xhr.status) > -1 ? t = p.SUCCESS : this.uploader.opts.permanentErrors.indexOf(this.xhr.status) > -1 || !u && this.retries >= this.uploader.opts.maxChunkRetries ? t = p.ERROR : (this.abort(), t = p.PENDING);
-            var i = this.processedState;
-            return i && i.err && (t = p.ERROR), t;
+            var r = this.processedState;
+            return r && r.err && (t = p.ERROR), t;
           } else
             return p.PENDING;
         },
@@ -806,62 +806,62 @@ var Pe = {}, Et = {
           var u = this.endByte - this.startByte;
           return this.status() !== p.SUCCESS && (u = this.progress() * u), u;
         },
-        prepareXhrRequest: function(u, t, i, l) {
+        prepareXhrRequest: function(u, t, r, l) {
           var a = n.evalOpts(this.uploader.opts.query, this.file, this, t);
           a = n.extend(this.getParams(), a), a = this.uploader.opts.processParams(a, this.file, this, t);
-          var r = n.evalOpts(this.uploader.opts.target, this.file, this, t), f = null;
-          if (u === "GET" || i === "octet") {
+          var i = n.evalOpts(this.uploader.opts.target, this.file, this, t), f = null;
+          if (u === "GET" || r === "octet") {
             var R = [];
             n.each(a, function(s, c) {
               R.push([encodeURIComponent(c), encodeURIComponent(s)].join("="));
-            }), r = this.getTarget(r, R), f = l || null;
+            }), i = this.getTarget(i, R), f = l || null;
           } else
             f = new FormData(), n.each(a, function(s, c) {
               f.append(c, s);
             }), typeof l < "u" && f.append(this.uploader.opts.fileParameterName, l, this.file.name);
-          return this.xhr.open(u, r, !0), this.xhr.withCredentials = this.uploader.opts.withCredentials, n.each(n.evalOpts(this.uploader.opts.headers, this.file, this, t), function(s, c) {
+          return this.xhr.open(u, i, !0), this.xhr.withCredentials = this.uploader.opts.withCredentials, n.each(n.evalOpts(this.uploader.opts.headers, this.file, this, t), function(s, c) {
             this.xhr.setRequestHeader(c, s);
           }, this), f;
         }
-      }), x.exports = E;
-    }, { "./utils": 5 }], 2: [function(C, x, w) {
+      }), S.exports = E;
+    }, { "./utils": 5 }], 2: [function(C, S, w) {
       var n = C("./utils").each, E = {
         _eventData: null,
         on: function(p, u) {
           this._eventData || (this._eventData = {}), this._eventData[p] || (this._eventData[p] = []);
           var t = !1;
-          n(this._eventData[p], function(i) {
-            if (i === u)
+          n(this._eventData[p], function(r) {
+            if (r === u)
               return t = !0, !1;
           }), t || this._eventData[p].push(u);
         },
         off: function(p, u) {
-          this._eventData || (this._eventData = {}), !(!this._eventData[p] || !this._eventData[p].length) && (u ? n(this._eventData[p], function(t, i) {
+          this._eventData || (this._eventData = {}), !(!this._eventData[p] || !this._eventData[p].length) && (u ? n(this._eventData[p], function(t, r) {
             if (t === u)
-              return this._eventData[p].splice(i, 1), !1;
+              return this._eventData[p].splice(r, 1), !1;
           }, this) : this._eventData[p] = []);
         },
         trigger: function(p) {
           if (this._eventData || (this._eventData = {}), !this._eventData[p])
             return !0;
           var u = this._eventData[p].slice.call(arguments, 1), t = !1;
-          return n(this._eventData[p], function(i) {
-            t = i.apply(this, u) === !1 || t;
+          return n(this._eventData[p], function(r) {
+            t = r.apply(this, u) === !1 || t;
           }, this), !t;
         }
       };
-      x.exports = E;
-    }, { "./utils": 5 }], 3: [function(C, x, w) {
-      var n = C("./utils"), E = C("./event"), p = C("./file"), u = C("./chunk"), t = "0.6.0", i = typeof window > "u", l = i ? !1 : window.navigator.msPointerEnabled, a = function() {
-        if (i)
+      S.exports = E;
+    }, { "./utils": 5 }], 3: [function(C, S, w) {
+      var n = C("./utils"), E = C("./event"), p = C("./file"), u = C("./chunk"), t = "0.6.0", r = typeof window > "u", l = r ? !1 : window.navigator.msPointerEnabled, a = function() {
+        if (r)
           return !1;
         var s = "slice", c = n.isDefined(window.File) && n.isDefined(window.Blob) && n.isDefined(window.FileList), d = null;
         return c && (d = window.Blob.prototype, n.each(["slice", "webkitSlice", "mozSlice"], function(v) {
           if (d[v])
             return s = v, !1;
         }), c = !!d[s]), c && (f.sliceName = s), d = null, c;
-      }(), r = function() {
-        if (i)
+      }(), i = function() {
+        if (r)
           return !1;
         var s = window.document.createElement("input");
         s.type = "file";
@@ -869,10 +869,10 @@ var Pe = {}, Et = {
         return s = null, c;
       }();
       function f(s) {
-        this.support = a, this.support && (this.supportDirectory = r, n.defineNonEnumerable(this, "filePaths", {}), this.opts = n.extend({}, f.defaults, s || {}), this.preventEvent = n.bind(this._preventEvent, this), p.call(this, this));
+        this.support = a, this.support && (this.supportDirectory = i, n.defineNonEnumerable(this, "filePaths", {}), this.opts = n.extend({}, f.defaults, s || {}), this.preventEvent = n.bind(this._preventEvent, this), p.call(this, this));
       }
-      var R = function(s, c, d, v, S) {
-        S.readFinished(s.file[f.sliceName](d, v, c));
+      var R = function(s, c, d, v, x) {
+        x.readFinished(s.file[f.sliceName](d, v, c));
       };
       f.version = t, f.defaults = {
         chunkSize: 1024 * 1024,
@@ -932,10 +932,10 @@ var Pe = {}, Et = {
               }
             }
           }, this);
-          var S = this.fileList.slice(v);
-          this._trigger("filesAdded", d, S, c) ? (n.each(d, function(g) {
+          var x = this.fileList.slice(v);
+          this._trigger("filesAdded", d, x, c) ? (n.each(d, function(g) {
             this.opts.singleFile && this.files.length > 0 && this.removeFile(this.files[0]), this.files.push(g);
-          }, this), this._trigger("filesSubmitted", d, S, c)) : n.each(S, function(g) {
+          }, this), this._trigger("filesSubmitted", d, x, c)) : n.each(x, function(g) {
             p.prototype.removeFile.call(this, g);
           }, this);
         },
@@ -987,11 +987,11 @@ var Pe = {}, Et = {
               return !1;
           }), c)
             return !0;
-          var S = !1;
+          var x = !1;
           return n.each(this.files, function(g) {
             if (!g.isComplete())
-              return S = !0, !1;
-          }), !S && !s && this.files.length && this._triggerAsync("complete"), S;
+              return x = !0, !1;
+          }), !x && !s && this.files.length && this._triggerAsync("complete"), x;
         },
         upload: function(s) {
           var c = this._shouldUploadNext();
@@ -1004,23 +1004,23 @@ var Pe = {}, Et = {
         },
         _shouldUploadNext: function() {
           var s = 0, c = !0, d = this.opts.simultaneousUploads, v = u.STATUS.UPLOADING;
-          return n.each(this.files, function(S) {
-            return n.each(S.chunks, function(g) {
+          return n.each(this.files, function(x) {
+            return n.each(x.chunks, function(g) {
               if (g.status() === v && (s++, s >= d))
                 return c = !1, !1;
             }), c;
           }), c && s;
         },
         assignBrowse: function(s, c, d, v) {
-          typeof s.length > "u" && (s = [s]), n.each(s, function(S) {
+          typeof s.length > "u" && (s = [s]), n.each(s, function(x) {
             var g;
-            S.tagName === "INPUT" && S.type === "file" ? g = S : (g = document.createElement("input"), g.setAttribute("type", "file"), n.extend(g.style, {
+            x.tagName === "INPUT" && x.type === "file" ? g = x : (g = document.createElement("input"), g.setAttribute("type", "file"), n.extend(g.style, {
               visibility: "hidden",
               position: "absolute",
               width: "1px",
               height: "1px"
-            }), S.appendChild(g), S.addEventListener("click", function(j) {
-              S.tagName.toLowerCase() !== "label" && g.click();
+            }), x.appendChild(g), x.addEventListener("click", function(j) {
+              x.tagName.toLowerCase() !== "label" && g.click();
             }, !1)), !this.opts.singleFile && !d && g.setAttribute("multiple", "multiple"), c && g.setAttribute("webkitdirectory", "webkitdirectory"), v && n.each(v, function(j, G) {
               g.setAttribute(G, j);
             });
@@ -1037,7 +1037,7 @@ var Pe = {}, Et = {
           s.items && s.items[0] && s.items[0].webkitGetAsEntry ? this.webkitReadDataTransfer(s, c) : this.addFiles(s.files, c);
         },
         webkitReadDataTransfer: function(s, c) {
-          var d = this, v = s.items.length, S = [];
+          var d = this, v = s.items.length, x = [];
           n.each(s.items, function(I) {
             var L = I.webkitGetAsEntry();
             if (!L) {
@@ -1060,21 +1060,21 @@ var Pe = {}, Et = {
             }, j);
           }
           function O(I, L) {
-            I.relativePath = L.substring(1), S.push(I), G();
+            I.relativePath = L.substring(1), x.push(I), G();
           }
           function j(I) {
             throw I;
           }
           function G() {
-            --v === 0 && d.addFiles(S, c);
+            --v === 0 && d.addFiles(x, c);
           }
         },
         _assignHelper: function(s, c, d) {
           typeof s.length > "u" && (s = [s]);
           var v = d ? "removeEventListener" : "addEventListener";
-          n.each(s, function(S) {
+          n.each(s, function(x) {
             n.each(c, function(g, O) {
-              S[v](O, g, !1);
+              x[v](O, g, !1);
             }, this);
           }, this);
         },
@@ -1097,87 +1097,87 @@ var Pe = {}, Et = {
             drop: this._onDrop
           }, !0), this._onDrop = null;
         }
-      }), x.exports = f;
-    }, { "./chunk": 1, "./event": 2, "./file": 4, "./utils": 5 }], 4: [function(C, x, w) {
+      }), S.exports = f;
+    }, { "./chunk": 1, "./event": 2, "./file": 4, "./utils": 5 }], 4: [function(C, S, w) {
       var n = C("./utils"), E = C("./chunk");
-      function p(t, i, l) {
-        n.defineNonEnumerable(this, "uploader", t), this.isRoot = this.isFolder = t === this, n.defineNonEnumerable(this, "parent", l || null), n.defineNonEnumerable(this, "files", []), n.defineNonEnumerable(this, "fileList", []), n.defineNonEnumerable(this, "chunks", []), n.defineNonEnumerable(this, "_errorFiles", []), n.defineNonEnumerable(this, "file", null), this.id = n.uid(), this.isRoot || !i ? this.file = null : n.isString(i) ? (this.isFolder = !0, this.file = null, this.path = i, this.parent.path && (i = i.substr(this.parent.path.length)), this.name = i.charAt(i.length - 1) === "/" ? i.substr(0, i.length - 1) : i) : (this.file = i, this.fileType = this.file.type, this.name = i.fileName || i.name, this.size = i.size, this.relativePath = i.relativePath || i.webkitRelativePath || this.name, this._parseFile()), this.paused = t.opts.initialPaused, this.error = !1, this.allError = !1, this.aborted = !1, this.completed = !1, this.averageSpeed = 0, this.currentSpeed = 0, this._lastProgressCallback = Date.now(), this._prevUploadedSize = 0, this._prevProgress = 0, this.bootstrap();
+      function p(t, r, l) {
+        n.defineNonEnumerable(this, "uploader", t), this.isRoot = this.isFolder = t === this, n.defineNonEnumerable(this, "parent", l || null), n.defineNonEnumerable(this, "files", []), n.defineNonEnumerable(this, "fileList", []), n.defineNonEnumerable(this, "chunks", []), n.defineNonEnumerable(this, "_errorFiles", []), n.defineNonEnumerable(this, "file", null), this.id = n.uid(), this.isRoot || !r ? this.file = null : n.isString(r) ? (this.isFolder = !0, this.file = null, this.path = r, this.parent.path && (r = r.substr(this.parent.path.length)), this.name = r.charAt(r.length - 1) === "/" ? r.substr(0, r.length - 1) : r) : (this.file = r, this.fileType = this.file.type, this.name = r.fileName || r.name, this.size = r.size, this.relativePath = r.relativePath || r.webkitRelativePath || this.name, this._parseFile()), this.paused = t.opts.initialPaused, this.error = !1, this.allError = !1, this.aborted = !1, this.completed = !1, this.averageSpeed = 0, this.currentSpeed = 0, this._lastProgressCallback = Date.now(), this._prevUploadedSize = 0, this._prevProgress = 0, this.bootstrap();
       }
       n.extend(p.prototype, {
         _parseFile: function() {
           var t = u(this.relativePath);
           if (t.length) {
-            var i = this.uploader.filePaths;
+            var r = this.uploader.filePaths;
             n.each(t, function(l, a) {
-              var r = i[l];
-              r || (r = new p(this.uploader, l, this.parent), i[l] = r, this._updateParentFileList(r)), this.parent = r, r.files.push(this), t[a + 1] || r.fileList.push(this);
+              var i = r[l];
+              i || (i = new p(this.uploader, l, this.parent), r[l] = i, this._updateParentFileList(i)), this.parent = i, i.files.push(this), t[a + 1] || i.fileList.push(this);
             }, this);
           } else
             this._updateParentFileList();
         },
         _updateParentFileList: function(t) {
           t || (t = this);
-          var i = this.parent;
-          i && i.fileList.push(t);
+          var r = this.parent;
+          r && r.fileList.push(t);
         },
-        _eachAccess: function(t, i) {
+        _eachAccess: function(t, r) {
           if (this.isFolder) {
             n.each(this.files, function(l, a) {
               return t.call(this, l, a);
             }, this);
             return;
           }
-          i.call(this, this);
+          r.call(this, this);
         },
         bootstrap: function() {
           if (!this.isFolder) {
             var t = this.uploader.opts;
             n.isFunction(t.initFileFn) && t.initFileFn.call(this, this), this.abort(!0), this._resetError(), this._prevProgress = 0;
-            for (var i = t.forceChunkSize ? Math.ceil : Math.floor, l = Math.max(i(this.size / t.chunkSize), 1), a = 0; a < l; a++)
+            for (var r = t.forceChunkSize ? Math.ceil : Math.floor, l = Math.max(r(this.size / t.chunkSize), 1), a = 0; a < l; a++)
               this.chunks.push(new E(this.uploader, this, a));
           }
         },
         _measureSpeed: function() {
-          var t = this.uploader.opts.speedSmoothingFactor, i = Date.now() - this._lastProgressCallback;
-          if (i) {
+          var t = this.uploader.opts.speedSmoothingFactor, r = Date.now() - this._lastProgressCallback;
+          if (r) {
             var l = this.sizeUploaded();
-            this.currentSpeed = Math.max((l - this._prevUploadedSize) / i * 1e3, 0), this.averageSpeed = t * this.currentSpeed + (1 - t) * this.averageSpeed, this._prevUploadedSize = l, this.parent && this.parent._checkProgress() && this.parent._measureSpeed();
+            this.currentSpeed = Math.max((l - this._prevUploadedSize) / r * 1e3, 0), this.averageSpeed = t * this.currentSpeed + (1 - t) * this.averageSpeed, this._prevUploadedSize = l, this.parent && this.parent._checkProgress() && this.parent._measureSpeed();
           }
         },
         _checkProgress: function(t) {
           return Date.now() - this._lastProgressCallback >= this.uploader.opts.progressCallbacksInterval;
         },
-        _chunkEvent: function(t, i, l) {
-          var a = this.uploader, r = E.STATUS, f = this, R = this.getRoot(), s = function() {
+        _chunkEvent: function(t, r, l) {
+          var a = this.uploader, i = E.STATUS, f = this, R = this.getRoot(), s = function() {
             f._measureSpeed(), a._trigger("fileProgress", R, f, t), f._lastProgressCallback = Date.now();
           };
-          switch (i) {
-            case r.PROGRESS:
+          switch (r) {
+            case i.PROGRESS:
               this._checkProgress() && s();
               break;
-            case r.ERROR:
+            case i.ERROR:
               this._error(), this.abort(!0), a._trigger("fileError", R, this, l, t);
               break;
-            case r.SUCCESS:
+            case i.SUCCESS:
               if (this._updateUploadedChunks(l, t), this.error)
                 return;
               clearTimeout(this._progeressId), this._progeressId = 0;
               var c = Date.now() - this._lastProgressCallback;
               c < a.opts.progressCallbacksInterval && (this._progeressId = setTimeout(s, a.opts.progressCallbacksInterval - c)), this.isComplete() ? (clearTimeout(this._progeressId), s(), this.currentSpeed = 0, this.averageSpeed = 0, a._trigger("fileSuccess", R, this, l, t), R.isComplete() && a._trigger("fileComplete", R, this)) : this._progeressId || s();
               break;
-            case r.RETRY:
+            case i.RETRY:
               a._trigger("fileRetry", R, this, t);
               break;
           }
         },
-        _updateUploadedChunks: function(t, i) {
+        _updateUploadedChunks: function(t, r) {
           var l = this.uploader.opts.checkChunkUploadedByResponse;
           if (l) {
-            var a = i.xhr;
-            n.each(this.chunks, function(r) {
-              if (!r.tested) {
-                var f = l.call(this, r, t);
-                r === i && !f && (r.xhr = null), f && (r.xhr = a), r.tested = !0;
+            var a = r.xhr;
+            n.each(this.chunks, function(i) {
+              if (!i.tested) {
+                var f = l.call(this, i, t);
+                i === r && !f && (i.xhr = null), f && (i.xhr = a), i.tested = !0;
               }
             }, this), this._firstResponse ? this.uploader.uploadNextChunk() : (this._firstResponse = !0, this.uploader.upload(!0));
           } else
@@ -1190,23 +1190,23 @@ var Pe = {}, Et = {
         },
         _resetError: function() {
           this.error = this.allError = !1;
-          for (var t = this.parent, i = -1; t && t !== this.uploader; )
-            i = t._errorFiles.indexOf(this), t._errorFiles.splice(i, 1), t.allError = !1, t._errorFiles.length || (t.error = !1), t = t.parent;
+          for (var t = this.parent, r = -1; t && t !== this.uploader; )
+            r = t._errorFiles.indexOf(this), t._errorFiles.splice(r, 1), t.allError = !1, t._errorFiles.length || (t.error = !1), t = t.parent;
         },
         isComplete: function() {
           if (!this.completed) {
             var t = !1;
-            this._eachAccess(function(i) {
-              if (!i.isComplete())
+            this._eachAccess(function(r) {
+              if (!r.isComplete())
                 return t = !0, !1;
             }, function() {
               if (this.error)
                 t = !0;
               else {
-                var i = E.STATUS;
+                var r = E.STATUS;
                 n.each(this.chunks, function(l) {
                   var a = l.status();
-                  if (a === i.ERROR || a === i.PENDING || a === i.UPLOADING || a === i.READING || l.preprocessState === 1 || l.readState === 1)
+                  if (a === r.ERROR || a === r.PENDING || a === r.UPLOADING || a === r.READING || l.preprocessState === 1 || l.readState === 1)
                     return t = !0, !1;
                 });
               }
@@ -1216,13 +1216,13 @@ var Pe = {}, Et = {
         },
         isUploading: function() {
           var t = !1;
-          return this._eachAccess(function(i) {
-            if (i.isUploading())
+          return this._eachAccess(function(r) {
+            if (r.isUploading())
               return t = !0, !1;
           }, function() {
-            var i = E.STATUS.UPLOADING;
+            var r = E.STATUS.UPLOADING;
             n.each(this.chunks, function(l) {
-              if (l.status() === i)
+              if (l.status() === r)
                 return t = !0, !1;
             });
           }), t;
@@ -1245,28 +1245,28 @@ var Pe = {}, Et = {
           this.uploader.removeFile(this);
         },
         retry: function(t) {
-          var i = function(l) {
+          var r = function(l) {
             l.error && l.bootstrap();
           };
-          t ? t.bootstrap() : this._eachAccess(i, function() {
+          t ? t.bootstrap() : this._eachAccess(r, function() {
             this.bootstrap();
           }), this.uploader.upload();
         },
         abort: function(t) {
           if (!this.aborted) {
             this.currentSpeed = 0, this.averageSpeed = 0, this.aborted = !t;
-            var i = this.chunks;
+            var r = this.chunks;
             t && (this.chunks = []);
             var l = E.STATUS.UPLOADING;
-            n.each(i, function(a) {
+            n.each(r, function(a) {
               a.status() === l && (a.abort(), this.uploader.uploadNextChunk());
             }, this);
           }
         },
         progress: function() {
-          var t = 0, i = 0, l = 0;
-          return this._eachAccess(function(a, r) {
-            t += a.progress() * a.size, i += a.size, r === this.files.length - 1 && (l = i > 0 ? t / i : this.isComplete() ? 1 : 0);
+          var t = 0, r = 0, l = 0;
+          return this._eachAccess(function(a, i) {
+            t += a.progress() * a.size, r += a.size, i === this.files.length - 1 && (l = r > 0 ? t / r : this.isComplete() ? 1 : 0);
           }, function() {
             if (this.error) {
               l = 1;
@@ -1280,14 +1280,14 @@ var Pe = {}, Et = {
             n.each(this.chunks, function(f) {
               a += f.progress() * (f.endByte - f.startByte);
             });
-            var r = a / this.size;
-            this._prevProgress = Math.max(this._prevProgress, r > 0.9999 ? 1 : r), l = this._prevProgress;
+            var i = a / this.size;
+            this._prevProgress = Math.max(this._prevProgress, i > 0.9999 ? 1 : i), l = this._prevProgress;
           }), l;
         },
         getSize: function() {
           var t = 0;
-          return this._eachAccess(function(i) {
-            t += i.size;
+          return this._eachAccess(function(r) {
+            t += r.size;
           }, function() {
             t += this.size;
           }), t;
@@ -1308,55 +1308,55 @@ var Pe = {}, Et = {
         },
         sizeUploaded: function() {
           var t = 0;
-          return this._eachAccess(function(i) {
-            t += i.sizeUploaded();
+          return this._eachAccess(function(r) {
+            t += r.sizeUploaded();
           }, function() {
-            n.each(this.chunks, function(i) {
-              t += i.sizeUploaded();
+            n.each(this.chunks, function(r) {
+              t += r.sizeUploaded();
             });
           }), t;
         },
         timeRemaining: function() {
-          var t = 0, i = 0, l = 0;
-          return this._eachAccess(function(r, f) {
-            !r.paused && !r.error && (i += r.size - r.sizeUploaded(), l += r.averageSpeed), f === this.files.length - 1 && (t = a(i, l));
+          var t = 0, r = 0, l = 0;
+          return this._eachAccess(function(i, f) {
+            !i.paused && !i.error && (r += i.size - i.sizeUploaded(), l += i.averageSpeed), f === this.files.length - 1 && (t = a(r, l));
           }, function() {
             if (this.paused || this.error) {
               t = 0;
               return;
             }
-            var r = this.size - this.sizeUploaded();
-            t = a(r, this.averageSpeed);
+            var i = this.size - this.sizeUploaded();
+            t = a(i, this.averageSpeed);
           }), t;
-          function a(r, f) {
-            return r && !f ? Number.POSITIVE_INFINITY : !r && !f ? 0 : Math.floor(r / f);
+          function a(i, f) {
+            return i && !f ? Number.POSITIVE_INFINITY : !i && !f ? 0 : Math.floor(i / f);
           }
         },
         removeFile: function(t) {
           if (t.isFolder)
             for (; t.files.length; ) {
-              var i = t.files[t.files.length - 1];
-              this._removeFile(i);
+              var r = t.files[t.files.length - 1];
+              this._removeFile(r);
             }
           this._removeFile(t);
         },
         _delFilePath: function(t) {
-          t.path && this.filePaths && delete this.filePaths[t.path], n.each(t.fileList, function(i) {
-            this._delFilePath(i);
+          t.path && this.filePaths && delete this.filePaths[t.path], n.each(t.fileList, function(r) {
+            this._delFilePath(r);
           }, this);
         },
         _removeFile: function(t) {
           if (!t.isFolder) {
-            n.each(this.files, function(a, r) {
+            n.each(this.files, function(a, i) {
               if (a === t)
-                return this.files.splice(r, 1), !1;
+                return this.files.splice(i, 1), !1;
             }, this), t.abort();
-            for (var i = t.parent, l; i && i !== this; )
-              l = i.parent, i._removeFile(t), i = l;
+            for (var r = t.parent, l; r && r !== this; )
+              l = r.parent, r._removeFile(t), r = l;
           }
-          t.parent === this && n.each(this.fileList, function(a, r) {
+          t.parent === this && n.each(this.fileList, function(a, i) {
             if (a === t)
-              return this.fileList.splice(r, 1), !1;
+              return this.fileList.splice(i, 1), !1;
           }, this), !this.isRoot && this.isFolder && !this.files.length && (this.parent._removeFile(this), this.uploader._delFilePath(this)), t.parent = null;
         },
         getType: function() {
@@ -1365,84 +1365,84 @@ var Pe = {}, Et = {
         getExtension: function() {
           return this.isFolder ? "" : this.name.substr((~-this.name.lastIndexOf(".") >>> 0) + 2).toLowerCase();
         }
-      }), x.exports = p;
+      }), S.exports = p;
       function u(t) {
-        var i = [], l = t.split("/"), a = l.length, r = 1;
+        var r = [], l = t.split("/"), a = l.length, i = 1;
         if (l.splice(a - 1, 1), a--, l.length)
-          for (; r <= a; )
-            i.push(l.slice(0, r++).join("/") + "/");
-        return i;
+          for (; i <= a; )
+            r.push(l.slice(0, i++).join("/") + "/");
+        return r;
       }
-    }, { "./chunk": 1, "./utils": 5 }], 5: [function(C, x, w) {
-      var n = Object.prototype, E = Array.prototype, p = n.toString, u = function(r) {
-        return p.call(r) === "[object Function]";
-      }, t = Array.isArray || function(r) {
-        return p.call(r) === "[object Array]";
-      }, i = function(r) {
-        return p.call(r) === "[object Object]" && Object.getPrototypeOf(r) === n;
+    }, { "./chunk": 1, "./utils": 5 }], 5: [function(C, S, w) {
+      var n = Object.prototype, E = Array.prototype, p = n.toString, u = function(i) {
+        return p.call(i) === "[object Function]";
+      }, t = Array.isArray || function(i) {
+        return p.call(i) === "[object Array]";
+      }, r = function(i) {
+        return p.call(i) === "[object Object]" && Object.getPrototypeOf(i) === n;
       }, l = 0, a = {
         uid: function() {
           return ++l;
         },
         noop: function() {
         },
-        bind: function(r, f) {
+        bind: function(i, f) {
           return function() {
-            return r.apply(f, arguments);
+            return i.apply(f, arguments);
           };
         },
-        preventEvent: function(r) {
-          r.preventDefault();
+        preventEvent: function(i) {
+          i.preventDefault();
         },
-        stop: function(r) {
-          r.preventDefault(), r.stopPropagation();
+        stop: function(i) {
+          i.preventDefault(), i.stopPropagation();
         },
-        nextTick: function(r, f) {
-          setTimeout(a.bind(r, f), 0);
+        nextTick: function(i, f) {
+          setTimeout(a.bind(i, f), 0);
         },
-        toArray: function(r, f, R) {
-          return f === void 0 && (f = 0), R === void 0 && (R = r.length), E.slice.call(r, f, R);
+        toArray: function(i, f, R) {
+          return f === void 0 && (f = 0), R === void 0 && (R = i.length), E.slice.call(i, f, R);
         },
-        isPlainObject: i,
+        isPlainObject: r,
         isFunction: u,
         isArray: t,
-        isObject: function(r) {
-          return Object(r) === r;
+        isObject: function(i) {
+          return Object(i) === i;
         },
-        isString: function(r) {
-          return typeof r == "string";
+        isString: function(i) {
+          return typeof i == "string";
         },
-        isUndefined: function(r) {
-          return typeof r > "u";
+        isUndefined: function(i) {
+          return typeof i > "u";
         },
-        isDefined: function(r) {
-          return typeof r < "u";
+        isDefined: function(i) {
+          return typeof i < "u";
         },
-        each: function(r, f, R) {
-          if (a.isDefined(r.length))
-            for (var s = 0, c = r.length; s < c && f.call(R, r[s], s, r) !== !1; s++)
+        each: function(i, f, R) {
+          if (a.isDefined(i.length))
+            for (var s = 0, c = i.length; s < c && f.call(R, i[s], s, i) !== !1; s++)
               ;
           else
-            for (var d in r)
-              if (f.call(R, r[d], d, r) === !1)
+            for (var d in i)
+              if (f.call(R, i[d], d, i) === !1)
                 break;
         },
-        evalOpts: function(r, f) {
-          return a.isFunction(r) && (f = a.toArray(arguments), r = r.apply(null, f.slice(1))), r;
+        evalOpts: function(i, f) {
+          return a.isFunction(i) && (f = a.toArray(arguments), i = i.apply(null, f.slice(1))), i;
         },
         extend: function() {
-          var r, f, R, s, c, d, v = arguments[0] || {}, S = 1, g = arguments.length, O = !1;
-          for (typeof v == "boolean" && (O = v, v = arguments[1] || {}, S++), typeof v != "object" && !u(v) && (v = {}), S === g && (v = this, S--); S < g; S++)
-            if ((r = arguments[S]) != null)
-              for (f in r)
-                R = v[f], s = r[f], v !== s && (O && s && (i(s) || (c = t(s))) ? (c ? (c = !1, d = R && t(R) ? R : []) : d = R && i(R) ? R : {}, v[f] = a.extend(O, d, s)) : s !== void 0 && (v[f] = s));
+          var i, f, R, s, c, d, v = arguments[0] || {}, x = 1, g = arguments.length, O = !1;
+          for (typeof v == "boolean" && (O = v, v = arguments[1] || {}, x++), typeof v != "object" && !u(v) && (v = {}), x === g && (v = this, x--); x < g; x++)
+            if ((i = arguments[x]) != null)
+              for (f in i)
+                R = v[f], s = i[f], v !== s && (O && s && (r(s) || (c = t(s))) ? (c ? (c = !1, d = R && t(R) ? R : []) : d = R && r(R) ? R : {}, v[f] = a.extend(O, d, s)) : s !== void 0 && (v[f] = s));
           return v;
         },
-        formatSize: function(r) {
-          return r < 1024 ? r.toFixed(0) + " bytes" : r < 1024 * 1024 ? (r / 1024).toFixed(0) + " KB" : r < 1024 * 1024 * 1024 ? (r / 1024 / 1024).toFixed(1) + " MB" : (r / 1024 / 1024 / 1024).toFixed(1) + " GB";
+        formatSize: function(i) {
+          return i < 1024 ? i.toFixed(0) + " bytes" : i < 1024 * 1024 ? (i / 1024).toFixed(0) + " KB" : i < 1024 * 1024 * 1024 ? (i / 1024 / 1024).toFixed(1) + " MB" : (i / 1024 / 1024 / 1024).toFixed(1) + " GB";
         },
-        defineNonEnumerable: function(r, f, R) {
-          Object.defineProperty(r, f, {
+        defineNonEnumerable: function(i, f, R) {
+          Object.defineProperty(i, f, {
             enumerable: !1,
             configurable: !0,
             writable: !0,
@@ -1450,7 +1450,7 @@ var Pe = {}, Et = {
           });
         }
       };
-      x.exports = a;
+      S.exports = a;
     }, {}] }, {}, [3])(3);
   });
 })(Et);
@@ -1458,26 +1458,26 @@ const Ve = Pe, ce = mt({
   uploader: null,
   isSupport: !0
 });
-const qe = ({ children: m, directory: y = !1, single: C = !1, attributes: x = "" }) => {
+const qe = ({ children: m, directory: y = !1, single: C = !1, attributes: S = "" }) => {
   const w = Q(null), { uploader: n } = be(ce);
   return le(() => {
-    n == null || n.assignBrowse(w.current, y, C, x);
+    n == null || n.assignBrowse(w.current, y, C, S);
   }, [n]), _.jsx("div", { children: _.jsx("label", { className: "uploader-btn", ref: w, children: m }) });
 };
 const Rt = ({ children: m }) => {
   const { uploader: y, isSupport: C } = be(ce);
   if (!C)
     return null;
-  const x = Q(null), [w, n] = V(""), E = () => {
+  const S = Q(null), [w, n] = V(""), E = () => {
     n("uploader-dragover");
   }, p = () => {
     n("");
   }, u = () => {
     n("uploader-droped");
   };
-  return le(() => (y == null || y.assignDrop(x.current), y == null || y.on("dragenter", E), y == null || y.on("dragleave", p), y == null || y.on("drop", u), () => {
-    y == null || y.off("dragenter", E), y == null || y.off("dragleave", p), y == null || y.off("drop", u), y == null || y.unAssignDrop(x.current);
-  }), [y]), _.jsx("div", { className: `uploader-drop ${w}`, ref: x, children: m });
+  return le(() => (y == null || y.assignDrop(S.current), y == null || y.on("dragenter", E), y == null || y.on("dragleave", p), y == null || y.on("drop", u), () => {
+    y == null || y.off("dragenter", E), y == null || y.off("dragleave", p), y == null || y.off("drop", u), y == null || y.unAssignDrop(S.current);
+  }), [y]), _.jsx("div", { className: `uploader-drop ${w}`, ref: S, children: m });
 }, St = {
   image: ["gif", "jpg", "jpeg", "png", "bmp", "webp"],
   video: ["mp4", "m3u8", "rmvb", "avi", "swf", "3gp", "mkv", "flv"],
@@ -1505,9 +1505,9 @@ function xt(m) {
   const C = Math.floor((m %= 31536e3) / 86400);
   if (C)
     return C + " day" + E(C);
-  const x = Math.floor((m %= 86400) / 3600);
-  if (x)
-    return x + " hour" + E(x);
+  const S = Math.floor((m %= 86400) / 3600);
+  if (S)
+    return S + " hour" + E(S);
   const w = Math.floor((m %= 3600) / 60);
   if (w)
     return w + " minute" + E(w);
@@ -1518,7 +1518,7 @@ function xt(m) {
   }
 }
 const Ye = ["fileProgress", "fileSuccess", "fileComplete", "fileError"], kt = ({ file: m, list: y = !1, children: C }) => {
-  const [x, w] = V(!1), [n, E] = V(!1), [p, u] = V(!1), [t, i] = V(!1), [l, a] = V(0), [r, f] = V(0), [R, s] = V(null), [c, d] = V(""), v = Q(null), S = Q({}), g = se(() => p ? "success" : x ? "error" : t ? "uploading" : n ? "paused" : "waiting", [t, p, x, n]), O = se(() => {
+  const [S, w] = V(!1), [n, E] = V(!1), [p, u] = V(!1), [t, r] = V(!1), [l, a] = V(0), [i, f] = V(0), [R, s] = V(null), [c, d] = V(""), v = Q(null), x = Q({}), g = se(() => p ? "success" : S ? "error" : t ? "uploading" : n ? "paused" : "waiting", [t, p, S, n]), O = se(() => {
     const A = m.isFolder, T = m.getExtension();
     let $ = A ? "folder" : "unknown";
     const K = m.uploader.opts.categoryMap || St;
@@ -1535,12 +1535,12 @@ const Ye = ["fileProgress", "fileSuccess", "fileComplete", "fileError"], kt = ({
       transform: T
     };
   }, [l]), G = se(() => `${Ve.utils.formatSize(m.averageSpeed)} / s`, [m.averageSpeed]), I = se(() => m.uploader.fileStatusText[g], [g]), L = se(() => {
-    if (r === Number.POSITIVE_INFINITY || r === 0)
+    if (i === Number.POSITIVE_INFINITY || i === 0)
       return "";
-    let A = xt(r);
+    let A = xt(i);
     const T = m.uploader.opts.parseTimeRemaining;
-    return T && (A = T(r, A)), A;
-  }, [r]), q = () => {
+    return T && (A = T(i, A)), A;
+  }, [i]), q = () => {
     m.pause(), J(), W();
   }, X = () => {
     m.retry(), J();
@@ -1551,7 +1551,7 @@ const Ye = ["fileProgress", "fileSuccess", "fileComplete", "fileError"], kt = ({
   }, W = () => {
     f(m.timeRemaining()), a(m.progress()), J();
   }, ne = (A, T, $) => {
-    A && ee($), W(), w(!1), u(!0), i(!1);
+    A && ee($), W(), w(!1), u(!0), r(!1);
   }, fe = Q({
     _fileProgress: W,
     _fileSuccess: ne,
@@ -1559,7 +1559,7 @@ const Ye = ["fileProgress", "fileSuccess", "fileComplete", "fileError"], kt = ({
       ne();
     },
     _fileError: (A, T, $) => {
-      W(), ee($), w(!0), u(!1), i(!1);
+      W(), ee($), w(!0), u(!1), r(!1);
     }
   }), ee = (A) => {
     let T = A;
@@ -1578,29 +1578,29 @@ const Ye = ["fileProgress", "fileSuccess", "fileComplete", "fileError"], kt = ({
       fe.current[`_${A}`]();
     }
   }, J = () => {
-    w(m.error), E(m.paused), i(m.isUploading());
+    w(m.error), E(m.paused), r(m.isUploading());
   };
   return le(() => {
     g === "uploading" ? v.current = setTimeout(() => {
       d("uploader-file-progressing");
     }, 200) : (clearTimeout(v.current), d(""));
   }, [g]), le(() => {
-    w(m.error), E(m.paused), u(m.isComplete()), i(m.isUploading()), a(m.progress()), f(m.timeRemaining());
-    const A = (T) => S.current[T] = (...$) => {
+    w(m.error), E(m.paused), u(m.isComplete()), r(m.isUploading()), a(m.progress()), f(m.timeRemaining());
+    const A = (T) => x.current[T] = (...$) => {
       he(T, $);
     };
     return Ye.forEach((T) => {
       m.uploader.on(T, A(T));
     }), () => {
       Ye.forEach((T) => {
-        m.uploader.off(T, S.current[T]);
-      }), S.current = null;
+        m.uploader.off(T, x.current[T]);
+      });
     };
   }, []), _.jsx(_.Fragment, { children: C ? C({
     name: m.name,
     size: m.getFormatSize(),
     averageSpeed: G,
-    error: x,
+    error: S,
     paused: n,
     isComplete: p,
     isUploading: t,
@@ -1617,7 +1617,7 @@ const Ye = ["fileProgress", "fileSuccess", "fileComplete", "fileError"], kt = ({
 };
 const Ct = ({ fileList: m, children: y }) => {
   const { isSupport: C } = be(ce);
-  return C ? _.jsx("div", { className: "uploader-list", children: y ? y(m) : _.jsx("ul", { children: m.map((x) => _.jsx(kt, { file: x, list: !0 }, x.id)) }) }) : null;
+  return C ? _.jsx("div", { className: "uploader-list", children: y ? y(m) : _.jsx("ul", { children: m.map((S) => _.jsx(kt, { file: S, list: !0 }, S.id)) }) }) : null;
 };
 const Pt = ({ children: m }) => {
   const { isSupport: y } = be(ce);
@@ -1631,22 +1631,22 @@ function wt(m) {
     uploading: "上传中",
     paused: "暂停中",
     waiting: "等待中"
-  }, autoStart: x = !0, onFileComplete: w = () => {
+  }, autoStart: S = !0, onFileComplete: w = () => {
   }, onComplete: n = () => {
   }, onChange: E = () => {
   }, onFilesSubmitted: p = () => {
   }, onFileProgress: u = () => {
   }, onFileSuccess: t = () => {
-  }, onFileAdded: i = () => {
+  }, onFileAdded: r = () => {
   }, onFilesAdded: l = () => {
-  }, children: a } = m, r = Q(new Ve(y)), f = Q((d = r.current) == null ? void 0 : d.support), [R, s] = V([]), c = (...v) => {
+  }, children: a } = m, i = Q(new Ve(y)), f = Q((d = i.current) == null ? void 0 : d.support), [R, s] = V([]), c = (...v) => {
     var g, O;
     switch (v[0]) {
       case "change":
         E(v[1]);
         break;
       case "filesSubmitted":
-        s([...(g = r.current) == null ? void 0 : g.fileList]), r.current.upload(), p(v[1], v[2], v[3]);
+        s([...(g = i.current) == null ? void 0 : g.fileList]), i.current.upload(), p(v[1], v[2], v[3]);
         break;
       case "fileProgress":
         u(v[1], v[2], v[3]);
@@ -1661,20 +1661,20 @@ function wt(m) {
         n();
         break;
       case "fileAdded":
-        i(v[1]);
+        r(v[1]);
         break;
       case "filesAdded":
         l(v[1], v[2]);
         break;
       case "fileRemoved":
-        s([...(O = r.current) == null ? void 0 : O.fileList]);
+        s([...(O = i.current) == null ? void 0 : O.fileList]);
     }
   };
-  return le(() => (r.current.fileStatusText = C, r.current.on("catchAll", c), window.uploader = r.current, () => {
+  return le(() => (i.current.fileStatusText = C, i.current.on("catchAll", c), window.uploader = i.current, () => {
     var v;
-    (v = r.current) == null || v.off("catchAll", c), r.current = null;
+    (v = i.current) == null || v.off("catchAll", c);
   }), []), _.jsx("div", { className: "uploader-example uploader", children: _.jsx(ce.Provider, { value: {
-    uploader: r.current,
+    uploader: i.current,
     isSupport: f.current
   }, children: a ? a({ fileList: R }) : _.jsxs(_.Fragment, { children: [_.jsx(Pt, {}), _.jsx(Rt, { children: _.jsxs(_.Fragment, { children: [_.jsx("p", { className: "m-3", children: "把文件拖拽到此处进行上传" }), _.jsxs("div", { className: "flex", children: [_.jsx(qe, { children: "选择文件" }), _.jsx(qe, { directory: !0, children: "选择文件夹" })] })] }) }), _.jsx(Ct, { fileList: R })] }) }) });
 }

@@ -22,7 +22,7 @@ export const A = () => {
     console.log(rootFile, 'fileComplete');
   };
   const complete = () => {
-    console.log('complete');
+    console.log('complete 111xxx');
   };
   return (
     <>
