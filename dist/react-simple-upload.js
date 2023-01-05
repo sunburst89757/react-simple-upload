@@ -1,13 +1,13 @@
 import './style.css';
-import Ye, { createContext as mt, useRef as ie, useContext as We, useEffect as ue, useState as q, useMemo as re } from "react";
-var R = {}, yt = {
+import We, { createContext as mt, useRef as Q, useContext as be, useEffect as le, useState as V, useMemo as se } from "react";
+var _ = {}, yt = {
   get exports() {
-    return R;
+    return _;
   },
-  set exports(v) {
-    R = v;
+  set exports(m) {
+    _ = m;
   }
-}, ae = {};
+}, oe = {};
 /**
  * @license React
  * react-jsx-runtime.production.min.js
@@ -17,25 +17,25 @@ var R = {}, yt = {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var $e;
+var Be;
 function bt() {
-  if ($e)
-    return ae;
-  $e = 1;
-  var v = Ye, D = Symbol.for("react.element"), m = Symbol.for("react.fragment"), k = Object.prototype.hasOwnProperty, w = v.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, a = { key: !0, ref: !0, __self: !0, __source: !0 };
-  function x(p, f, t) {
-    var r, l = {}, n = null, i = null;
-    t !== void 0 && (n = "" + t), f.key !== void 0 && (n = "" + f.key), f.ref !== void 0 && (i = f.ref);
-    for (r in f)
-      k.call(f, r) && !a.hasOwnProperty(r) && (l[r] = f[r]);
+  if (Be)
+    return oe;
+  Be = 1;
+  var m = We, y = Symbol.for("react.element"), C = Symbol.for("react.fragment"), x = Object.prototype.hasOwnProperty, w = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, n = { key: !0, ref: !0, __self: !0, __source: !0 };
+  function E(p, u, t) {
+    var i, l = {}, a = null, r = null;
+    t !== void 0 && (a = "" + t), u.key !== void 0 && (a = "" + u.key), u.ref !== void 0 && (r = u.ref);
+    for (i in u)
+      x.call(u, i) && !n.hasOwnProperty(i) && (l[i] = u[i]);
     if (p && p.defaultProps)
-      for (r in f = p.defaultProps, f)
-        l[r] === void 0 && (l[r] = f[r]);
-    return { $$typeof: D, type: p, key: n, ref: i, props: l, _owner: w.current };
+      for (i in u = p.defaultProps, u)
+        l[i] === void 0 && (l[i] = u[i]);
+    return { $$typeof: y, type: p, key: a, ref: r, props: l, _owner: w.current };
   }
-  return ae.Fragment = m, ae.jsx = x, ae.jsxs = x, ae;
+  return oe.Fragment = C, oe.jsx = E, oe.jsxs = E, oe;
 }
-var oe = {};
+var ue = {};
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -45,87 +45,87 @@ var oe = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var Be;
+var Ge;
 function _t() {
-  return Be || (Be = 1, process.env.NODE_ENV !== "production" && function() {
-    var v = Ye, D = Symbol.for("react.element"), m = Symbol.for("react.portal"), k = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), a = Symbol.for("react.profiler"), x = Symbol.for("react.provider"), p = Symbol.for("react.context"), f = Symbol.for("react.forward_ref"), t = Symbol.for("react.suspense"), r = Symbol.for("react.suspense_list"), l = Symbol.for("react.memo"), n = Symbol.for("react.lazy"), i = Symbol.for("react.offscreen"), d = Symbol.iterator, E = "@@iterator";
+  return Ge || (Ge = 1, process.env.NODE_ENV !== "production" && function() {
+    var m = We, y = Symbol.for("react.element"), C = Symbol.for("react.portal"), x = Symbol.for("react.fragment"), w = Symbol.for("react.strict_mode"), n = Symbol.for("react.profiler"), E = Symbol.for("react.provider"), p = Symbol.for("react.context"), u = Symbol.for("react.forward_ref"), t = Symbol.for("react.suspense"), i = Symbol.for("react.suspense_list"), l = Symbol.for("react.memo"), a = Symbol.for("react.lazy"), r = Symbol.for("react.offscreen"), f = Symbol.iterator, R = "@@iterator";
     function s(e) {
       if (e === null || typeof e != "object")
         return null;
-      var o = d && e[d] || e[E];
+      var o = f && e[f] || e[R];
       return typeof o == "function" ? o : null;
     }
-    var c = v.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-    function u(e) {
+    var c = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    function d(e) {
       {
-        for (var o = arguments.length, h = new Array(o > 1 ? o - 1 : 0), _ = 1; _ < o; _++)
-          h[_ - 1] = arguments[_];
-        y("error", e, h);
+        for (var o = arguments.length, h = new Array(o > 1 ? o - 1 : 0), b = 1; b < o; b++)
+          h[b - 1] = arguments[b];
+        v("error", e, h);
       }
     }
-    function y(e, o, h) {
+    function v(e, o, h) {
       {
-        var _ = c.ReactDebugCurrentFrame, F = _.getStackAddendum();
+        var b = c.ReactDebugCurrentFrame, F = b.getStackAddendum();
         F !== "" && (o += "%s", h = h.concat([F]));
-        var T = h.map(function(C) {
-          return String(C);
+        var D = h.map(function(P) {
+          return String(P);
         });
-        T.unshift("Warning: " + o), Function.prototype.apply.call(console[e], console, T);
+        D.unshift("Warning: " + o), Function.prototype.apply.call(console[e], console, D);
       }
     }
-    var b = !1, g = !1, O = !1, j = !1, Y = !1, I;
+    var S = !1, g = !1, O = !1, j = !1, G = !1, I;
     I = Symbol.for("react.module.reference");
-    function z(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === k || e === a || Y || e === w || e === t || e === r || j || e === i || b || g || O || typeof e == "object" && e !== null && (e.$$typeof === n || e.$$typeof === l || e.$$typeof === x || e.$$typeof === p || e.$$typeof === f || e.$$typeof === I || e.getModuleId !== void 0));
+    function L(e) {
+      return !!(typeof e == "string" || typeof e == "function" || e === x || e === n || G || e === w || e === t || e === i || j || e === r || S || g || O || typeof e == "object" && e !== null && (e.$$typeof === a || e.$$typeof === l || e.$$typeof === E || e.$$typeof === p || e.$$typeof === u || e.$$typeof === I || e.getModuleId !== void 0));
     }
-    function W(e, o, h) {
-      var _ = e.displayName;
-      if (_)
-        return _;
+    function q(e, o, h) {
+      var b = e.displayName;
+      if (b)
+        return b;
       var F = o.displayName || o.name || "";
       return F !== "" ? h + "(" + F + ")" : h;
     }
-    function K(e) {
+    function X(e) {
       return e.displayName || "Context";
     }
     function M(e) {
       if (e == null)
         return null;
-      if (typeof e.tag == "number" && u("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof e == "function")
+      if (typeof e.tag == "number" && d("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), typeof e == "function")
         return e.displayName || e.name || null;
       if (typeof e == "string")
         return e;
       switch (e) {
-        case k:
+        case x:
           return "Fragment";
-        case m:
+        case C:
           return "Portal";
-        case a:
+        case n:
           return "Profiler";
         case w:
           return "StrictMode";
         case t:
           return "Suspense";
-        case r:
+        case i:
           return "SuspenseList";
       }
       if (typeof e == "object")
         switch (e.$$typeof) {
           case p:
             var o = e;
-            return K(o) + ".Consumer";
-          case x:
+            return X(o) + ".Consumer";
+          case E:
             var h = e;
-            return K(h._context) + ".Provider";
-          case f:
-            return W(e, e.render, "ForwardRef");
+            return X(h._context) + ".Provider";
+          case u:
+            return q(e, e.render, "ForwardRef");
           case l:
-            var _ = e.displayName || null;
-            return _ !== null ? _ : M(e.type) || "Memo";
-          case n: {
-            var F = e, T = F._payload, C = F._init;
+            var b = e.displayName || null;
+            return b !== null ? b : M(e.type) || "Memo";
+          case a: {
+            var F = e, D = F._payload, P = F._init;
             try {
-              return M(C(T));
+              return M(P(D));
             } catch {
               return null;
             }
@@ -133,18 +133,18 @@ function _t() {
         }
       return null;
     }
-    var B = Object.assign, H = 0, me, ye, le, Z, ce, X, A;
-    function P() {
+    var Y = Object.assign, W = 0, ne, _e, Ee, fe, ee, he, J;
+    function A() {
     }
-    P.__reactDisabledLog = !0;
-    function $() {
+    A.__reactDisabledLog = !0;
+    function T() {
       {
-        if (H === 0) {
-          me = console.log, ye = console.info, le = console.warn, Z = console.error, ce = console.group, X = console.groupCollapsed, A = console.groupEnd;
+        if (W === 0) {
+          ne = console.log, _e = console.info, Ee = console.warn, fe = console.error, ee = console.group, he = console.groupCollapsed, J = console.groupEnd;
           var e = {
             configurable: !0,
             enumerable: !0,
-            value: P,
+            value: A,
             writable: !0
           };
           Object.defineProperties(console, {
@@ -157,199 +157,199 @@ function _t() {
             groupEnd: e
           });
         }
-        H++;
+        W++;
       }
     }
-    function fe() {
+    function $() {
       {
-        if (H--, H === 0) {
+        if (W--, W === 0) {
           var e = {
             configurable: !0,
             enumerable: !0,
             writable: !0
           };
           Object.defineProperties(console, {
-            log: B({}, e, {
-              value: me
+            log: Y({}, e, {
+              value: ne
             }),
-            info: B({}, e, {
-              value: ye
+            info: Y({}, e, {
+              value: _e
             }),
-            warn: B({}, e, {
-              value: le
+            warn: Y({}, e, {
+              value: Ee
             }),
-            error: B({}, e, {
-              value: Z
+            error: Y({}, e, {
+              value: fe
             }),
-            group: B({}, e, {
-              value: ce
+            group: Y({}, e, {
+              value: ee
             }),
-            groupCollapsed: B({}, e, {
-              value: X
+            groupCollapsed: Y({}, e, {
+              value: he
             }),
-            groupEnd: B({}, e, {
-              value: A
+            groupEnd: Y({}, e, {
+              value: J
             })
           });
         }
-        H < 0 && u("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
+        W < 0 && d("disabledDepth fell below zero. This is a bug in React. Please file an issue.");
       }
     }
-    var J = c.ReactCurrentDispatcher, Q;
-    function se(e, o, h) {
+    var te = c.ReactCurrentDispatcher, K;
+    function Z(e, o, h) {
       {
-        if (Q === void 0)
+        if (K === void 0)
           try {
             throw Error();
           } catch (F) {
-            var _ = F.stack.trim().match(/\n( *(at )?)/);
-            Q = _ && _[1] || "";
+            var b = F.stack.trim().match(/\n( *(at )?)/);
+            K = b && b[1] || "";
           }
         return `
-` + Q + e;
+` + K + e;
       }
     }
-    var be = !1, he;
+    var pe = !1, de;
     {
       var He = typeof WeakMap == "function" ? WeakMap : Map;
-      he = new He();
+      de = new He();
     }
-    function Pe(e, o) {
-      if (!e || be)
+    function Fe(e, o) {
+      if (!e || pe)
         return "";
       {
-        var h = he.get(e);
+        var h = de.get(e);
         if (h !== void 0)
           return h;
       }
-      var _;
-      be = !0;
+      var b;
+      pe = !0;
       var F = Error.prepareStackTrace;
       Error.prepareStackTrace = void 0;
-      var T;
-      T = J.current, J.current = null, $();
+      var D;
+      D = te.current, te.current = null, T();
       try {
         if (o) {
-          var C = function() {
+          var P = function() {
             throw Error();
           };
-          if (Object.defineProperty(C.prototype, "props", {
+          if (Object.defineProperty(P.prototype, "props", {
             set: function() {
               throw Error();
             }
           }), typeof Reflect == "object" && Reflect.construct) {
             try {
-              Reflect.construct(C, []);
-            } catch (V) {
-              _ = V;
+              Reflect.construct(P, []);
+            } catch (H) {
+              b = H;
             }
-            Reflect.construct(e, [], C);
+            Reflect.construct(e, [], P);
           } else {
             try {
-              C.call();
-            } catch (V) {
-              _ = V;
+              P.call();
+            } catch (H) {
+              b = H;
             }
-            e.call(C.prototype);
+            e.call(P.prototype);
           }
         } else {
           try {
             throw Error();
-          } catch (V) {
-            _ = V;
+          } catch (H) {
+            b = H;
           }
           e();
         }
-      } catch (V) {
-        if (V && _ && typeof V.stack == "string") {
-          for (var S = V.stack.split(`
-`), L = _.stack.split(`
-`), N = S.length - 1, U = L.length - 1; N >= 1 && U >= 0 && S[N] !== L[U]; )
+      } catch (H) {
+        if (H && b && typeof H.stack == "string") {
+          for (var k = H.stack.split(`
+`), z = b.stack.split(`
+`), N = k.length - 1, U = z.length - 1; N >= 1 && U >= 0 && k[N] !== z[U]; )
             U--;
           for (; N >= 1 && U >= 0; N--, U--)
-            if (S[N] !== L[U]) {
+            if (k[N] !== z[U]) {
               if (N !== 1 || U !== 1)
                 do
-                  if (N--, U--, U < 0 || S[N] !== L[U]) {
-                    var G = `
-` + S[N].replace(" at new ", " at ");
-                    return e.displayName && G.includes("<anonymous>") && (G = G.replace("<anonymous>", e.displayName)), typeof e == "function" && he.set(e, G), G;
+                  if (N--, U--, U < 0 || k[N] !== z[U]) {
+                    var B = `
+` + k[N].replace(" at new ", " at ");
+                    return e.displayName && B.includes("<anonymous>") && (B = B.replace("<anonymous>", e.displayName)), typeof e == "function" && de.set(e, B), B;
                   }
                 while (N >= 1 && U >= 0);
               break;
             }
         }
       } finally {
-        be = !1, J.current = T, fe(), Error.prepareStackTrace = F;
+        pe = !1, te.current = D, $(), Error.prepareStackTrace = F;
       }
-      var te = e ? e.displayName || e.name : "", Me = te ? se(te) : "";
-      return typeof e == "function" && he.set(e, Me), Me;
+      var ie = e ? e.displayName || e.name : "", $e = ie ? Z(ie) : "";
+      return typeof e == "function" && de.set(e, $e), $e;
     }
     function Xe(e, o, h) {
-      return Pe(e, !1);
+      return Fe(e, !1);
     }
     function Je(e) {
       var o = e.prototype;
       return !!(o && o.isReactComponent);
     }
-    function pe(e, o, h) {
+    function ve(e, o, h) {
       if (e == null)
         return "";
       if (typeof e == "function")
-        return Pe(e, Je(e));
+        return Fe(e, Je(e));
       if (typeof e == "string")
-        return se(e);
+        return Z(e);
       switch (e) {
         case t:
-          return se("Suspense");
-        case r:
-          return se("SuspenseList");
+          return Z("Suspense");
+        case i:
+          return Z("SuspenseList");
       }
       if (typeof e == "object")
         switch (e.$$typeof) {
-          case f:
+          case u:
             return Xe(e.render);
           case l:
-            return pe(e.type, o, h);
-          case n: {
-            var _ = e, F = _._payload, T = _._init;
+            return ve(e.type, o, h);
+          case a: {
+            var b = e, F = b._payload, D = b._init;
             try {
-              return pe(T(F), o, h);
+              return ve(D(F), o, h);
             } catch {
             }
           }
         }
       return "";
     }
-    var de = Object.prototype.hasOwnProperty, Fe = {}, we = c.ReactDebugCurrentFrame;
-    function ve(e) {
+    var ge = Object.prototype.hasOwnProperty, we = {}, Te = c.ReactDebugCurrentFrame;
+    function me(e) {
       if (e) {
-        var o = e._owner, h = pe(e.type, e._source, o ? o.type : null);
-        we.setExtraStackFrame(h);
+        var o = e._owner, h = ve(e.type, e._source, o ? o.type : null);
+        Te.setExtraStackFrame(h);
       } else
-        we.setExtraStackFrame(null);
+        Te.setExtraStackFrame(null);
     }
-    function Ke(e, o, h, _, F) {
+    function Ke(e, o, h, b, F) {
       {
-        var T = Function.call.bind(de);
-        for (var C in e)
-          if (T(e, C)) {
-            var S = void 0;
+        var D = Function.call.bind(ge);
+        for (var P in e)
+          if (D(e, P)) {
+            var k = void 0;
             try {
-              if (typeof e[C] != "function") {
-                var L = Error((_ || "React class") + ": " + h + " type `" + C + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof e[C] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                throw L.name = "Invariant Violation", L;
+              if (typeof e[P] != "function") {
+                var z = Error((b || "React class") + ": " + h + " type `" + P + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof e[P] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                throw z.name = "Invariant Violation", z;
               }
-              S = e[C](o, C, _, h, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+              k = e[P](o, P, b, h, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
             } catch (N) {
-              S = N;
+              k = N;
             }
-            S && !(S instanceof Error) && (ve(F), u("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", _ || "React class", h, C, typeof S), ve(null)), S instanceof Error && !(S.message in Fe) && (Fe[S.message] = !0, ve(F), u("Failed %s type: %s", h, S.message), ve(null));
+            k && !(k instanceof Error) && (me(F), d("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).", b || "React class", h, P, typeof k), me(null)), k instanceof Error && !(k.message in we) && (we[k.message] = !0, me(F), d("Failed %s type: %s", h, k.message), me(null));
           }
       }
     }
     var Ze = Array.isArray;
-    function _e(e) {
+    function Re(e) {
       return Ze(e);
     }
     function Qe(e) {
@@ -360,27 +360,27 @@ function _t() {
     }
     function et(e) {
       try {
-        return Te(e), !1;
+        return De(e), !1;
       } catch {
         return !0;
       }
     }
-    function Te(e) {
+    function De(e) {
       return "" + e;
     }
-    function De(e) {
+    function Oe(e) {
       if (et(e))
-        return u("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Qe(e)), Te(e);
+        return d("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Qe(e)), De(e);
     }
-    var ne = c.ReactCurrentOwner, tt = {
+    var ae = c.ReactCurrentOwner, tt = {
       key: !0,
       ref: !0,
       __self: !0,
       __source: !0
-    }, Oe, je, Ee;
-    Ee = {};
+    }, je, Ae, Se;
+    Se = {};
     function rt(e) {
-      if (de.call(e, "ref")) {
+      if (ge.call(e, "ref")) {
         var o = Object.getOwnPropertyDescriptor(e, "ref").get;
         if (o && o.isReactWarning)
           return !1;
@@ -388,7 +388,7 @@ function _t() {
       return e.ref !== void 0;
     }
     function it(e) {
-      if (de.call(e, "key")) {
+      if (ge.call(e, "key")) {
         var o = Object.getOwnPropertyDescriptor(e, "key").get;
         if (o && o.isReactWarning)
           return !1;
@@ -396,15 +396,15 @@ function _t() {
       return e.key !== void 0;
     }
     function st(e, o) {
-      if (typeof e.ref == "string" && ne.current && o && ne.current.stateNode !== o) {
-        var h = M(ne.current.type);
-        Ee[h] || (u('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', M(ne.current.type), e.ref), Ee[h] = !0);
+      if (typeof e.ref == "string" && ae.current && o && ae.current.stateNode !== o) {
+        var h = M(ae.current.type);
+        Se[h] || (d('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', M(ae.current.type), e.ref), Se[h] = !0);
       }
     }
     function nt(e, o) {
       {
         var h = function() {
-          Oe || (Oe = !0, u("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", o));
+          je || (je = !0, d("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", o));
         };
         h.isReactWarning = !0, Object.defineProperty(e, "key", {
           get: h,
@@ -415,7 +415,7 @@ function _t() {
     function at(e, o) {
       {
         var h = function() {
-          je || (je = !0, u("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", o));
+          Ae || (Ae = !0, d("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", o));
         };
         h.isReactWarning = !0, Object.defineProperty(e, "ref", {
           get: h,
@@ -423,67 +423,67 @@ function _t() {
         });
       }
     }
-    var ot = function(e, o, h, _, F, T, C) {
-      var S = {
-        $$typeof: D,
+    var ot = function(e, o, h, b, F, D, P) {
+      var k = {
+        $$typeof: y,
         type: e,
         key: o,
         ref: h,
-        props: C,
-        _owner: T
+        props: P,
+        _owner: D
       };
-      return S._store = {}, Object.defineProperty(S._store, "validated", {
+      return k._store = {}, Object.defineProperty(k._store, "validated", {
         configurable: !1,
         enumerable: !1,
         writable: !0,
         value: !1
-      }), Object.defineProperty(S, "_self", {
+      }), Object.defineProperty(k, "_self", {
         configurable: !1,
         enumerable: !1,
         writable: !1,
-        value: _
-      }), Object.defineProperty(S, "_source", {
+        value: b
+      }), Object.defineProperty(k, "_source", {
         configurable: !1,
         enumerable: !1,
         writable: !1,
         value: F
-      }), Object.freeze && (Object.freeze(S.props), Object.freeze(S)), S;
+      }), Object.freeze && (Object.freeze(k.props), Object.freeze(k)), k;
     };
-    function ut(e, o, h, _, F) {
+    function ut(e, o, h, b, F) {
       {
-        var T, C = {}, S = null, L = null;
-        h !== void 0 && (De(h), S = "" + h), it(o) && (De(o.key), S = "" + o.key), rt(o) && (L = o.ref, st(o, F));
-        for (T in o)
-          de.call(o, T) && !tt.hasOwnProperty(T) && (C[T] = o[T]);
+        var D, P = {}, k = null, z = null;
+        h !== void 0 && (Oe(h), k = "" + h), it(o) && (Oe(o.key), k = "" + o.key), rt(o) && (z = o.ref, st(o, F));
+        for (D in o)
+          ge.call(o, D) && !tt.hasOwnProperty(D) && (P[D] = o[D]);
         if (e && e.defaultProps) {
           var N = e.defaultProps;
-          for (T in N)
-            C[T] === void 0 && (C[T] = N[T]);
+          for (D in N)
+            P[D] === void 0 && (P[D] = N[D]);
         }
-        if (S || L) {
+        if (k || z) {
           var U = typeof e == "function" ? e.displayName || e.name || "Unknown" : e;
-          S && nt(C, U), L && at(C, U);
+          k && nt(P, U), z && at(P, U);
         }
-        return ot(e, S, L, F, _, ne.current, C);
+        return ot(e, k, z, F, b, ae.current, P);
       }
     }
-    var Re = c.ReactCurrentOwner, Ae = c.ReactDebugCurrentFrame;
-    function ee(e) {
+    var xe = c.ReactCurrentOwner, Ne = c.ReactDebugCurrentFrame;
+    function re(e) {
       if (e) {
-        var o = e._owner, h = pe(e.type, e._source, o ? o.type : null);
-        Ae.setExtraStackFrame(h);
+        var o = e._owner, h = ve(e.type, e._source, o ? o.type : null);
+        Ne.setExtraStackFrame(h);
       } else
-        Ae.setExtraStackFrame(null);
+        Ne.setExtraStackFrame(null);
     }
-    var xe;
-    xe = !1;
-    function Se(e) {
-      return typeof e == "object" && e !== null && e.$$typeof === D;
+    var ke;
+    ke = !1;
+    function Ce(e) {
+      return typeof e == "object" && e !== null && e.$$typeof === y;
     }
-    function Ne() {
+    function Ue() {
       {
-        if (Re.current) {
-          var e = M(Re.current.type);
+        if (xe.current) {
+          var e = M(xe.current.type);
           if (e)
             return `
 
@@ -503,10 +503,10 @@ Check your code at ` + o + ":" + h + ".";
         return "";
       }
     }
-    var Ue = {};
+    var Ie = {};
     function ct(e) {
       {
-        var o = Ne();
+        var o = Ue();
         if (!o) {
           var h = typeof e == "string" ? e : e.displayName || e.name;
           h && (o = `
@@ -516,35 +516,35 @@ Check the top-level render call using <` + h + ">.");
         return o;
       }
     }
-    function Ie(e, o) {
+    function Le(e, o) {
       {
         if (!e._store || e._store.validated || e.key != null)
           return;
         e._store.validated = !0;
         var h = ct(o);
-        if (Ue[h])
+        if (Ie[h])
           return;
-        Ue[h] = !0;
-        var _ = "";
-        e && e._owner && e._owner !== Re.current && (_ = " It was passed a child from " + M(e._owner.type) + "."), ee(e), u('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', h, _), ee(null);
+        Ie[h] = !0;
+        var b = "";
+        e && e._owner && e._owner !== xe.current && (b = " It was passed a child from " + M(e._owner.type) + "."), re(e), d('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', h, b), re(null);
       }
     }
-    function Le(e, o) {
+    function ze(e, o) {
       {
         if (typeof e != "object")
           return;
-        if (_e(e))
+        if (Re(e))
           for (var h = 0; h < e.length; h++) {
-            var _ = e[h];
-            Se(_) && Ie(_, o);
+            var b = e[h];
+            Ce(b) && Le(b, o);
           }
-        else if (Se(e))
+        else if (Ce(e))
           e._store && (e._store.validated = !0);
         else if (e) {
           var F = s(e);
           if (typeof F == "function" && F !== e.entries)
-            for (var T = F.call(e), C; !(C = T.next()).done; )
-              Se(C.value) && Ie(C.value, o);
+            for (var D = F.call(e), P; !(P = D.next()).done; )
+              Ce(P.value) && Le(P.value, o);
         }
       }
     }
@@ -556,85 +556,85 @@ Check the top-level render call using <` + h + ">.");
         var h;
         if (typeof o == "function")
           h = o.propTypes;
-        else if (typeof o == "object" && (o.$$typeof === f || o.$$typeof === l))
+        else if (typeof o == "object" && (o.$$typeof === u || o.$$typeof === l))
           h = o.propTypes;
         else
           return;
         if (h) {
-          var _ = M(o);
-          Ke(h, e.props, "prop", _, e);
-        } else if (o.PropTypes !== void 0 && !xe) {
-          xe = !0;
+          var b = M(o);
+          Ke(h, e.props, "prop", b, e);
+        } else if (o.PropTypes !== void 0 && !ke) {
+          ke = !0;
           var F = M(o);
-          u("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", F || "Unknown");
+          d("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", F || "Unknown");
         }
-        typeof o.getDefaultProps == "function" && !o.getDefaultProps.isReactClassApproved && u("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
+        typeof o.getDefaultProps == "function" && !o.getDefaultProps.isReactClassApproved && d("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
       }
     }
     function ht(e) {
       {
         for (var o = Object.keys(e.props), h = 0; h < o.length; h++) {
-          var _ = o[h];
-          if (_ !== "children" && _ !== "key") {
-            ee(e), u("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", _), ee(null);
+          var b = o[h];
+          if (b !== "children" && b !== "key") {
+            re(e), d("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", b), re(null);
             break;
           }
         }
-        e.ref !== null && (ee(e), u("Invalid attribute `ref` supplied to `React.Fragment`."), ee(null));
+        e.ref !== null && (re(e), d("Invalid attribute `ref` supplied to `React.Fragment`."), re(null));
       }
     }
-    function ze(e, o, h, _, F, T) {
+    function Me(e, o, h, b, F, D) {
       {
-        var C = z(e);
-        if (!C) {
-          var S = "";
-          (e === void 0 || typeof e == "object" && e !== null && Object.keys(e).length === 0) && (S += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
-          var L = lt(F);
-          L ? S += L : S += Ne();
+        var P = L(e);
+        if (!P) {
+          var k = "";
+          (e === void 0 || typeof e == "object" && e !== null && Object.keys(e).length === 0) && (k += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
+          var z = lt(F);
+          z ? k += z : k += Ue();
           var N;
-          e === null ? N = "null" : _e(e) ? N = "array" : e !== void 0 && e.$$typeof === D ? (N = "<" + (M(e.type) || "Unknown") + " />", S = " Did you accidentally export a JSX literal instead of a component?") : N = typeof e, u("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", N, S);
+          e === null ? N = "null" : Re(e) ? N = "array" : e !== void 0 && e.$$typeof === y ? (N = "<" + (M(e.type) || "Unknown") + " />", k = " Did you accidentally export a JSX literal instead of a component?") : N = typeof e, d("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", N, k);
         }
-        var U = ut(e, o, h, F, T);
+        var U = ut(e, o, h, F, D);
         if (U == null)
           return U;
-        if (C) {
-          var G = o.children;
-          if (G !== void 0)
-            if (_)
-              if (_e(G)) {
-                for (var te = 0; te < G.length; te++)
-                  Le(G[te], e);
-                Object.freeze && Object.freeze(G);
+        if (P) {
+          var B = o.children;
+          if (B !== void 0)
+            if (b)
+              if (Re(B)) {
+                for (var ie = 0; ie < B.length; ie++)
+                  ze(B[ie], e);
+                Object.freeze && Object.freeze(B);
               } else
-                u("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+                d("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
             else
-              Le(G, e);
+              ze(B, e);
         }
-        return e === k ? ht(U) : ft(U), U;
+        return e === x ? ht(U) : ft(U), U;
       }
     }
     function pt(e, o, h) {
-      return ze(e, o, h, !0);
+      return Me(e, o, h, !0);
     }
     function dt(e, o, h) {
-      return ze(e, o, h, !1);
+      return Me(e, o, h, !1);
     }
     var vt = dt, gt = pt;
-    oe.Fragment = k, oe.jsx = vt, oe.jsxs = gt;
-  }()), oe;
+    ue.Fragment = x, ue.jsx = vt, ue.jsxs = gt;
+  }()), ue;
 }
-(function(v) {
-  process.env.NODE_ENV === "production" ? v.exports = bt() : v.exports = _t();
+(function(m) {
+  process.env.NODE_ENV === "production" ? m.exports = bt() : m.exports = _t();
 })(yt);
-function ge(v) {
-  throw new Error('Could not dynamically require "' + v + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
+function ye(m) {
+  throw new Error('Could not dynamically require "' + m + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
 }
-var ke = {}, Et = {
+var Pe = {}, Et = {
   get exports() {
-    return ke;
+    return Pe;
   },
-  set exports(v) {
-    ke = v;
+  set exports(m) {
+    Pe = m;
   }
 };
 /*!
@@ -644,38 +644,38 @@ var ke = {}, Et = {
  * @link https://github.com/simple-uploader/Uploader
  * @license MIT
  */
-(function(v, D) {
-  (function(m) {
-    v.exports = m();
+(function(m, y) {
+  (function(C) {
+    m.exports = C();
   })(function() {
-    return function m(k, w, a) {
-      function x(t, r) {
+    return function C(x, w, n) {
+      function E(t, i) {
         if (!w[t]) {
-          if (!k[t]) {
-            var l = typeof ge == "function" && ge;
-            if (!r && l)
+          if (!x[t]) {
+            var l = typeof ye == "function" && ye;
+            if (!i && l)
               return l(t, !0);
             if (p)
               return p(t, !0);
             throw new Error("Cannot find module '" + t + "'");
           }
-          var n = w[t] = { exports: {} };
-          k[t][0].call(n.exports, function(i) {
-            var d = k[t][1][i];
-            return x(d || i);
-          }, n, n.exports, m, k, w, a);
+          var a = w[t] = { exports: {} };
+          x[t][0].call(a.exports, function(r) {
+            var f = x[t][1][r];
+            return E(f || r);
+          }, a, a.exports, C, x, w, n);
         }
         return w[t].exports;
       }
-      for (var p = typeof ge == "function" && ge, f = 0; f < a.length; f++)
-        x(a[f]);
-      return x;
-    }({ 1: [function(m, k, w) {
-      var a = m("./utils");
-      function x(f, t, r) {
-        a.defineNonEnumerable(this, "uploader", f), a.defineNonEnumerable(this, "file", t), a.defineNonEnumerable(this, "bytes", null), this.offset = r, this.tested = !1, this.retries = 0, this.pendingRetry = !1, this.preprocessState = 0, this.readState = 0, this.loaded = 0, this.total = 0, this.chunkSize = a.evalOpts(f.opts.chunkSize, t, this), this.startByte = this.offset * this.chunkSize, this.endByte = this.computeEndByte(), this.xhr = null;
+      for (var p = typeof ye == "function" && ye, u = 0; u < n.length; u++)
+        E(n[u]);
+      return E;
+    }({ 1: [function(C, x, w) {
+      var n = C("./utils");
+      function E(u, t, i) {
+        n.defineNonEnumerable(this, "uploader", u), n.defineNonEnumerable(this, "file", t), n.defineNonEnumerable(this, "bytes", null), this.offset = i, this.tested = !1, this.retries = 0, this.pendingRetry = !1, this.preprocessState = 0, this.readState = 0, this.loaded = 0, this.total = 0, this.chunkSize = n.evalOpts(u.opts.chunkSize, t, this), this.startByte = this.offset * this.chunkSize, this.endByte = this.computeEndByte(), this.xhr = null;
       }
-      var p = x.STATUS = {
+      var p = E.STATUS = {
         PENDING: "pending",
         UPLOADING: "uploading",
         READING: "reading",
@@ -685,13 +685,13 @@ var ke = {}, Et = {
         PROGRESS: "progress",
         RETRY: "retry"
       };
-      a.extend(x.prototype, {
-        _event: function(f, t) {
-          t = a.toArray(arguments), t.unshift(this), this.file._chunkEvent.apply(this.file, t);
+      n.extend(E.prototype, {
+        _event: function(u, t) {
+          t = n.toArray(arguments), t.unshift(this), this.file._chunkEvent.apply(this.file, t);
         },
         computeEndByte: function() {
-          var f = Math.min(this.file.size, (this.offset + 1) * this.chunkSize);
-          return this.file.size - f < this.chunkSize && !this.uploader.opts.forceChunkSize && (f = this.file.size), f;
+          var u = Math.min(this.file.size, (this.offset + 1) * this.chunkSize);
+          return this.file.size - u < this.chunkSize && !this.uploader.opts.forceChunkSize && (u = this.file.size), u;
         },
         getParams: function() {
           return {
@@ -705,31 +705,31 @@ var ke = {}, Et = {
             totalChunks: this.file.chunks.length
           };
         },
-        getTarget: function(f, t) {
-          return t.length ? (f.indexOf("?") < 0 ? f += "?" : f += "&", f + t.join("&")) : f;
+        getTarget: function(u, t) {
+          return t.length ? (u.indexOf("?") < 0 ? u += "?" : u += "&", u + t.join("&")) : u;
         },
         test: function() {
           this.xhr = new XMLHttpRequest(), this.xhr.addEventListener("load", l, !1), this.xhr.addEventListener("error", l, !1);
-          var f = a.evalOpts(this.uploader.opts.testMethod, this.file, this), t = this.prepareXhrRequest(f, !0);
+          var u = n.evalOpts(this.uploader.opts.testMethod, this.file, this), t = this.prepareXhrRequest(u, !0);
           this.xhr.send(t);
-          var r = this;
-          function l(n) {
-            var i = r.status(!0);
-            i === p.ERROR ? (r._event(i, r.message()), r.uploader.uploadNextChunk()) : i === p.SUCCESS ? (r._event(i, r.message()), r.tested = !0) : r.file.paused || (r.tested = !0, r.send());
+          var i = this;
+          function l(a) {
+            var r = i.status(!0);
+            r === p.ERROR ? (i._event(r, i.message()), i.uploader.uploadNextChunk()) : r === p.SUCCESS ? (i._event(r, i.message()), i.tested = !0) : i.file.paused || (i.tested = !0, i.send());
           }
         },
         preprocessFinished: function() {
           this.endByte = this.computeEndByte(), this.preprocessState = 2, this.send();
         },
-        readFinished: function(f) {
-          this.readState = 2, this.bytes = f, this.send();
+        readFinished: function(u) {
+          this.readState = 2, this.bytes = u, this.send();
         },
         send: function() {
-          var f = this.uploader.opts.preprocess, t = this.uploader.opts.readFileFn;
-          if (a.isFunction(f))
+          var u = this.uploader.opts.preprocess, t = this.uploader.opts.readFileFn;
+          if (n.isFunction(u))
             switch (this.preprocessState) {
               case 0:
-                this.preprocessState = 1, f(this);
+                this.preprocessState = 1, u(this);
                 return;
               case 1:
                 return;
@@ -745,40 +745,40 @@ var ke = {}, Et = {
             this.test();
             return;
           }
-          this.loaded = 0, this.total = 0, this.pendingRetry = !1, this.xhr = new XMLHttpRequest(), this.xhr.upload.addEventListener("progress", i, !1), this.xhr.addEventListener("load", d, !1), this.xhr.addEventListener("error", d, !1);
-          var r = a.evalOpts(this.uploader.opts.uploadMethod, this.file, this), l = this.prepareXhrRequest(r, !1, this.uploader.opts.method, this.bytes);
+          this.loaded = 0, this.total = 0, this.pendingRetry = !1, this.xhr = new XMLHttpRequest(), this.xhr.upload.addEventListener("progress", r, !1), this.xhr.addEventListener("load", f, !1), this.xhr.addEventListener("error", f, !1);
+          var i = n.evalOpts(this.uploader.opts.uploadMethod, this.file, this), l = this.prepareXhrRequest(i, !1, this.uploader.opts.method, this.bytes);
           this.xhr.send(l);
-          var n = this;
-          function i(E) {
-            E.lengthComputable && (n.loaded = E.loaded, n.total = E.total), n._event(p.PROGRESS, E);
+          var a = this;
+          function r(R) {
+            R.lengthComputable && (a.loaded = R.loaded, a.total = R.total), a._event(p.PROGRESS, R);
           }
-          function d(E) {
-            var s = n.message();
-            n.processingResponse = !0, n.uploader.opts.processResponse(s, function(c, u) {
-              if (n.processingResponse = !1, !!n.xhr) {
-                n.processedState = {
+          function f(R) {
+            var s = a.message();
+            a.processingResponse = !0, a.uploader.opts.processResponse(s, function(c, d) {
+              if (a.processingResponse = !1, !!a.xhr) {
+                a.processedState = {
                   err: c,
-                  res: u
+                  res: d
                 };
-                var y = n.status();
-                if (y === p.SUCCESS || y === p.ERROR)
-                  n._event(y, u), y === p.ERROR && n.uploader.uploadNextChunk();
+                var v = a.status();
+                if (v === p.SUCCESS || v === p.ERROR)
+                  a._event(v, d), v === p.ERROR && a.uploader.uploadNextChunk();
                 else {
-                  n._event(p.RETRY, u), n.pendingRetry = !0, n.abort(), n.retries++;
-                  var b = n.uploader.opts.chunkRetryInterval;
-                  b !== null ? setTimeout(function() {
-                    n.send();
-                  }, b) : n.send();
+                  a._event(p.RETRY, d), a.pendingRetry = !0, a.abort(), a.retries++;
+                  var S = a.uploader.opts.chunkRetryInterval;
+                  S !== null ? setTimeout(function() {
+                    a.send();
+                  }, S) : a.send();
                 }
               }
-            }, n.file, n);
+            }, a.file, a);
           }
         },
         abort: function() {
-          var f = this.xhr;
-          this.xhr = null, this.processingResponse = !1, this.processedState = null, f && f.abort();
+          var u = this.xhr;
+          this.xhr = null, this.processingResponse = !1, this.processedState = null, u && u.abort();
         },
-        status: function(f) {
+        status: function(u) {
           if (this.readState === 1)
             return p.READING;
           if (this.pendingRetry || this.preprocessState === 1)
@@ -787,9 +787,9 @@ var ke = {}, Et = {
             if (this.xhr.readyState < 4 || this.processingResponse)
               return p.UPLOADING;
             var t;
-            this.uploader.opts.successStatuses.indexOf(this.xhr.status) > -1 ? t = p.SUCCESS : this.uploader.opts.permanentErrors.indexOf(this.xhr.status) > -1 || !f && this.retries >= this.uploader.opts.maxChunkRetries ? t = p.ERROR : (this.abort(), t = p.PENDING);
-            var r = this.processedState;
-            return r && r.err && (t = p.ERROR), t;
+            this.uploader.opts.successStatuses.indexOf(this.xhr.status) > -1 ? t = p.SUCCESS : this.uploader.opts.permanentErrors.indexOf(this.xhr.status) > -1 || !u && this.retries >= this.uploader.opts.maxChunkRetries ? t = p.ERROR : (this.abort(), t = p.PENDING);
+            var i = this.processedState;
+            return i && i.err && (t = p.ERROR), t;
           } else
             return p.PENDING;
         },
@@ -799,82 +799,82 @@ var ke = {}, Et = {
         progress: function() {
           if (this.pendingRetry)
             return 0;
-          var f = this.status();
-          return f === p.SUCCESS || f === p.ERROR ? 1 : f === p.PENDING ? 0 : this.total > 0 ? this.loaded / this.total : 0;
+          var u = this.status();
+          return u === p.SUCCESS || u === p.ERROR ? 1 : u === p.PENDING ? 0 : this.total > 0 ? this.loaded / this.total : 0;
         },
         sizeUploaded: function() {
-          var f = this.endByte - this.startByte;
-          return this.status() !== p.SUCCESS && (f = this.progress() * f), f;
+          var u = this.endByte - this.startByte;
+          return this.status() !== p.SUCCESS && (u = this.progress() * u), u;
         },
-        prepareXhrRequest: function(f, t, r, l) {
-          var n = a.evalOpts(this.uploader.opts.query, this.file, this, t);
-          n = a.extend(this.getParams(), n), n = this.uploader.opts.processParams(n, this.file, this, t);
-          var i = a.evalOpts(this.uploader.opts.target, this.file, this, t), d = null;
-          if (f === "GET" || r === "octet") {
-            var E = [];
-            a.each(n, function(s, c) {
-              E.push([encodeURIComponent(c), encodeURIComponent(s)].join("="));
-            }), i = this.getTarget(i, E), d = l || null;
+        prepareXhrRequest: function(u, t, i, l) {
+          var a = n.evalOpts(this.uploader.opts.query, this.file, this, t);
+          a = n.extend(this.getParams(), a), a = this.uploader.opts.processParams(a, this.file, this, t);
+          var r = n.evalOpts(this.uploader.opts.target, this.file, this, t), f = null;
+          if (u === "GET" || i === "octet") {
+            var R = [];
+            n.each(a, function(s, c) {
+              R.push([encodeURIComponent(c), encodeURIComponent(s)].join("="));
+            }), r = this.getTarget(r, R), f = l || null;
           } else
-            d = new FormData(), a.each(n, function(s, c) {
-              d.append(c, s);
-            }), typeof l < "u" && d.append(this.uploader.opts.fileParameterName, l, this.file.name);
-          return this.xhr.open(f, i, !0), this.xhr.withCredentials = this.uploader.opts.withCredentials, a.each(a.evalOpts(this.uploader.opts.headers, this.file, this, t), function(s, c) {
+            f = new FormData(), n.each(a, function(s, c) {
+              f.append(c, s);
+            }), typeof l < "u" && f.append(this.uploader.opts.fileParameterName, l, this.file.name);
+          return this.xhr.open(u, r, !0), this.xhr.withCredentials = this.uploader.opts.withCredentials, n.each(n.evalOpts(this.uploader.opts.headers, this.file, this, t), function(s, c) {
             this.xhr.setRequestHeader(c, s);
-          }, this), d;
+          }, this), f;
         }
-      }), k.exports = x;
-    }, { "./utils": 5 }], 2: [function(m, k, w) {
-      var a = m("./utils").each, x = {
+      }), x.exports = E;
+    }, { "./utils": 5 }], 2: [function(C, x, w) {
+      var n = C("./utils").each, E = {
         _eventData: null,
-        on: function(p, f) {
+        on: function(p, u) {
           this._eventData || (this._eventData = {}), this._eventData[p] || (this._eventData[p] = []);
           var t = !1;
-          a(this._eventData[p], function(r) {
-            if (r === f)
+          n(this._eventData[p], function(i) {
+            if (i === u)
               return t = !0, !1;
-          }), t || this._eventData[p].push(f);
+          }), t || this._eventData[p].push(u);
         },
-        off: function(p, f) {
-          this._eventData || (this._eventData = {}), !(!this._eventData[p] || !this._eventData[p].length) && (f ? a(this._eventData[p], function(t, r) {
-            if (t === f)
-              return this._eventData[p].splice(r, 1), !1;
+        off: function(p, u) {
+          this._eventData || (this._eventData = {}), !(!this._eventData[p] || !this._eventData[p].length) && (u ? n(this._eventData[p], function(t, i) {
+            if (t === u)
+              return this._eventData[p].splice(i, 1), !1;
           }, this) : this._eventData[p] = []);
         },
         trigger: function(p) {
           if (this._eventData || (this._eventData = {}), !this._eventData[p])
             return !0;
-          var f = this._eventData[p].slice.call(arguments, 1), t = !1;
-          return a(this._eventData[p], function(r) {
-            t = r.apply(this, f) === !1 || t;
+          var u = this._eventData[p].slice.call(arguments, 1), t = !1;
+          return n(this._eventData[p], function(i) {
+            t = i.apply(this, u) === !1 || t;
           }, this), !t;
         }
       };
-      k.exports = x;
-    }, { "./utils": 5 }], 3: [function(m, k, w) {
-      var a = m("./utils"), x = m("./event"), p = m("./file"), f = m("./chunk"), t = "0.6.0", r = typeof window > "u", l = r ? !1 : window.navigator.msPointerEnabled, n = function() {
-        if (r)
+      x.exports = E;
+    }, { "./utils": 5 }], 3: [function(C, x, w) {
+      var n = C("./utils"), E = C("./event"), p = C("./file"), u = C("./chunk"), t = "0.6.0", i = typeof window > "u", l = i ? !1 : window.navigator.msPointerEnabled, a = function() {
+        if (i)
           return !1;
-        var s = "slice", c = a.isDefined(window.File) && a.isDefined(window.Blob) && a.isDefined(window.FileList), u = null;
-        return c && (u = window.Blob.prototype, a.each(["slice", "webkitSlice", "mozSlice"], function(y) {
-          if (u[y])
-            return s = y, !1;
-        }), c = !!u[s]), c && (d.sliceName = s), u = null, c;
-      }(), i = function() {
-        if (r)
+        var s = "slice", c = n.isDefined(window.File) && n.isDefined(window.Blob) && n.isDefined(window.FileList), d = null;
+        return c && (d = window.Blob.prototype, n.each(["slice", "webkitSlice", "mozSlice"], function(v) {
+          if (d[v])
+            return s = v, !1;
+        }), c = !!d[s]), c && (f.sliceName = s), d = null, c;
+      }(), r = function() {
+        if (i)
           return !1;
         var s = window.document.createElement("input");
         s.type = "file";
         var c = "webkitdirectory" in s || "directory" in s;
         return s = null, c;
       }();
-      function d(s) {
-        this.support = n, this.support && (this.supportDirectory = i, a.defineNonEnumerable(this, "filePaths", {}), this.opts = a.extend({}, d.defaults, s || {}), this.preventEvent = a.bind(this._preventEvent, this), p.call(this, this));
+      function f(s) {
+        this.support = a, this.support && (this.supportDirectory = r, n.defineNonEnumerable(this, "filePaths", {}), this.opts = n.extend({}, f.defaults, s || {}), this.preventEvent = n.bind(this._preventEvent, this), p.call(this, this));
       }
-      var E = function(s, c, u, y, b) {
-        b.readFinished(s.file[d.sliceName](u, y, c));
+      var R = function(s, c, d, v, S) {
+        S.readFinished(s.file[f.sliceName](d, v, c));
       };
-      d.version = t, d.defaults = {
+      f.version = t, f.defaults = {
         chunkSize: 1024 * 1024,
         forceChunkSize: !1,
         simultaneousUploads: 3,
@@ -900,7 +900,7 @@ var ke = {}, Et = {
         successStatuses: [200, 201, 202],
         onDropStopPropagation: !1,
         initFileFn: null,
-        readFileFn: E,
+        readFileFn: R,
         checkChunkUploadedByResponse: null,
         initialPaused: !1,
         processResponse: function(s, c) {
@@ -909,33 +909,33 @@ var ke = {}, Et = {
         processParams: function(s) {
           return s;
         }
-      }, d.utils = a, d.event = x, d.File = p, d.Chunk = f, d.prototype = a.extend({}, p.prototype), a.extend(d.prototype, x), a.extend(d.prototype, {
-        constructor: d,
+      }, f.utils = n, f.event = E, f.File = p, f.Chunk = u, f.prototype = n.extend({}, p.prototype), n.extend(f.prototype, E), n.extend(f.prototype, {
+        constructor: f,
         _trigger: function(s) {
-          var c = a.toArray(arguments), u = !this.trigger.apply(this, arguments);
-          return s !== "catchAll" && (c.unshift("catchAll"), u = !this.trigger.apply(this, c) || u), !u;
+          var c = n.toArray(arguments), d = !this.trigger.apply(this, arguments);
+          return s !== "catchAll" && (c.unshift("catchAll"), d = !this.trigger.apply(this, c) || d), !d;
         },
         _triggerAsync: function() {
           var s = arguments;
-          a.nextTick(function() {
+          n.nextTick(function() {
             this._trigger.apply(this, s);
           }, this);
         },
         addFiles: function(s, c) {
-          var u = [], y = this.fileList.length;
-          a.each(s, function(g) {
+          var d = [], v = this.fileList.length;
+          n.each(s, function(g) {
             if ((!l || l && g.size > 0) && !(g.size % 4096 === 0 && (g.name === "." || g.fileName === "."))) {
               var O = this.generateUniqueIdentifier(g);
               if (this.opts.allowDuplicateUploads || !this.getFromUniqueIdentifier(O)) {
                 var j = new p(this, g, this);
-                j.uniqueIdentifier = O, this._trigger("fileAdded", j, c) ? u.push(j) : p.prototype.removeFile.call(this, j);
+                j.uniqueIdentifier = O, this._trigger("fileAdded", j, c) ? d.push(j) : p.prototype.removeFile.call(this, j);
               }
             }
           }, this);
-          var b = this.fileList.slice(y);
-          this._trigger("filesAdded", u, b, c) ? (a.each(u, function(g) {
+          var S = this.fileList.slice(v);
+          this._trigger("filesAdded", d, S, c) ? (n.each(d, function(g) {
             this.opts.singleFile && this.files.length > 0 && this.removeFile(this.files[0]), this.files.push(g);
-          }, this), this._trigger("filesSubmitted", u, b, c)) : a.each(b, function(g) {
+          }, this), this._trigger("filesSubmitted", d, S, c)) : n.each(S, function(g) {
             p.prototype.removeFile.call(this, g);
           }, this);
         },
@@ -951,35 +951,35 @@ var ke = {}, Et = {
         },
         generateUniqueIdentifier: function(s) {
           var c = this.opts.generateUniqueIdentifier;
-          if (a.isFunction(c))
+          if (n.isFunction(c))
             return c(s);
-          var u = s.relativePath || s.webkitRelativePath || s.fileName || s.name;
-          return s.size + "-" + u.replace(/[^0-9a-zA-Z_-]/img, "");
+          var d = s.relativePath || s.webkitRelativePath || s.fileName || s.name;
+          return s.size + "-" + d.replace(/[^0-9a-zA-Z_-]/img, "");
         },
         getFromUniqueIdentifier: function(s) {
           var c = !1;
-          return a.each(this.files, function(u) {
-            if (u.uniqueIdentifier === s)
-              return c = u, !1;
+          return n.each(this.files, function(d) {
+            if (d.uniqueIdentifier === s)
+              return c = d, !1;
           }), c;
         },
         uploadNextChunk: function(s) {
-          var c = !1, u = f.STATUS.PENDING, y = this.uploader.opts.checkChunkUploadedByResponse;
-          if (this.opts.prioritizeFirstAndLastChunk && (a.each(this.files, function(g) {
-            if (!g.paused && !(y && !g._firstResponse && g.isUploading())) {
-              if (g.chunks.length && g.chunks[0].status() === u)
+          var c = !1, d = u.STATUS.PENDING, v = this.uploader.opts.checkChunkUploadedByResponse;
+          if (this.opts.prioritizeFirstAndLastChunk && (n.each(this.files, function(g) {
+            if (!g.paused && !(v && !g._firstResponse && g.isUploading())) {
+              if (g.chunks.length && g.chunks[0].status() === d)
                 return g.chunks[0].send(), c = !0, !1;
-              if (g.chunks.length > 1 && g.chunks[g.chunks.length - 1].status() === u)
+              if (g.chunks.length > 1 && g.chunks[g.chunks.length - 1].status() === d)
                 return g.chunks[g.chunks.length - 1].send(), c = !0, !1;
             }
           }), c))
             return c;
-          if (a.each(this.files, function(g) {
+          if (n.each(this.files, function(g) {
             if (!g.paused) {
-              if (y && !g._firstResponse && g.isUploading())
+              if (v && !g._firstResponse && g.isUploading())
                 return;
-              a.each(g.chunks, function(O) {
-                if (O.status() === u)
+              n.each(g.chunks, function(O) {
+                if (O.status() === d)
                   return O.send(), c = !0, !1;
               });
             }
@@ -987,42 +987,42 @@ var ke = {}, Et = {
               return !1;
           }), c)
             return !0;
-          var b = !1;
-          return a.each(this.files, function(g) {
+          var S = !1;
+          return n.each(this.files, function(g) {
             if (!g.isComplete())
-              return b = !0, !1;
-          }), !b && !s && this.files.length && this._triggerAsync("complete"), b;
+              return S = !0, !1;
+          }), !S && !s && this.files.length && this._triggerAsync("complete"), S;
         },
         upload: function(s) {
           var c = this._shouldUploadNext();
           if (c !== !1) {
             !s && this._trigger("uploadStart");
-            for (var u = !1, y = 1; y <= this.opts.simultaneousUploads - c && (u = this.uploadNextChunk(!s) || u, !(!u && s)); y++)
+            for (var d = !1, v = 1; v <= this.opts.simultaneousUploads - c && (d = this.uploadNextChunk(!s) || d, !(!d && s)); v++)
               ;
-            !u && !s && this._triggerAsync("complete");
+            !d && !s && this._triggerAsync("complete");
           }
         },
         _shouldUploadNext: function() {
-          var s = 0, c = !0, u = this.opts.simultaneousUploads, y = f.STATUS.UPLOADING;
-          return a.each(this.files, function(b) {
-            return a.each(b.chunks, function(g) {
-              if (g.status() === y && (s++, s >= u))
+          var s = 0, c = !0, d = this.opts.simultaneousUploads, v = u.STATUS.UPLOADING;
+          return n.each(this.files, function(S) {
+            return n.each(S.chunks, function(g) {
+              if (g.status() === v && (s++, s >= d))
                 return c = !1, !1;
             }), c;
           }), c && s;
         },
-        assignBrowse: function(s, c, u, y) {
-          typeof s.length > "u" && (s = [s]), a.each(s, function(b) {
+        assignBrowse: function(s, c, d, v) {
+          typeof s.length > "u" && (s = [s]), n.each(s, function(S) {
             var g;
-            b.tagName === "INPUT" && b.type === "file" ? g = b : (g = document.createElement("input"), g.setAttribute("type", "file"), a.extend(g.style, {
+            S.tagName === "INPUT" && S.type === "file" ? g = S : (g = document.createElement("input"), g.setAttribute("type", "file"), n.extend(g.style, {
               visibility: "hidden",
               position: "absolute",
               width: "1px",
               height: "1px"
-            }), b.appendChild(g), b.addEventListener("click", function(j) {
-              b.tagName.toLowerCase() !== "label" && g.click();
-            }, !1)), !this.opts.singleFile && !u && g.setAttribute("multiple", "multiple"), c && g.setAttribute("webkitdirectory", "webkitdirectory"), y && a.each(y, function(j, Y) {
-              g.setAttribute(Y, j);
+            }), S.appendChild(g), S.addEventListener("click", function(j) {
+              S.tagName.toLowerCase() !== "label" && g.click();
+            }, !1)), !this.opts.singleFile && !d && g.setAttribute("multiple", "multiple"), c && g.setAttribute("webkitdirectory", "webkitdirectory"), v && n.each(v, function(j, G) {
+              g.setAttribute(G, j);
             });
             var O = this;
             g.addEventListener("change", function(j) {
@@ -1037,52 +1037,52 @@ var ke = {}, Et = {
           s.items && s.items[0] && s.items[0].webkitGetAsEntry ? this.webkitReadDataTransfer(s, c) : this.addFiles(s.files, c);
         },
         webkitReadDataTransfer: function(s, c) {
-          var u = this, y = s.items.length, b = [];
-          a.each(s.items, function(I) {
-            var z = I.webkitGetAsEntry();
-            if (!z) {
-              Y();
+          var d = this, v = s.items.length, S = [];
+          n.each(s.items, function(I) {
+            var L = I.webkitGetAsEntry();
+            if (!L) {
+              G();
               return;
             }
-            z.isFile ? O(I.getAsFile(), z.fullPath) : g(z.createReader());
+            L.isFile ? O(I.getAsFile(), L.fullPath) : g(L.createReader());
           });
           function g(I) {
-            I.readEntries(function(z) {
-              z.length ? (y += z.length, a.each(z, function(W) {
-                if (W.isFile) {
-                  var K = W.fullPath;
-                  W.file(function(M) {
-                    O(M, K);
+            I.readEntries(function(L) {
+              L.length ? (v += L.length, n.each(L, function(q) {
+                if (q.isFile) {
+                  var X = q.fullPath;
+                  q.file(function(M) {
+                    O(M, X);
                   }, j);
                 } else
-                  W.isDirectory && g(W.createReader());
-              }), g(I)) : Y();
+                  q.isDirectory && g(q.createReader());
+              }), g(I)) : G();
             }, j);
           }
-          function O(I, z) {
-            I.relativePath = z.substring(1), b.push(I), Y();
+          function O(I, L) {
+            I.relativePath = L.substring(1), S.push(I), G();
           }
           function j(I) {
             throw I;
           }
-          function Y() {
-            --y === 0 && u.addFiles(b, c);
+          function G() {
+            --v === 0 && d.addFiles(S, c);
           }
         },
-        _assignHelper: function(s, c, u) {
+        _assignHelper: function(s, c, d) {
           typeof s.length > "u" && (s = [s]);
-          var y = u ? "removeEventListener" : "addEventListener";
-          a.each(s, function(b) {
-            a.each(c, function(g, O) {
-              b[y](O, g, !1);
+          var v = d ? "removeEventListener" : "addEventListener";
+          n.each(s, function(S) {
+            n.each(c, function(g, O) {
+              S[v](O, g, !1);
             }, this);
           }, this);
         },
         _preventEvent: function(s) {
-          a.preventEvent(s), this._trigger(s.type, s);
+          n.preventEvent(s), this._trigger(s.type, s);
         },
         assignDrop: function(s) {
-          this._onDrop = a.bind(this.onDrop, this), this._assignHelper(s, {
+          this._onDrop = n.bind(this.onDrop, this), this._assignHelper(s, {
             dragover: this.preventEvent,
             dragenter: this.preventEvent,
             dragleave: this.preventEvent,
@@ -1097,87 +1097,87 @@ var ke = {}, Et = {
             drop: this._onDrop
           }, !0), this._onDrop = null;
         }
-      }), k.exports = d;
-    }, { "./chunk": 1, "./event": 2, "./file": 4, "./utils": 5 }], 4: [function(m, k, w) {
-      var a = m("./utils"), x = m("./chunk");
-      function p(t, r, l) {
-        a.defineNonEnumerable(this, "uploader", t), this.isRoot = this.isFolder = t === this, a.defineNonEnumerable(this, "parent", l || null), a.defineNonEnumerable(this, "files", []), a.defineNonEnumerable(this, "fileList", []), a.defineNonEnumerable(this, "chunks", []), a.defineNonEnumerable(this, "_errorFiles", []), a.defineNonEnumerable(this, "file", null), this.id = a.uid(), this.isRoot || !r ? this.file = null : a.isString(r) ? (this.isFolder = !0, this.file = null, this.path = r, this.parent.path && (r = r.substr(this.parent.path.length)), this.name = r.charAt(r.length - 1) === "/" ? r.substr(0, r.length - 1) : r) : (this.file = r, this.fileType = this.file.type, this.name = r.fileName || r.name, this.size = r.size, this.relativePath = r.relativePath || r.webkitRelativePath || this.name, this._parseFile()), this.paused = t.opts.initialPaused, this.error = !1, this.allError = !1, this.aborted = !1, this.completed = !1, this.averageSpeed = 0, this.currentSpeed = 0, this._lastProgressCallback = Date.now(), this._prevUploadedSize = 0, this._prevProgress = 0, this.bootstrap();
+      }), x.exports = f;
+    }, { "./chunk": 1, "./event": 2, "./file": 4, "./utils": 5 }], 4: [function(C, x, w) {
+      var n = C("./utils"), E = C("./chunk");
+      function p(t, i, l) {
+        n.defineNonEnumerable(this, "uploader", t), this.isRoot = this.isFolder = t === this, n.defineNonEnumerable(this, "parent", l || null), n.defineNonEnumerable(this, "files", []), n.defineNonEnumerable(this, "fileList", []), n.defineNonEnumerable(this, "chunks", []), n.defineNonEnumerable(this, "_errorFiles", []), n.defineNonEnumerable(this, "file", null), this.id = n.uid(), this.isRoot || !i ? this.file = null : n.isString(i) ? (this.isFolder = !0, this.file = null, this.path = i, this.parent.path && (i = i.substr(this.parent.path.length)), this.name = i.charAt(i.length - 1) === "/" ? i.substr(0, i.length - 1) : i) : (this.file = i, this.fileType = this.file.type, this.name = i.fileName || i.name, this.size = i.size, this.relativePath = i.relativePath || i.webkitRelativePath || this.name, this._parseFile()), this.paused = t.opts.initialPaused, this.error = !1, this.allError = !1, this.aborted = !1, this.completed = !1, this.averageSpeed = 0, this.currentSpeed = 0, this._lastProgressCallback = Date.now(), this._prevUploadedSize = 0, this._prevProgress = 0, this.bootstrap();
       }
-      a.extend(p.prototype, {
+      n.extend(p.prototype, {
         _parseFile: function() {
-          var t = f(this.relativePath);
+          var t = u(this.relativePath);
           if (t.length) {
-            var r = this.uploader.filePaths;
-            a.each(t, function(l, n) {
-              var i = r[l];
-              i || (i = new p(this.uploader, l, this.parent), r[l] = i, this._updateParentFileList(i)), this.parent = i, i.files.push(this), t[n + 1] || i.fileList.push(this);
+            var i = this.uploader.filePaths;
+            n.each(t, function(l, a) {
+              var r = i[l];
+              r || (r = new p(this.uploader, l, this.parent), i[l] = r, this._updateParentFileList(r)), this.parent = r, r.files.push(this), t[a + 1] || r.fileList.push(this);
             }, this);
           } else
             this._updateParentFileList();
         },
         _updateParentFileList: function(t) {
           t || (t = this);
-          var r = this.parent;
-          r && r.fileList.push(t);
+          var i = this.parent;
+          i && i.fileList.push(t);
         },
-        _eachAccess: function(t, r) {
+        _eachAccess: function(t, i) {
           if (this.isFolder) {
-            a.each(this.files, function(l, n) {
-              return t.call(this, l, n);
+            n.each(this.files, function(l, a) {
+              return t.call(this, l, a);
             }, this);
             return;
           }
-          r.call(this, this);
+          i.call(this, this);
         },
         bootstrap: function() {
           if (!this.isFolder) {
             var t = this.uploader.opts;
-            a.isFunction(t.initFileFn) && t.initFileFn.call(this, this), this.abort(!0), this._resetError(), this._prevProgress = 0;
-            for (var r = t.forceChunkSize ? Math.ceil : Math.floor, l = Math.max(r(this.size / t.chunkSize), 1), n = 0; n < l; n++)
-              this.chunks.push(new x(this.uploader, this, n));
+            n.isFunction(t.initFileFn) && t.initFileFn.call(this, this), this.abort(!0), this._resetError(), this._prevProgress = 0;
+            for (var i = t.forceChunkSize ? Math.ceil : Math.floor, l = Math.max(i(this.size / t.chunkSize), 1), a = 0; a < l; a++)
+              this.chunks.push(new E(this.uploader, this, a));
           }
         },
         _measureSpeed: function() {
-          var t = this.uploader.opts.speedSmoothingFactor, r = Date.now() - this._lastProgressCallback;
-          if (r) {
+          var t = this.uploader.opts.speedSmoothingFactor, i = Date.now() - this._lastProgressCallback;
+          if (i) {
             var l = this.sizeUploaded();
-            this.currentSpeed = Math.max((l - this._prevUploadedSize) / r * 1e3, 0), this.averageSpeed = t * this.currentSpeed + (1 - t) * this.averageSpeed, this._prevUploadedSize = l, this.parent && this.parent._checkProgress() && this.parent._measureSpeed();
+            this.currentSpeed = Math.max((l - this._prevUploadedSize) / i * 1e3, 0), this.averageSpeed = t * this.currentSpeed + (1 - t) * this.averageSpeed, this._prevUploadedSize = l, this.parent && this.parent._checkProgress() && this.parent._measureSpeed();
           }
         },
         _checkProgress: function(t) {
           return Date.now() - this._lastProgressCallback >= this.uploader.opts.progressCallbacksInterval;
         },
-        _chunkEvent: function(t, r, l) {
-          var n = this.uploader, i = x.STATUS, d = this, E = this.getRoot(), s = function() {
-            d._measureSpeed(), n._trigger("fileProgress", E, d, t), d._lastProgressCallback = Date.now();
+        _chunkEvent: function(t, i, l) {
+          var a = this.uploader, r = E.STATUS, f = this, R = this.getRoot(), s = function() {
+            f._measureSpeed(), a._trigger("fileProgress", R, f, t), f._lastProgressCallback = Date.now();
           };
-          switch (r) {
-            case i.PROGRESS:
+          switch (i) {
+            case r.PROGRESS:
               this._checkProgress() && s();
               break;
-            case i.ERROR:
-              this._error(), this.abort(!0), n._trigger("fileError", E, this, l, t);
+            case r.ERROR:
+              this._error(), this.abort(!0), a._trigger("fileError", R, this, l, t);
               break;
-            case i.SUCCESS:
+            case r.SUCCESS:
               if (this._updateUploadedChunks(l, t), this.error)
                 return;
               clearTimeout(this._progeressId), this._progeressId = 0;
               var c = Date.now() - this._lastProgressCallback;
-              c < n.opts.progressCallbacksInterval && (this._progeressId = setTimeout(s, n.opts.progressCallbacksInterval - c)), this.isComplete() ? (clearTimeout(this._progeressId), s(), this.currentSpeed = 0, this.averageSpeed = 0, n._trigger("fileSuccess", E, this, l, t), E.isComplete() && n._trigger("fileComplete", E, this)) : this._progeressId || s();
+              c < a.opts.progressCallbacksInterval && (this._progeressId = setTimeout(s, a.opts.progressCallbacksInterval - c)), this.isComplete() ? (clearTimeout(this._progeressId), s(), this.currentSpeed = 0, this.averageSpeed = 0, a._trigger("fileSuccess", R, this, l, t), R.isComplete() && a._trigger("fileComplete", R, this)) : this._progeressId || s();
               break;
-            case i.RETRY:
-              n._trigger("fileRetry", E, this, t);
+            case r.RETRY:
+              a._trigger("fileRetry", R, this, t);
               break;
           }
         },
-        _updateUploadedChunks: function(t, r) {
+        _updateUploadedChunks: function(t, i) {
           var l = this.uploader.opts.checkChunkUploadedByResponse;
           if (l) {
-            var n = r.xhr;
-            a.each(this.chunks, function(i) {
-              if (!i.tested) {
-                var d = l.call(this, i, t);
-                i === r && !d && (i.xhr = null), d && (i.xhr = n), i.tested = !0;
+            var a = i.xhr;
+            n.each(this.chunks, function(r) {
+              if (!r.tested) {
+                var f = l.call(this, r, t);
+                r === i && !f && (r.xhr = null), f && (r.xhr = a), r.tested = !0;
               }
             }, this), this._firstResponse ? this.uploader.uploadNextChunk() : (this._firstResponse = !0, this.uploader.upload(!0));
           } else
@@ -1190,23 +1190,23 @@ var ke = {}, Et = {
         },
         _resetError: function() {
           this.error = this.allError = !1;
-          for (var t = this.parent, r = -1; t && t !== this.uploader; )
-            r = t._errorFiles.indexOf(this), t._errorFiles.splice(r, 1), t.allError = !1, t._errorFiles.length || (t.error = !1), t = t.parent;
+          for (var t = this.parent, i = -1; t && t !== this.uploader; )
+            i = t._errorFiles.indexOf(this), t._errorFiles.splice(i, 1), t.allError = !1, t._errorFiles.length || (t.error = !1), t = t.parent;
         },
         isComplete: function() {
           if (!this.completed) {
             var t = !1;
-            this._eachAccess(function(r) {
-              if (!r.isComplete())
+            this._eachAccess(function(i) {
+              if (!i.isComplete())
                 return t = !0, !1;
             }, function() {
               if (this.error)
                 t = !0;
               else {
-                var r = x.STATUS;
-                a.each(this.chunks, function(l) {
-                  var n = l.status();
-                  if (n === r.ERROR || n === r.PENDING || n === r.UPLOADING || n === r.READING || l.preprocessState === 1 || l.readState === 1)
+                var i = E.STATUS;
+                n.each(this.chunks, function(l) {
+                  var a = l.status();
+                  if (a === i.ERROR || a === i.PENDING || a === i.UPLOADING || a === i.READING || l.preprocessState === 1 || l.readState === 1)
                     return t = !0, !1;
                 });
               }
@@ -1216,13 +1216,13 @@ var ke = {}, Et = {
         },
         isUploading: function() {
           var t = !1;
-          return this._eachAccess(function(r) {
-            if (r.isUploading())
+          return this._eachAccess(function(i) {
+            if (i.isUploading())
               return t = !0, !1;
           }, function() {
-            var r = x.STATUS.UPLOADING;
-            a.each(this.chunks, function(l) {
-              if (l.status() === r)
+            var i = E.STATUS.UPLOADING;
+            n.each(this.chunks, function(l) {
+              if (l.status() === i)
                 return t = !0, !1;
             });
           }), t;
@@ -1245,28 +1245,28 @@ var ke = {}, Et = {
           this.uploader.removeFile(this);
         },
         retry: function(t) {
-          var r = function(l) {
+          var i = function(l) {
             l.error && l.bootstrap();
           };
-          t ? t.bootstrap() : this._eachAccess(r, function() {
+          t ? t.bootstrap() : this._eachAccess(i, function() {
             this.bootstrap();
           }), this.uploader.upload();
         },
         abort: function(t) {
           if (!this.aborted) {
             this.currentSpeed = 0, this.averageSpeed = 0, this.aborted = !t;
-            var r = this.chunks;
+            var i = this.chunks;
             t && (this.chunks = []);
-            var l = x.STATUS.UPLOADING;
-            a.each(r, function(n) {
-              n.status() === l && (n.abort(), this.uploader.uploadNextChunk());
+            var l = E.STATUS.UPLOADING;
+            n.each(i, function(a) {
+              a.status() === l && (a.abort(), this.uploader.uploadNextChunk());
             }, this);
           }
         },
         progress: function() {
-          var t = 0, r = 0, l = 0;
-          return this._eachAccess(function(n, i) {
-            t += n.progress() * n.size, r += n.size, i === this.files.length - 1 && (l = r > 0 ? t / r : this.isComplete() ? 1 : 0);
+          var t = 0, i = 0, l = 0;
+          return this._eachAccess(function(a, r) {
+            t += a.progress() * a.size, i += a.size, r === this.files.length - 1 && (l = i > 0 ? t / i : this.isComplete() ? 1 : 0);
           }, function() {
             if (this.error) {
               l = 1;
@@ -1276,25 +1276,25 @@ var ke = {}, Et = {
               this._prevProgress = Math.max(this._prevProgress, this.chunks[0].progress()), l = this._prevProgress;
               return;
             }
-            var n = 0;
-            a.each(this.chunks, function(d) {
-              n += d.progress() * (d.endByte - d.startByte);
+            var a = 0;
+            n.each(this.chunks, function(f) {
+              a += f.progress() * (f.endByte - f.startByte);
             });
-            var i = n / this.size;
-            this._prevProgress = Math.max(this._prevProgress, i > 0.9999 ? 1 : i), l = this._prevProgress;
+            var r = a / this.size;
+            this._prevProgress = Math.max(this._prevProgress, r > 0.9999 ? 1 : r), l = this._prevProgress;
           }), l;
         },
         getSize: function() {
           var t = 0;
-          return this._eachAccess(function(r) {
-            t += r.size;
+          return this._eachAccess(function(i) {
+            t += i.size;
           }, function() {
             t += this.size;
           }), t;
         },
         getFormatSize: function() {
           var t = this.getSize();
-          return a.formatSize(t);
+          return n.formatSize(t);
         },
         getRoot: function() {
           if (this.isRoot)
@@ -1308,55 +1308,55 @@ var ke = {}, Et = {
         },
         sizeUploaded: function() {
           var t = 0;
-          return this._eachAccess(function(r) {
-            t += r.sizeUploaded();
+          return this._eachAccess(function(i) {
+            t += i.sizeUploaded();
           }, function() {
-            a.each(this.chunks, function(r) {
-              t += r.sizeUploaded();
+            n.each(this.chunks, function(i) {
+              t += i.sizeUploaded();
             });
           }), t;
         },
         timeRemaining: function() {
-          var t = 0, r = 0, l = 0;
-          return this._eachAccess(function(i, d) {
-            !i.paused && !i.error && (r += i.size - i.sizeUploaded(), l += i.averageSpeed), d === this.files.length - 1 && (t = n(r, l));
+          var t = 0, i = 0, l = 0;
+          return this._eachAccess(function(r, f) {
+            !r.paused && !r.error && (i += r.size - r.sizeUploaded(), l += r.averageSpeed), f === this.files.length - 1 && (t = a(i, l));
           }, function() {
             if (this.paused || this.error) {
               t = 0;
               return;
             }
-            var i = this.size - this.sizeUploaded();
-            t = n(i, this.averageSpeed);
+            var r = this.size - this.sizeUploaded();
+            t = a(r, this.averageSpeed);
           }), t;
-          function n(i, d) {
-            return i && !d ? Number.POSITIVE_INFINITY : !i && !d ? 0 : Math.floor(i / d);
+          function a(r, f) {
+            return r && !f ? Number.POSITIVE_INFINITY : !r && !f ? 0 : Math.floor(r / f);
           }
         },
         removeFile: function(t) {
           if (t.isFolder)
             for (; t.files.length; ) {
-              var r = t.files[t.files.length - 1];
-              this._removeFile(r);
+              var i = t.files[t.files.length - 1];
+              this._removeFile(i);
             }
           this._removeFile(t);
         },
         _delFilePath: function(t) {
-          t.path && this.filePaths && delete this.filePaths[t.path], a.each(t.fileList, function(r) {
-            this._delFilePath(r);
+          t.path && this.filePaths && delete this.filePaths[t.path], n.each(t.fileList, function(i) {
+            this._delFilePath(i);
           }, this);
         },
         _removeFile: function(t) {
           if (!t.isFolder) {
-            a.each(this.files, function(n, i) {
-              if (n === t)
-                return this.files.splice(i, 1), !1;
+            n.each(this.files, function(a, r) {
+              if (a === t)
+                return this.files.splice(r, 1), !1;
             }, this), t.abort();
-            for (var r = t.parent, l; r && r !== this; )
-              l = r.parent, r._removeFile(t), r = l;
+            for (var i = t.parent, l; i && i !== this; )
+              l = i.parent, i._removeFile(t), i = l;
           }
-          t.parent === this && a.each(this.fileList, function(n, i) {
-            if (n === t)
-              return this.fileList.splice(i, 1), !1;
+          t.parent === this && n.each(this.fileList, function(a, r) {
+            if (a === t)
+              return this.fileList.splice(r, 1), !1;
           }, this), !this.isRoot && this.isFolder && !this.files.length && (this.parent._removeFile(this), this.uploader._delFilePath(this)), t.parent = null;
         },
         getType: function() {
@@ -1365,116 +1365,120 @@ var ke = {}, Et = {
         getExtension: function() {
           return this.isFolder ? "" : this.name.substr((~-this.name.lastIndexOf(".") >>> 0) + 2).toLowerCase();
         }
-      }), k.exports = p;
-      function f(t) {
-        var r = [], l = t.split("/"), n = l.length, i = 1;
-        if (l.splice(n - 1, 1), n--, l.length)
-          for (; i <= n; )
-            r.push(l.slice(0, i++).join("/") + "/");
-        return r;
+      }), x.exports = p;
+      function u(t) {
+        var i = [], l = t.split("/"), a = l.length, r = 1;
+        if (l.splice(a - 1, 1), a--, l.length)
+          for (; r <= a; )
+            i.push(l.slice(0, r++).join("/") + "/");
+        return i;
       }
-    }, { "./chunk": 1, "./utils": 5 }], 5: [function(m, k, w) {
-      var a = Object.prototype, x = Array.prototype, p = a.toString, f = function(i) {
-        return p.call(i) === "[object Function]";
-      }, t = Array.isArray || function(i) {
-        return p.call(i) === "[object Array]";
-      }, r = function(i) {
-        return p.call(i) === "[object Object]" && Object.getPrototypeOf(i) === a;
-      }, l = 0, n = {
+    }, { "./chunk": 1, "./utils": 5 }], 5: [function(C, x, w) {
+      var n = Object.prototype, E = Array.prototype, p = n.toString, u = function(r) {
+        return p.call(r) === "[object Function]";
+      }, t = Array.isArray || function(r) {
+        return p.call(r) === "[object Array]";
+      }, i = function(r) {
+        return p.call(r) === "[object Object]" && Object.getPrototypeOf(r) === n;
+      }, l = 0, a = {
         uid: function() {
           return ++l;
         },
         noop: function() {
         },
-        bind: function(i, d) {
+        bind: function(r, f) {
           return function() {
-            return i.apply(d, arguments);
+            return r.apply(f, arguments);
           };
         },
-        preventEvent: function(i) {
-          i.preventDefault();
+        preventEvent: function(r) {
+          r.preventDefault();
         },
-        stop: function(i) {
-          i.preventDefault(), i.stopPropagation();
+        stop: function(r) {
+          r.preventDefault(), r.stopPropagation();
         },
-        nextTick: function(i, d) {
-          setTimeout(n.bind(i, d), 0);
+        nextTick: function(r, f) {
+          setTimeout(a.bind(r, f), 0);
         },
-        toArray: function(i, d, E) {
-          return d === void 0 && (d = 0), E === void 0 && (E = i.length), x.slice.call(i, d, E);
+        toArray: function(r, f, R) {
+          return f === void 0 && (f = 0), R === void 0 && (R = r.length), E.slice.call(r, f, R);
         },
-        isPlainObject: r,
-        isFunction: f,
+        isPlainObject: i,
+        isFunction: u,
         isArray: t,
-        isObject: function(i) {
-          return Object(i) === i;
+        isObject: function(r) {
+          return Object(r) === r;
         },
-        isString: function(i) {
-          return typeof i == "string";
+        isString: function(r) {
+          return typeof r == "string";
         },
-        isUndefined: function(i) {
-          return typeof i > "u";
+        isUndefined: function(r) {
+          return typeof r > "u";
         },
-        isDefined: function(i) {
-          return typeof i < "u";
+        isDefined: function(r) {
+          return typeof r < "u";
         },
-        each: function(i, d, E) {
-          if (n.isDefined(i.length))
-            for (var s = 0, c = i.length; s < c && d.call(E, i[s], s, i) !== !1; s++)
+        each: function(r, f, R) {
+          if (a.isDefined(r.length))
+            for (var s = 0, c = r.length; s < c && f.call(R, r[s], s, r) !== !1; s++)
               ;
           else
-            for (var u in i)
-              if (d.call(E, i[u], u, i) === !1)
+            for (var d in r)
+              if (f.call(R, r[d], d, r) === !1)
                 break;
         },
-        evalOpts: function(i, d) {
-          return n.isFunction(i) && (d = n.toArray(arguments), i = i.apply(null, d.slice(1))), i;
+        evalOpts: function(r, f) {
+          return a.isFunction(r) && (f = a.toArray(arguments), r = r.apply(null, f.slice(1))), r;
         },
         extend: function() {
-          var i, d, E, s, c, u, y = arguments[0] || {}, b = 1, g = arguments.length, O = !1;
-          for (typeof y == "boolean" && (O = y, y = arguments[1] || {}, b++), typeof y != "object" && !f(y) && (y = {}), b === g && (y = this, b--); b < g; b++)
-            if ((i = arguments[b]) != null)
-              for (d in i)
-                E = y[d], s = i[d], y !== s && (O && s && (r(s) || (c = t(s))) ? (c ? (c = !1, u = E && t(E) ? E : []) : u = E && r(E) ? E : {}, y[d] = n.extend(O, u, s)) : s !== void 0 && (y[d] = s));
-          return y;
+          var r, f, R, s, c, d, v = arguments[0] || {}, S = 1, g = arguments.length, O = !1;
+          for (typeof v == "boolean" && (O = v, v = arguments[1] || {}, S++), typeof v != "object" && !u(v) && (v = {}), S === g && (v = this, S--); S < g; S++)
+            if ((r = arguments[S]) != null)
+              for (f in r)
+                R = v[f], s = r[f], v !== s && (O && s && (i(s) || (c = t(s))) ? (c ? (c = !1, d = R && t(R) ? R : []) : d = R && i(R) ? R : {}, v[f] = a.extend(O, d, s)) : s !== void 0 && (v[f] = s));
+          return v;
         },
-        formatSize: function(i) {
-          return i < 1024 ? i.toFixed(0) + " bytes" : i < 1024 * 1024 ? (i / 1024).toFixed(0) + " KB" : i < 1024 * 1024 * 1024 ? (i / 1024 / 1024).toFixed(1) + " MB" : (i / 1024 / 1024 / 1024).toFixed(1) + " GB";
+        formatSize: function(r) {
+          return r < 1024 ? r.toFixed(0) + " bytes" : r < 1024 * 1024 ? (r / 1024).toFixed(0) + " KB" : r < 1024 * 1024 * 1024 ? (r / 1024 / 1024).toFixed(1) + " MB" : (r / 1024 / 1024 / 1024).toFixed(1) + " GB";
         },
-        defineNonEnumerable: function(i, d, E) {
-          Object.defineProperty(i, d, {
+        defineNonEnumerable: function(r, f, R) {
+          Object.defineProperty(r, f, {
             enumerable: !1,
             configurable: !0,
             writable: !0,
-            value: E
+            value: R
           });
         }
       };
-      k.exports = n;
+      x.exports = a;
     }, {}] }, {}, [3])(3);
   });
 })(Et);
-const Ve = ke, Ce = mt({
-  uploader: null
+const Ve = Pe, ce = mt({
+  uploader: null,
+  isSupport: !0
 });
-const Ge = ({ children: v, directory: D = !1, single: m = !1, attributes: k = "" }) => {
-  const w = ie(null), { uploader: a } = We(Ce);
-  return ue(() => {
-    a == null || a.assignBrowse(w.current, D, m, k);
-  }, [a]), R.jsx("div", { children: R.jsx("label", { className: "uploader-btn", ref: w, children: v }) });
+const qe = ({ children: m, directory: y = !1, single: C = !1, attributes: x = "" }) => {
+  const w = Q(null), { uploader: n } = be(ce);
+  return le(() => {
+    n == null || n.assignBrowse(w.current, y, C, x);
+  }, [n]), _.jsx("div", { children: _.jsx("label", { className: "uploader-btn", ref: w, children: m }) });
 };
-const Rt = ({ children: v }) => {
-  const D = ie(null), { uploader: m } = We(Ce), [k, w] = q(""), a = () => {
-    w("uploader-dragover");
-  }, x = () => {
-    w("");
+const Rt = ({ children: m }) => {
+  const { uploader: y, isSupport: C } = be(ce);
+  if (!C)
+    return null;
+  const x = Q(null), [w, n] = V(""), E = () => {
+    n("uploader-dragover");
   }, p = () => {
-    w("uploader-droped");
+    n("");
+  }, u = () => {
+    n("uploader-droped");
   };
-  return ue(() => (m == null || m.assignDrop(D.current), m == null || m.on("dragenter", a), m == null || m.on("dragleave", x), m == null || m.on("drop", p), () => {
-    m == null || m.off("dragenter", a), m == null || m.off("dragleave", x), m == null || m.off("drop", p), m == null || m.unAssignDrop(D.current);
-  }), [m]), R.jsx("div", { className: `uploader-drop ${k}`, ref: D, children: v });
-}, xt = {
+  return le(() => (y == null || y.assignDrop(x.current), y == null || y.on("dragenter", E), y == null || y.on("dragleave", p), y == null || y.on("drop", u), () => {
+    y == null || y.off("dragenter", E), y == null || y.off("dragleave", p), y == null || y.off("drop", u), y == null || y.unAssignDrop(x.current);
+  }), [y]), _.jsx("div", { className: `uploader-drop ${w}`, ref: x, children: m });
+}, St = {
   image: ["gif", "jpg", "jpeg", "png", "bmp", "webp"],
   video: ["mp4", "m3u8", "rmvb", "avi", "swf", "3gp", "mkv", "flv"],
   audio: ["mp3", "wav", "wma", "ogg", "aac", "flac"],
@@ -1494,160 +1498,191 @@ const Rt = ({ children: v }) => {
     "pptx"
   ]
 };
-function St(v) {
-  const D = Math.floor(v / 31536e3);
-  if (D)
-    return D + " year" + x(D);
-  const m = Math.floor((v %= 31536e3) / 86400);
-  if (m)
-    return m + " day" + x(m);
-  const k = Math.floor((v %= 86400) / 3600);
-  if (k)
-    return k + " hour" + x(k);
-  const w = Math.floor((v %= 3600) / 60);
+function xt(m) {
+  const y = Math.floor(m / 31536e3);
+  if (y)
+    return y + " year" + E(y);
+  const C = Math.floor((m %= 31536e3) / 86400);
+  if (C)
+    return C + " day" + E(C);
+  const x = Math.floor((m %= 86400) / 3600);
+  if (x)
+    return x + " hour" + E(x);
+  const w = Math.floor((m %= 3600) / 60);
   if (w)
-    return w + " minute" + x(w);
-  const a = v % 60;
-  return a + " second" + x(a);
-  function x(p) {
+    return w + " minute" + E(w);
+  const n = m % 60;
+  return n + " second" + E(n);
+  function E(p) {
     return p > 1 ? "s" : "";
   }
 }
-const qe = ["fileProgress", "fileSuccess", "fileComplete", "fileError"], kt = ({ file: v, list: D = !1 }) => {
-  const [m, k] = q(!1), [w, a] = q(!1), [x, p] = q(!1), [f, t] = q(!1), [r, l] = q(0), [n, i] = q(0), [d, E] = q(null), [s, c] = q(""), u = ie(null), y = ie({}), b = re(() => x ? "success" : m ? "error" : f ? "uploading" : w ? "paused" : "waiting", [f, x, m, w]), g = re(() => {
-    const A = v.isFolder, P = v.getExtension();
+const Ye = ["fileProgress", "fileSuccess", "fileComplete", "fileError"], kt = ({ file: m, list: y = !1, children: C }) => {
+  const [x, w] = V(!1), [n, E] = V(!1), [p, u] = V(!1), [t, i] = V(!1), [l, a] = V(0), [r, f] = V(0), [R, s] = V(null), [c, d] = V(""), v = Q(null), S = Q({}), g = se(() => p ? "success" : x ? "error" : t ? "uploading" : n ? "paused" : "waiting", [t, p, x, n]), O = se(() => {
+    const A = m.isFolder, T = m.getExtension();
     let $ = A ? "folder" : "unknown";
-    const J = v.uploader.opts.categoryMap || xt;
-    return Object.keys(J).forEach((Q) => {
-      J[Q].indexOf(P) > -1 && ($ = Q);
+    const K = m.uploader.opts.categoryMap || St;
+    return Object.keys(K).forEach((Z) => {
+      K[Z].indexOf(T) > -1 && ($ = Z);
     }), $;
-  }, [v.getExtension()]), O = re(() => {
-    const A = Math.floor(r * 100), P = `translateX(${Math.floor(A - 100)}%)`;
+  }, [m.getExtension()]), j = se(() => {
+    const A = Math.floor(l * 100), T = `translateX(${Math.floor(A - 100)}%)`;
     return {
       progress: `${A}%`,
-      WebkitTransform: P,
-      MozTransform: P,
-      msTransform: P,
-      transform: P
+      WebkitTransform: T,
+      MozTransform: T,
+      msTransform: T,
+      transform: T
     };
-  }, [r]), j = re(() => `${Ve.utils.formatSize(v.averageSpeed)} / s`, [v.averageSpeed]), Y = re(() => v.uploader.fileStatusText[b], [b]), I = re(() => {
-    if (n === Number.POSITIVE_INFINITY || n === 0)
+  }, [l]), G = se(() => `${Ve.utils.formatSize(m.averageSpeed)} / s`, [m.averageSpeed]), I = se(() => m.uploader.fileStatusText[g], [g]), L = se(() => {
+    if (r === Number.POSITIVE_INFINITY || r === 0)
       return "";
-    let A = St(n);
-    const P = v.uploader.opts.parseTimeRemaining;
-    return P && (A = P(n, A)), A;
-  }, [n]), z = () => {
-    v.pause(), X(), B();
-  }, W = () => {
-    v.retry(), X();
-  }, K = () => {
-    v.resume(), X();
+    let A = xt(r);
+    const T = m.uploader.opts.parseTimeRemaining;
+    return T && (A = T(r, A)), A;
+  }, [r]), q = () => {
+    m.pause(), J(), W();
+  }, X = () => {
+    m.retry(), J();
   }, M = () => {
-    v.cancel();
-  }, B = () => {
-    i(v.timeRemaining()), l(v.progress()), X();
-  }, H = (A, P, $) => {
-    A && Z($), B(), k(!1), p(!0), t(!1);
-  }, le = ie({
-    _fileProgress: B,
-    _fileSuccess: H,
+    m.resume(), J();
+  }, Y = () => {
+    m.cancel();
+  }, W = () => {
+    f(m.timeRemaining()), a(m.progress()), J();
+  }, ne = (A, T, $) => {
+    A && ee($), W(), w(!1), u(!0), i(!1);
+  }, fe = Q({
+    _fileProgress: W,
+    _fileSuccess: ne,
     _fileComplete: () => {
-      H();
+      ne();
     },
-    _fileError: (A, P, $) => {
-      B(), Z($), k(!0), p(!1), t(!1);
+    _fileError: (A, T, $) => {
+      W(), ee($), w(!0), u(!1), i(!1);
     }
-  }), Z = (A) => {
-    let P = A;
+  }), ee = (A) => {
+    let T = A;
     try {
-      P = JSON.parse(P);
+      T = JSON.parse(T);
     } catch {
-      E(P);
+      s(T);
     }
-  }, ce = (A, P) => {
-    const $ = P[0], fe = P[1];
-    if (v === (D ? $ : fe)) {
-      if (D && A === "fileSuccess") {
-        Z(P[2]);
+  }, he = (A, T) => {
+    const $ = T[0], te = T[1];
+    if (m === (y ? $ : te)) {
+      if (y && A === "fileSuccess") {
+        ee(T[2]);
         return;
       }
-      le.current[`_${A}`]();
+      fe.current[`_${A}`]();
     }
-  }, X = () => {
-    k(v.error), a(v.paused), t(v.isUploading());
+  }, J = () => {
+    w(m.error), E(m.paused), i(m.isUploading());
   };
-  return ue(() => {
-    b === "uploading" ? u.current = setTimeout(() => {
-      c("uploader-file-progressing");
-    }, 200) : (clearTimeout(u.current), c(""));
-  }, [b]), ue(() => {
-    k(v.error), a(v.paused), p(v.isComplete()), t(v.isUploading()), l(v.progress()), i(v.timeRemaining());
-    const A = (P) => y.current[P] = (...$) => {
-      ce(P, $);
+  return le(() => {
+    g === "uploading" ? v.current = setTimeout(() => {
+      d("uploader-file-progressing");
+    }, 200) : (clearTimeout(v.current), d(""));
+  }, [g]), le(() => {
+    w(m.error), E(m.paused), u(m.isComplete()), i(m.isUploading()), a(m.progress()), f(m.timeRemaining());
+    const A = (T) => S.current[T] = (...$) => {
+      he(T, $);
     };
-    return qe.forEach((P) => {
-      v.uploader.on(P, A(P));
+    return Ye.forEach((T) => {
+      m.uploader.on(T, A(T));
     }), () => {
-      qe.forEach((P) => {
-        v.uploader.off(P, y.current[P]);
-      });
+      Ye.forEach((T) => {
+        m.uploader.off(T, S.current[T]);
+      }), S.current = null;
     };
-  }, []), R.jsx(R.Fragment, { children: R.jsxs("div", { className: "uploader-file", status: b, children: [R.jsx("div", { className: `uploader-file-progress ${s}`, style: O }), R.jsxs("div", { className: "uploader-file-info", children: [R.jsxs("div", { className: "uploader-file-name", children: [R.jsx("i", { className: "uploader-file-icon", icon: g }), v.name] }), R.jsx("div", { className: "uploader-file-size", children: v.getFormatSize() }), R.jsx("div", { className: "uploader-file-meta" }), R.jsxs("div", { className: "uploader-file-status", children: [b !== "uploading" && R.jsx("span", { children: Y }), b === "uploading" && R.jsxs("span", { children: [R.jsxs("span", { children: [O.progress, " "] }), R.jsxs("em", { children: [j, " "] }), R.jsxs("i", { children: [I, " "] })] })] }), R.jsxs("div", { className: "uploader-file-actions", children: [R.jsx("span", { className: "uploader-file-pause", onClick: z }), R.jsx("span", { className: "uploader-file-resume", onClick: K }), R.jsx("span", { className: "uploader-file-retry", onClick: W }), R.jsx("span", { className: "uploader-file-remove", onClick: M })] })] })] }) });
+  }, []), _.jsx(_.Fragment, { children: C ? C({
+    name: m.name,
+    size: m.getFormatSize(),
+    averageSpeed: G,
+    error: x,
+    paused: n,
+    isComplete: p,
+    isUploading: t,
+    progress: l,
+    formatedTimeRemaining: L,
+    status: g,
+    statusText: I,
+    fileCategory: O,
+    pause: q,
+    remove: Y,
+    resume: M,
+    retry: X
+  }) : _.jsxs("div", { className: "uploader-file", status: g, children: [_.jsx("div", { className: `uploader-file-progress ${c}`, style: j }), _.jsxs("div", { className: "uploader-file-info", children: [_.jsxs("div", { className: "uploader-file-name", children: [_.jsx("i", { className: "uploader-file-icon", icon: O }), m.name] }), _.jsx("div", { className: "uploader-file-size", children: m.getFormatSize() }), _.jsx("div", { className: "uploader-file-meta" }), _.jsxs("div", { className: "uploader-file-status", children: [g !== "uploading" && _.jsx("span", { children: I }), g === "uploading" && _.jsxs("span", { children: [_.jsxs("span", { children: [j.progress, " "] }), _.jsxs("em", { children: [G, " "] }), _.jsxs("i", { children: [L, " "] })] })] }), _.jsxs("div", { className: "uploader-file-actions", children: [_.jsx("span", { className: "uploader-file-pause", onClick: q }), _.jsx("span", { className: "uploader-file-resume", onClick: M }), _.jsx("span", { className: "uploader-file-retry", onClick: X }), _.jsx("span", { className: "uploader-file-remove", onClick: Y })] })] })] }) });
 };
-const Ct = ({ fileList: v }) => R.jsx("div", { className: "uploader-list", children: R.jsx("ul", { children: v.map((D) => R.jsx(kt, { file: D, list: !0 }, D.id)) }) });
-const Pt = ({ children: v }) => R.jsx("div", { className: "uploader-unsupport", children: v || R.jsx("p", { children: "你的浏览器等级过低暂不支持上传组件" }) });
-function wt(v) {
-  var s, c;
-  const { options: D, fileStatusText: m = {
+const Ct = ({ fileList: m, children: y }) => {
+  const { isSupport: C } = be(ce);
+  return C ? _.jsx("div", { className: "uploader-list", children: y ? y(m) : _.jsx("ul", { children: m.map((x) => _.jsx(kt, { file: x, list: !0 }, x.id)) }) }) : null;
+};
+const Pt = ({ children: m }) => {
+  const { isSupport: y } = be(ce);
+  return y ? null : _.jsx("div", { className: "uploader-unsupport", children: m || _.jsx("p", { children: "你的浏览器等级过低暂不支持上传组件" }) });
+};
+function wt(m) {
+  var d;
+  const { options: y, fileStatusText: C = {
     success: "成功了",
     error: "出错了",
     uploading: "上传中",
     paused: "暂停中",
     waiting: "等待中"
-  }, autoStart: k = !0, onFileComplete: w, onComplete: a, onChange: x = () => {
+  }, autoStart: x = !0, onFileComplete: w = () => {
+  }, onComplete: n = () => {
+  }, onChange: E = () => {
   }, onFilesSubmitted: p = () => {
-  }, onFileProgress: f = () => {
+  }, onFileProgress: u = () => {
   }, onFileSuccess: t = () => {
-  }, onFileAdded: r = () => {
+  }, onFileAdded: i = () => {
   }, onFilesAdded: l = () => {
-  } } = v, n = ie(new Ve(D)), [i, d] = q([]), E = (...u) => {
-    var b, g;
-    switch (u[0]) {
+  }, children: a } = m, r = Q(new Ve(y)), f = Q((d = r.current) == null ? void 0 : d.support), [R, s] = V([]), c = (...v) => {
+    var g, O;
+    switch (v[0]) {
       case "change":
-        x(u[1]);
+        E(v[1]);
         break;
       case "filesSubmitted":
-        d([...(b = n.current) == null ? void 0 : b.fileList]), n.current.upload(), p(u[1], u[2], u[3]);
+        s([...(g = r.current) == null ? void 0 : g.fileList]), r.current.upload(), p(v[1], v[2], v[3]);
         break;
       case "fileProgress":
-        f(u[1], u[2], u[3]);
+        u(v[1], v[2], v[3]);
         break;
       case "fileSuccess":
-        t(u[1], u[2], u[3], u[4]);
+        t(v[1], v[2], v[3], v[4]);
         break;
       case "fileComplete":
-        w(u[1]);
+        w(v[1]);
         break;
       case "complete":
-        a();
+        n();
         break;
       case "fileAdded":
-        r(u[1]);
+        i(v[1]);
         break;
       case "filesAdded":
-        l(u[1], u[2]);
+        l(v[1], v[2]);
         break;
       case "fileRemoved":
-        d([...(g = n.current) == null ? void 0 : g.fileList]);
+        s([...(O = r.current) == null ? void 0 : O.fileList]);
     }
   };
-  return ue(() => (n.current.fileStatusText = m, n.current.on("catchAll", E), window.uploader = n.current, () => {
-    var u;
-    (u = n.current) == null || u.off("catchAll", E);
-  }), []), R.jsx("div", { className: "uploader-example uploader", children: R.jsxs(Ce.Provider, { value: {
-    uploader: n.current
-  }, children: [(s = n.current) != null && s.support ? R.jsx(Rt, { children: R.jsxs(R.Fragment, { children: [R.jsx("p", { className: "m-3", children: "把文件拖拽到此处进行上传" }), R.jsxs("div", { className: "flex", children: [R.jsx(Ge, { children: "选择文件" }), R.jsx(Ge, { directory: !0, children: "选择文件夹" })] })] }) }) : R.jsx(Pt, {}), ((c = n.current) == null ? void 0 : c.support) && R.jsx(Ct, { fileList: i })] }) });
+  return le(() => (r.current.fileStatusText = C, r.current.on("catchAll", c), window.uploader = r.current, () => {
+    var v;
+    (v = r.current) == null || v.off("catchAll", c), r.current = null;
+  }), []), _.jsx("div", { className: "uploader-example uploader", children: _.jsx(ce.Provider, { value: {
+    uploader: r.current,
+    isSupport: f.current
+  }, children: a ? a({ fileList: R }) : _.jsxs(_.Fragment, { children: [_.jsx(Pt, {}), _.jsx(Rt, { children: _.jsxs(_.Fragment, { children: [_.jsx("p", { className: "m-3", children: "把文件拖拽到此处进行上传" }), _.jsxs("div", { className: "flex", children: [_.jsx(qe, { children: "选择文件" }), _.jsx(qe, { directory: !0, children: "选择文件夹" })] })] }) }), _.jsx(Ct, { fileList: R })] }) }) });
 }
 export {
+  Pt as UnSupport,
+  qe as UploaderBtn,
+  Rt as UploaderDrop,
+  kt as UploaderFile,
+  Ct as UploaderList,
   wt as default
 };

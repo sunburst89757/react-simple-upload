@@ -1,11 +1,11 @@
-export interface UploaderFile {
+export interface UploadFile {
   isFolder: boolean;
   name: string;
   isRoot: boolean;
-  fileList: UploaderFile[];
-  files: UploaderFile[];
+  fileList: UploadFile[];
+  files: UploadFile[];
 }
-export interface UploaderChunk {
+export interface UploadChunk {
   chunkSize: number;
   pendingRetry: boolean;
   retries: number;
@@ -15,23 +15,23 @@ export interface UploaderChunk {
 export type UploaderAllEvents = {
   onChange?: (e: Event) => void;
   onFilesSubmitted?: (
-    files: UploaderFile[],
-    fileList: UploaderFile[],
+    files: UploadFile[],
+    fileList: UploadFile[],
     e: Event
   ) => void;
   onFileProgress?: (
-    file1: UploaderFile,
-    file2: UploaderFile,
-    chunk: UploaderChunk
+    file1: UploadFile,
+    file2: UploadFile,
+    chunk: UploadChunk
   ) => void;
   onFileSuccess?: (
-    file1: UploaderFile,
-    file2: UploaderFile,
+    file1: UploadFile,
+    file2: UploadFile,
     status: string,
-    chunk: UploaderChunk
+    chunk: UploadChunk
   ) => void;
-  onFileComplete?: (rootFile: UploaderFile) => void;
+  onFileComplete?: (rootFile: UploadFile) => void;
   onComplete?: () => void;
-  onFileAdded?: (file: UploaderFile) => void;
-  onFilesAdded?: (files: UploaderFile[], fileList: UploaderFile[]) => {};
+  onFileAdded?: (file: UploadFile) => void;
+  onFilesAdded?: (files: UploadFile[], fileList: UploadFile[]) => {};
 };

@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import Uploader, { UploaderFile } from 'simple-uploader.js';
+import Uploader, { UploadFile } from 'simple-uploader.js';
 import { UploaderBtn } from './Btn';
 import { UploaderDrop } from './Drop';
 import { UploaderList } from './List';
 import { UnSupport } from './UnSupport';
+import { UploaderFile } from './File';
 import { UploaderContext } from './utils/UploaderContext';
 import './index.css';
 import { UploaderAllEvents } from './types';
@@ -12,14 +13,14 @@ interface IProps extends UploaderAllEvents {
   options: UploaderOptions;
   fileStatusText?: Record<string, string>;
   autoStart?: Boolean;
-  children?: ({ fileList }: { fileList: UploaderFile[] }) => JSX.Element;
+  children?: ({ fileList }: { fileList: UploadFile[] }) => JSX.Element;
 }
 interface UploaderOptions {
   target: string;
   testChunks: Boolean;
   [objkey: string]: any;
 }
-
+export { UploaderBtn, UploaderDrop, UploaderList, UnSupport, UploaderFile };
 export default function Upload(props: IProps) {
   const {
     options,
@@ -43,7 +44,7 @@ export default function Upload(props: IProps) {
   } = props;
   const uploader = useRef<Uploader | null>(new Uploader(options));
   const isSupport = useRef(uploader.current?.support);
-  const [fileList, setFileList] = useState<UploaderFile[]>([]);
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
   const allEvent = (...args: any[]) => {
     console.log(args, '事件监听');
 

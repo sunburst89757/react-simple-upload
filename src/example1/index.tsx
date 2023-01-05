@@ -6,7 +6,7 @@ import {
   PauseOutlined,
   CloseOutlined
 } from '@ant-design/icons';
-import { UploaderFile as File } from 'simple-uploader.js';
+import { UploadFile as File } from 'simple-uploader.js';
 import Uploader from '../lib';
 import { UploaderBtn } from '../lib/Btn';
 import { UploaderDrop } from '../lib/Drop';

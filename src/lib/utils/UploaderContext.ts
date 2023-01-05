@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import Uploader, { UploaderFile } from 'simple-uploader.js';
+import Uploader, { UploadFile } from 'simple-uploader.js';
 export const UploaderContext = createContext<{
   uploader: Uploader | null;
   isSupport?: boolean;

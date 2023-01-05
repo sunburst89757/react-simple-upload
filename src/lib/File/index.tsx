@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import Uploader, { UploaderFile as File } from 'simple-uploader.js';
+import Uploader, { UploadFile } from 'simple-uploader.js';
 import { defaultCategoryMap } from '../config';
 import { secondsToStr } from '../utils/time';
 import './index.scss';
 interface IProps {
-  file: File;
+  file: UploadFile;
   list?: boolean;
   children?: ({
     error,
@@ -126,8 +126,8 @@ export const UploaderFile = ({ file, list = false, children }: IProps) => {
     _actionCheck();
   };
   const _fileSuccess = (
-    rootFile?: null | File,
-    file?: File,
+    rootFile?: null | UploadFile,
+    file?: UploadFile,
     message?: string
   ) => {
     if (rootFile) {
@@ -141,7 +141,11 @@ export const UploaderFile = ({ file, list = false, children }: IProps) => {
   const _fileComplete = () => {
     _fileSuccess();
   };
-  const _fileError = (rootFile: File, file: File, message: string) => {
+  const _fileError = (
+    rootFile: UploadFile,
+    file: UploadFile,
+    message: string
+  ) => {
     _fileProgress();
     processResponse(message);
     setError(true);

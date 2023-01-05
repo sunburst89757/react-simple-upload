@@ -1,6 +1,7 @@
 /// <reference types="react" />
-import { UploaderFile as File } from 'simple-uploader.js';
+import { UploadFile } from 'simple-uploader.js';
 import './index.scss';
-export declare const UploaderList: ({ fileList }: {
-    fileList: File[];
-}) => JSX.Element;
+export declare const UploaderList: ({ fileList, children }: {
+    fileList: UploadFile[];
+    children?: ((fileList: UploadFile[]) => JSX.Element) | undefined;
+}) => JSX.Element | null;
