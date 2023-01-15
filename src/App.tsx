@@ -1,28 +1,27 @@
+import { Button } from 'antd';
 import { useState } from 'react';
 import { Example } from './example';
-import { A } from './example1';
+import { Example1 } from './example1';
 import Uploader from './lib';
 import { UploadFile } from './lib/types';
 function App() {
-  const [options, setoptions] = useState({
-    target: '//localhost:3000/upload', // '//jsonplaceholder.typicode.com/posts/',
-    testChunks: false
-  });
-  const fileComplete = (rootFile: UploadFile) => {
-    console.log(rootFile, 'fileComplete');
-  };
-  const complete = () => {
-    console.log('complete');
-  };
+  const [show, setShow] = useState(true);
   return (
     <>
+      <Button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        销毁测试
+      </Button>
       {/* <Example></Example> */}
       {/* <Uploader
         options={options}
         onFileComplete={fileComplete}
         onComplete={complete}
       ></Uploader> */}
-      <A></A>
+      {show ? <Example1></Example1> : null}
     </>
   );
 }

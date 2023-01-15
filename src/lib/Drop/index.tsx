@@ -28,7 +28,10 @@ export const UploaderDrop = ({ children }: DropProps) => {
       uploader?.off('dragenter', onDragEnter);
       uploader?.off('dragleave', onDragLeave);
       uploader?.off('drop', onDrop);
-      uploader?.unAssignDrop(DropEle.current!);
+      if (DropEle.current) {
+        uploader?.unAssignDrop(DropEle.current!);
+      }
+      console.log('error end');
     };
   }, [uploader]);
   return (

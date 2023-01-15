@@ -13,7 +13,7 @@ import { UploaderDrop } from '../lib/Drop';
 import { UploaderFile } from '../lib/File';
 import { UploaderList } from '../lib/List';
 import { UnSupport } from '../lib/UnSupport';
-export const A = () => {
+export const Example1 = () => {
   const [options, setoptions] = useState({
     target: '//localhost:3000/upload', // '//jsonplaceholder.typicode.com/posts/',
     testChunks: false

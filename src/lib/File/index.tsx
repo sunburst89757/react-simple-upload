@@ -221,8 +221,6 @@ export const UploaderFile = ({ file, list = false, children }: IProps) => {
       fileEvents.forEach((event) => {
         file.uploader.off(event, handlers.current![event]);
       });
-      // GC
-      // handlers.current = null;
     };
   }, []);
   return (

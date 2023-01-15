@@ -1,6 +1,6 @@
 {
   "name": "react-simple-upload",
-  "version": "0.0.7",
+  "version": "0.1.1",
   "type": "module",
   "module": "./dist/react-simple-upload.js",
   "types": "./dist/index.d.ts",
@@ -33,7 +33,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc  && vite build",
+    "build": "rm -rf dist && tsc  && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
