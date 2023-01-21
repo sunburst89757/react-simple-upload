@@ -30,9 +30,9 @@ declare module 'simple-uploader.js' {
     error: boolean;
     fileStatusText: Record<string, string>;
     paused: boolean;
-    file: UploadFile;
-    fileList: UploadFile[];
-    files: UploadFile[];
+    file: LibFile;
+    fileList: LibFile[];
+    files: LibFile[];
     opts: Option;
     uploader: Uploader;
     assignBrowse: (
@@ -46,13 +46,13 @@ declare module 'simple-uploader.js' {
     on: (watchEvent: string, cb: Function) => void;
     off: (watchEvent: string, cb: Function) => void;
     upload: () => void;
-    constructor(options: Record<string, any>) {}
+    constructor(options: Option) {}
     static utils: {
       formatSize: (number) => number;
     };
   }
   export default Uploader;
-  export interface UploadFile {
+  export interface LibFile {
     aborted: boolean;
     allError: boolean;
     completed: boolean;
@@ -65,7 +65,7 @@ declare module 'simple-uploader.js' {
     averageSpeed: number;
     currentSpeed: number;
     size: number;
-    chunks: UploadChunk[];
+    chunks: LibChunk[];
     isComplete: () => boolean;
     isUploading: () => boolean;
     sizeUploaded: () => number;
@@ -81,7 +81,7 @@ declare module 'simple-uploader.js' {
     uploader: Uploader;
     file: File;
   }
-  export interface UploadChunk {
+  export interface LibChunk {
     chunkSize: number;
     pendingRetry: boolean;
     retries: number;

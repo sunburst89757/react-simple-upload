@@ -1,8 +1,8 @@
 /// <reference types="react" />
-import { UploadFile } from 'simple-uploader.js';
+import { LibFile } from 'simple-uploader.js';
 import './index.scss';
 interface IProps {
-    file: UploadFile;
+    file: LibFile;
     list?: boolean;
     children?: ({ error, paused }: {
         name: string;

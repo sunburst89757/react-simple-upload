@@ -6,19 +6,19 @@ import {
   PauseOutlined,
   CloseOutlined
 } from '@ant-design/icons';
-import { UploadFile as File } from 'simple-uploader.js';
 import Uploader from '../lib';
 import { UploaderBtn } from '../lib/Btn';
 import { UploaderDrop } from '../lib/Drop';
 import { UploaderFile } from '../lib/File';
 import { UploaderList } from '../lib/List';
 import { UnSupport } from '../lib/UnSupport';
+import { UploadFile } from '../lib/types';
 export const Example1 = () => {
   const [options, setoptions] = useState({
     target: '//localhost:3000/upload', // '//jsonplaceholder.typicode.com/posts/',
     testChunks: false
   });
-  const fileComplete = (rootFile: File) => {
+  const fileComplete = (rootFile: UploadFile) => {
     console.log(rootFile, 'fileComplete');
   };
   const complete = () => {

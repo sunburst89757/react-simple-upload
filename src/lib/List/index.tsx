@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { UploadFile } from 'simple-uploader.js';
+import { LibFile } from 'simple-uploader.js';
 import { UploaderFile } from '../File';
 import { UploaderContext } from '../utils/UploaderContext';
 import './index.scss';
@@ -7,8 +7,8 @@ export const UploaderList = ({
   fileList,
   children
 }: {
-  fileList: UploadFile[];
-  children?: (fileList: UploadFile[]) => JSX.Element;
+  fileList: LibFile[];
+  children?: (fileList: LibFile[]) => JSX.Element;
 }) => {
   // console.log('render');
   const { isSupport } = useContext(UploaderContext);
