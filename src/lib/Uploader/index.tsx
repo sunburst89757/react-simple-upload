@@ -59,8 +59,11 @@ export function Upload(props: Props) {
     onFilesSubmitted = () => {},
     onFileProgress = () => {},
     onFileSuccess = () => {},
-    onFileAdded = () => {},
-    onFilesAdded = () => {},
+    onFileAdded = () => true,
+    onFilesAdded = () => true,
+    onFileError = () => {},
+    onFileRemove = () => {},
+    onFileRetry = () => {},
     children
   } = props;
   const uploader = useRef<Uploader | null>(new Uploader(options));

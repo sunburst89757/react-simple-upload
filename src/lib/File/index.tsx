@@ -6,10 +6,7 @@ import './index.scss';
 interface IProps {
   file: LibFile;
   list?: boolean;
-  children?: ({
-    error,
-    paused
-  }: {
+  children?: (fileInfo: {
     name: string;
     size: string;
     averageSpeed: string;

@@ -23,18 +23,30 @@ export interface UploadeAllEvents {
     e: Event
   ) => void;
   onFileProgress?: (
-    file1: UploadFile,
-    file2: UploadFile,
+    rootfile: UploadFile,
+    file: UploadFile,
     chunk: UploadChunk
   ) => void;
   onFileSuccess?: (
     file1: UploadFile,
     file2: UploadFile,
-    status: string,
+    message: string,
     chunk: UploadChunk
   ) => void;
   onFileComplete?: (rootFile: UploadFile) => void;
   onComplete?: () => void;
-  onFileAdded?: (file: UploadFile) => void;
-  onFilesAdded?: (files: UploadFile[], fileList: UploadFile[]) => {};
+  onFileAdded?: (file: UploadFile) => boolean;
+  onFilesAdded?: (files: UploadFile[], fileList: UploadFile[]) => boolean;
+  onFileRemove?: (file: UploadFile) => void;
+  onFileRetry?: (
+    rootFile: UploadFile,
+    file: UploadFile,
+    chunk: UploadChunk
+  ) => void;
+  onFileError?: (
+    rootFile: UploadFile,
+    file: UploadFile,
+    message: string,
+    chunk: UploadChunk
+  ) => void;
 }
